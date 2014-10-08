@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F269F6119CBD83B00B577F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F269F6019CBD83B00B577F6 /* Images.xcassets */; };
+		5F269F6519CBD84300B577F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F269F6319CBD84300B577F6 /* main.m */; };
+		5F269F6719CC2CF600B577F6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F269F6619CC2CF600B577F6 /* Security.framework */; };
+		5F269F6919CC2CFB00B577F6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F269F6819CC2CFB00B577F6 /* CFNetwork.framework */; };
+		5F5BBB2119D0189B009A9DCE /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5BBB1F19D0189B009A9DCE /* home.png */; };
+		5F61B02119C81A4F0035CD99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F61B02019C81A4F0035CD99 /* Foundation.framework */; };
+		5F61B02319C81A500035CD99 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F61B02219C81A500035CD99 /* CoreGraphics.framework */; };
+		5F61B02519C81A500035CD99 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F61B02419C81A500035CD99 /* UIKit.framework */; };
+		5F61B05519C81CA50035CD99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F61B05019C81CA50035CD99 /* AppDelegate.m */; };
+		5F61B05619C81CA50035CD99 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F61B05219C81CA50035CD99 /* NSData+Base64.m */; };
+		5F61B05719C81CA50035CD99 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F61B05419C81CA50035CD99 /* ViewController.mm */; };
+		5F61B06119C81D390035CD99 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F61B05D19C81D390035CD99 /* InfoPlist.strings */; };
+		5F61B06219C81D390035CD99 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F61B05F19C81D390035CD99 /* ViewController_iPad.xib */; };
+		5F61B06319C81D390035CD99 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F61B06019C81D390035CD99 /* ViewController_iPhone.xib */; };
+		5F61B07219C81EFC0035CD99 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F61B07119C81EFC0035CD99 /* SystemConfiguration.framework */; };
+		5F6DB9F219E5202E008FAD35 /* Alixpay.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DB9EA19E5202E008FAD35 /* Alixpay.bundle */; };
+		5F6DB9F419E5202E008FAD35 /* AlixPaylib_arc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6DB9EC19E5202E008FAD35 /* AlixPaylib_arc.a */; };
+		5F6DB9F519E5202E008FAD35 /* libpingpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6DB9ED19E5202E008FAD35 /* libpingpp.a */; };
+		5F6DB9F619E5202E008FAD35 /* libsbjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6DB9EE19E5202E008FAD35 /* libsbjson.a */; };
+		5F6DB9F719E5202E008FAD35 /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6DB9EF19E5202E008FAD35 /* libUPPayPlugin.a */; };
+		5F6DB9F819E5202E008FAD35 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6DB9F019E5202E008FAD35 /* libWeChatSDK.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5F269F6019CBD83B00B577F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iPinus/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		5F269F6219CBD84300B577F6 /* iPinus-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "iPinus-Info.plist"; path = "iPinus/iPinus-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5F269F6319CBD84300B577F6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iPinus/main.m; sourceTree = SOURCE_ROOT; };
+		5F269F6619CC2CF600B577F6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5F269F6819CC2CFB00B577F6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5F5BBB2019D0189B009A9DCE /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/home.png; sourceTree = "<group>"; };
+		5F61B01D19C81A4F0035CD99 /* iPinus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPinus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F61B02019C81A4F0035CD99 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5F61B02219C81A500035CD99 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5F61B02419C81A500035CD99 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5F61B04F19C81CA50035CD99 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = iPinus/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		5F61B05019C81CA50035CD99 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = iPinus/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		5F61B05119C81CA50035CD99 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "iPinus/NSData+Base64.h"; sourceTree = SOURCE_ROOT; };
+		5F61B05219C81CA50035CD99 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "iPinus/NSData+Base64.m"; sourceTree = SOURCE_ROOT; };
+		5F61B05319C81CA50035CD99 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = iPinus/ViewController.h; sourceTree = SOURCE_ROOT; };
+		5F61B05419C81CA50035CD99 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ViewController.mm; path = iPinus/ViewController.mm; sourceTree = SOURCE_ROOT; };
+		5F61B05E19C81D390035CD99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5F61B05F19C81D390035CD99 /* ViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPad.xib; sourceTree = "<group>"; };
+		5F61B06019C81D390035CD99 /* ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
+		5F61B07019C81E0D0035CD99 /* iPinus-Info.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "iPinus-Info.pch"; path = "iPinus/iPinus-Info.pch"; sourceTree = SOURCE_ROOT; };
+		5F61B07119C81EFC0035CD99 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5F6DB9EA19E5202E008FAD35 /* Alixpay.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Alixpay.bundle; sourceTree = "<group>"; };
+		5F6DB9EC19E5202E008FAD35 /* AlixPaylib_arc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AlixPaylib_arc.a; sourceTree = "<group>"; };
+		5F6DB9ED19E5202E008FAD35 /* libpingpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpingpp.a; sourceTree = "<group>"; };
+		5F6DB9EE19E5202E008FAD35 /* libsbjson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsbjson.a; sourceTree = "<group>"; };
+		5F6DB9EF19E5202E008FAD35 /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
+		5F6DB9F019E5202E008FAD35 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		5F6DB9F119E5202E008FAD35 /* Pingpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pingpp.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F61B01A19C81A4F0035CD99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F6DB9F619E5202E008FAD35 /* libsbjson.a in Frameworks */,
+				5F6DB9F819E5202E008FAD35 /* libWeChatSDK.a in Frameworks */,
+				5F269F6919CC2CFB00B577F6 /* CFNetwork.framework in Frameworks */,
+				5F269F6719CC2CF600B577F6 /* Security.framework in Frameworks */,
+				5F6DB9F419E5202E008FAD35 /* AlixPaylib_arc.a in Frameworks */,
+				5F61B07219C81EFC0035CD99 /* SystemConfiguration.framework in Frameworks */,
+				5F6DB9F719E5202E008FAD35 /* libUPPayPlugin.a in Frameworks */,
+				5F61B02319C81A500035CD99 /* CoreGraphics.framework in Frameworks */,
+				5F61B02519C81A500035CD99 /* UIKit.framework in Frameworks */,
+				5F6DB9F519E5202E008FAD35 /* libpingpp.a in Frameworks */,
+				5F61B02119C81A4F0035CD99 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F61B01419C81A4F0035CD99 = {
+			isa = PBXGroup;
+			children = (
+				5F61B02619C81A500035CD99 /* iPinus */,
+				5F61B01F19C81A4F0035CD99 /* Frameworks */,
+				5F6DB9E919E5202E008FAD35 /* lib */,
+				5F61B05C19C81D390035CD99 /* Resources */,
+				5F61B01E19C81A4F0035CD99 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F61B01E19C81A4F0035CD99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F61B01D19C81A4F0035CD99 /* iPinus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F61B01F19C81A4F0035CD99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F269F6819CC2CFB00B577F6 /* CFNetwork.framework */,
+				5F269F6619CC2CF600B577F6 /* Security.framework */,
+				5F61B07119C81EFC0035CD99 /* SystemConfiguration.framework */,
+				5F61B02019C81A4F0035CD99 /* Foundation.framework */,
+				5F61B02219C81A500035CD99 /* CoreGraphics.framework */,
+				5F61B02419C81A500035CD99 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F61B02619C81A500035CD99 /* iPinus */ = {
+			isa = PBXGroup;
+			children = (
+				5F61B04F19C81CA50035CD99 /* AppDelegate.h */,
+				5F61B05019C81CA50035CD99 /* AppDelegate.m */,
+				5F61B05119C81CA50035CD99 /* NSData+Base64.h */,
+				5F61B05219C81CA50035CD99 /* NSData+Base64.m */,
+				5F61B05319C81CA50035CD99 /* ViewController.h */,
+				5F61B05419C81CA50035CD99 /* ViewController.mm */,
+				5F269F6019CBD83B00B577F6 /* Images.xcassets */,
+				5F61B02719C81A500035CD99 /* Supporting Files */,
+			);
+			name = iPinus;
+			path = demoapp;
+			sourceTree = "<group>";
+		};
+		5F61B02719C81A500035CD99 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F269F6219CBD84300B577F6 /* iPinus-Info.plist */,
+				5F269F6319CBD84300B577F6 /* main.m */,
+				5F61B07019C81E0D0035CD99 /* iPinus-Info.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F61B05C19C81D390035CD99 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F61B05D19C81D390035CD99 /* InfoPlist.strings */,
+				5F61B05F19C81D390035CD99 /* ViewController_iPad.xib */,
+				5F61B06019C81D390035CD99 /* ViewController_iPhone.xib */,
+				5F5BBB1F19D0189B009A9DCE /* home.png */,
+			);
+			name = Resources;
+			path = iPinus/Resources;
+			sourceTree = "<group>";
+		};
+		5F6DB9E919E5202E008FAD35 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5F6DB9EA19E5202E008FAD35 /* Alixpay.bundle */,
+				5F6DB9EC19E5202E008FAD35 /* AlixPaylib_arc.a */,
+				5F6DB9ED19E5202E008FAD35 /* libpingpp.a */,
+				5F6DB9EE19E5202E008FAD35 /* libsbjson.a */,
+				5F6DB9EF19E5202E008FAD35 /* libUPPayPlugin.a */,
+				5F6DB9F019E5202E008FAD35 /* libWeChatSDK.a */,
+				5F6DB9F119E5202E008FAD35 /* Pingpp.h */,
+			);
+			name = lib;
+			path = ../lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F61B01C19C81A4F0035CD99 /* iPinus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F61B04919C81A500035CD99 /* Build configuration list for PBXNativeTarget "iPinus" */;
+			buildPhases = (
+				5F61B01919C81A4F0035CD99 /* Sources */,
+				5F61B01A19C81A4F0035CD99 /* Frameworks */,
+				5F61B01B19C81A4F0035CD99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPinus;
+			productName = demoapp;
+			productReference = 5F61B01D19C81A4F0035CD99 /* iPinus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F61B01519C81A4F0035CD99 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = pingplusplus;
+			};
+			buildConfigurationList = 5F61B01819C81A4F0035CD99 /* Build configuration list for PBXProject "iPinus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5F61B01419C81A4F0035CD99;
+			productRefGroup = 5F61B01E19C81A4F0035CD99 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F61B01C19C81A4F0035CD99 /* iPinus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F61B01B19C81A4F0035CD99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F61B06219C81D390035CD99 /* ViewController_iPad.xib in Resources */,
+				5F269F6119CBD83B00B577F6 /* Images.xcassets in Resources */,
+				5F6DB9F219E5202E008FAD35 /* Alixpay.bundle in Resources */,
+				5F5BBB2119D0189B009A9DCE /* home.png in Resources */,
+				5F61B06119C81D390035CD99 /* InfoPlist.strings in Resources */,
+				5F61B06319C81D390035CD99 /* ViewController_iPhone.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F61B01919C81A4F0035CD99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F61B05719C81CA50035CD99 /* ViewController.mm in Sources */,
+				5F61B05519C81CA50035CD99 /* AppDelegate.m in Sources */,
+				5F269F6519CBD84300B577F6 /* main.m in Sources */,
+				5F61B05619C81CA50035CD99 /* NSData+Base64.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5F5BBB1F19D0189B009A9DCE /* home.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F5BBB2019D0189B009A9DCE /* en */,
+			);
+			name = home.png;
+			sourceTree = "<group>";
+		};
+		5F61B05D19C81D390035CD99 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F61B05E19C81D390035CD99 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F61B04719C81A500035CD99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F61B04819C81A500035CD99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F61B04A19C81A500035CD99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPinus/iPinus-Info.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/iPinus/iPinus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../lib",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5F61B04B19C81A500035CD99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPinus/iPinus-Info.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/iPinus/iPinus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../lib",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F61B01819C81A4F0035CD99 /* Build configuration list for PBXProject "iPinus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F61B04719C81A500035CD99 /* Debug */,
+				5F61B04819C81A500035CD99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F61B04919C81A500035CD99 /* Build configuration list for PBXNativeTarget "iPinus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F61B04A19C81A500035CD99 /* Debug */,
+				5F61B04B19C81A500035CD99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F61B01519C81A4F0035CD99 /* Project object */;
+}
