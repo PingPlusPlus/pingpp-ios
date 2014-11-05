@@ -1,4 +1,4 @@
-iOS SDK 
+pingpp iOS SDK 
 =================
 
 ****
