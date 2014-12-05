@@ -16,7 +16,7 @@
 
 @interface Pingpp : NSObject
 
-+(void)createPayment:(NSString*)credential viewController:(UIViewController*)viewController appURLScheme:(NSString*)scheme delegate:(id<PingppDelegate>)delegate;
++(void)createPayment:(NSString*)charge viewController:(UIViewController*)viewController appURLScheme:(NSString*)scheme delegate:(id<PingppDelegate>)delegate;
 
 +(void)handleOpenURL:(NSURL *)url delegate:(id<PingppDelegate>)delegate;
 
