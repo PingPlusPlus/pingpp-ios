@@ -103,22 +103,10 @@
     [alipayButton setTag:2];
     [scrollView addSubview:alipayButton];
     
-    UIButton* upmpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [upmpButton setTitle:@"银联" forState:UIControlStateNormal];
-    [upmpButton addTarget:self action:@selector(normalPayAction:) forControlEvents:UIControlEventTouchUpInside];
-    [upmpButton setFrame:CGRectMake(imgx, KYOffSet+imgViewHeight+190, imgViewWith, KBtn_height)];
-    [upmpButton.layer setMasksToBounds:YES];
-    [upmpButton.layer setCornerRadius:8.0];
-    [upmpButton.layer setBorderWidth:1.0];
-    [upmpButton.layer setBorderColor:[UIColor grayColor].CGColor];
-    upmpButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
-    [upmpButton setTag:3];
-    [scrollView addSubview:upmpButton];
-    
     UIButton* bfbButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [bfbButton setTitle:@"百度钱包" forState:UIControlStateNormal];
     [bfbButton addTarget:self action:@selector(normalPayAction:) forControlEvents:UIControlEventTouchUpInside];
-    [bfbButton setFrame:CGRectMake(imgx, KYOffSet+imgViewHeight+240, imgViewWith, KBtn_height)];
+    [bfbButton setFrame:CGRectMake(imgx, KYOffSet+imgViewHeight+190, imgViewWith, KBtn_height)];
     [bfbButton.layer setMasksToBounds:YES];
     [bfbButton.layer setCornerRadius:8.0];
     [bfbButton.layer setBorderWidth:1.0];
@@ -127,7 +115,7 @@
     [bfbButton setTag:4];
     [scrollView addSubview:bfbButton];
     
-    [scrollView setContentSize:CGSizeMake(viewRect.size.width, KYOffSet+imgViewHeight+260+KBtn_height)];
+    [scrollView setContentSize:CGSizeMake(viewRect.size.width, KYOffSet+imgViewHeight+210+KBtn_height)];
 }
 
 - (void)didReceiveMemoryWarning

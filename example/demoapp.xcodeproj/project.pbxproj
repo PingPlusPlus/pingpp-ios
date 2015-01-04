@@ -15,7 +15,6 @@
 		5F61B07219C81EFC0035CD99 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F61B07119C81EFC0035CD99 /* SystemConfiguration.framework */; };
 		5FA575D91A58E713000B36ED /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5FA575A81A58E713000B36ED /* AlipaySDK.bundle */; };
 		5FA575DB1A58E713000B36ED /* BaiduWalletSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5FA575AA1A58E713000B36ED /* BaiduWalletSDKBundle.bundle */; };
-		5FA575DD1A58E713000B36ED /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA575AC1A58E713000B36ED /* libUPPayPlugin.a */; };
 		5FA575DE1A58E713000B36ED /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA575AD1A58E713000B36ED /* libWeChatSDK.a */; };
 		5FA575F11A58E713000B36ED /* libpingpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA575D71A58E713000B36ED /* libpingpp.a */; };
 		5FA575F21A58E713000B36ED /* Pingpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5FA575D81A58E713000B36ED /* Pingpp.bundle */; };
@@ -76,7 +75,6 @@
 		5F6DB9F119E5202E008FAD35 /* Pingpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pingpp.h; sourceTree = "<group>"; };
 		5FA575A81A58E713000B36ED /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		5FA575AA1A58E713000B36ED /* BaiduWalletSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BaiduWalletSDKBundle.bundle; sourceTree = "<group>"; };
-		5FA575AC1A58E713000B36ED /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
 		5FA575AD1A58E713000B36ED /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		5FA575D71A58E713000B36ED /* libpingpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpingpp.a; sourceTree = "<group>"; };
 		5FA575D81A58E713000B36ED /* Pingpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Pingpp.bundle; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				5FA576001A58F069000B36ED /* QuartzCore.framework in Frameworks */,
 				5F269F6919CC2CFB00B577F6 /* CFNetwork.framework in Frameworks */,
 				5FA576091A58F069000B36ED /* CoreTelephony.framework in Frameworks */,
-				5FA575DD1A58E713000B36ED /* libUPPayPlugin.a in Frameworks */,
 				5FA576041A58F069000B36ED /* ImageIO.framework in Frameworks */,
 				5FA576061A58F069000B36ED /* CoreAudio.framework in Frameworks */,
 				5F269F6719CC2CF600B577F6 /* Security.framework in Frameworks */,
@@ -257,7 +254,6 @@
 				5FA575A81A58E713000B36ED /* AlipaySDK.bundle */,
 				5FA575AA1A58E713000B36ED /* BaiduWalletSDKBundle.bundle */,
 				5FA576321A58FC2E000B36ED /* libBaiduWalletSDK.a */,
-				5FA575AC1A58E713000B36ED /* libUPPayPlugin.a */,
 				5FA575AD1A58E713000B36ED /* libWeChatSDK.a */,
 			);
 			path = Channels;
