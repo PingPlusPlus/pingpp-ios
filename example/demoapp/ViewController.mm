@@ -18,8 +18,6 @@
 #define KXOffSet          (self.view.frame.size.width - KBtn_width) / 2
 #define KYOffSet          20
 
-#define kVCTitle          @"Pinus"
-#define kBtnFirstTitle    @"捐一分"
 #define kWaiting          @"正在获取支付凭据,请稍后..."
 #define kNote             @"提示"
 #define kConfirm          @"确定"
@@ -30,7 +28,7 @@
 #define kMaxAmount        9999999
 
 #define kUrlScheme      @"YOUR-APP-URL-SCHEME"
-#define kUrl            @"http://192.168.1.116/101/pay.php"
+#define kUrl            @"YOUR-URL"
 
 @interface ViewController ()
 
@@ -44,7 +42,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = kVCTitle;
+    [self.navigationController setNavigationBarHidden:YES];
     // Do any additional setup after loading the view, typically from a nib.
     CGRect viewRect = self.view.frame;
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:viewRect];
@@ -129,7 +127,7 @@
     [bfbButton setTag:4];
     [scrollView addSubview:bfbButton];
     
-    [scrollView setContentSize:CGSizeMake(viewRect.size.width, KYOffSet+imgViewHeight+220+KBtn_height)];
+    [scrollView setContentSize:CGSizeMake(viewRect.size.width, KYOffSet+imgViewHeight+260+KBtn_height)];
 }
 
 - (void)didReceiveMemoryWarning
