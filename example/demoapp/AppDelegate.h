@@ -6,11 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Pingpp.h"
 
 @class ViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, PingppDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

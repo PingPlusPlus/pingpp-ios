@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:iPinus.xcodeproj">
+      location = "self:demoapp.xcodeproj">
    </FileRef>
 </Workspace>
