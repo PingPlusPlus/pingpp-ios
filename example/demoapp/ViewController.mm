@@ -115,19 +115,7 @@
     [upmpButton setTag:3];
     [scrollView addSubview:upmpButton];
     
-    UIButton* bfbButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [bfbButton setTitle:@"百度钱包" forState:UIControlStateNormal];
-    [bfbButton addTarget:self action:@selector(normalPayAction:) forControlEvents:UIControlEventTouchUpInside];
-    [bfbButton setFrame:CGRectMake(imgx, KYOffSet+imgViewHeight+240, imgViewWith, KBtn_height)];
-    [bfbButton.layer setMasksToBounds:YES];
-    [bfbButton.layer setCornerRadius:8.0];
-    [bfbButton.layer setBorderWidth:1.0];
-    [bfbButton.layer setBorderColor:[UIColor grayColor].CGColor];
-    bfbButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
-    [bfbButton setTag:4];
-    [scrollView addSubview:bfbButton];
-    
-    [scrollView setContentSize:CGSizeMake(viewRect.size.width, KYOffSet+imgViewHeight+260+KBtn_height)];
+    [scrollView setContentSize:CGSizeMake(viewRect.size.width, KYOffSet+imgViewHeight+210+KBtn_height)];
 }
 
 - (void)didReceiveMemoryWarning
