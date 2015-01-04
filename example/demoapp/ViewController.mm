@@ -11,11 +11,12 @@
 #include <net/if_dl.h>
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "Pingpp.h"
 
 #define KBtn_width        200
 #define KBtn_height       40
 #define KXOffSet          (self.view.frame.size.width - KBtn_width) / 2
-#define KYOffSet          80
+#define KYOffSet          20
 
 #define kVCTitle          @"Pinus"
 #define kBtnFirstTitle    @"捐一分"
@@ -26,10 +27,10 @@
 #define kResult           @"支付结果：%@"
 
 #define kPlaceHolder      @"支付金额"
-#define kMaxAmount  9999999
+#define kMaxAmount        9999999
 
-#define kWXAppId    @"YOUR-WEIXIN-APP-ID"
-#define kUrl        @"YOUR-URL"
+#define kUrlScheme      @"YOUR-APP-URL-SCHEME"
+#define kUrl            @"http://192.168.1.116/101/pay.php"
 
 @interface ViewController ()
 
@@ -39,19 +40,16 @@
 @synthesize channel;
 @synthesize mTextField;
 
-- (void)dealloc
-{
-    self.channel = nil;
-
-    [super dealloc];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = kVCTitle;
     // Do any additional setup after loading the view, typically from a nib.
+    CGRect viewRect = self.view.frame;
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:viewRect];
+    [scrollView setScrollEnabled:YES];
+    [self.view addSubview:scrollView];
     
     CGRect windowRect = [[UIScreen mainScreen] bounds];
     UIImage *headerImg = [UIImage imageNamed:@"home.png"];
@@ -61,8 +59,7 @@
     [imgView setContentScaleFactor:[[UIScreen mainScreen] scale]];
     CGFloat imgx = windowRect.size.width/2-imgViewWith/2;
     [imgView setFrame:CGRectMake(imgx, KYOffSet, imgViewWith, imgViewHeight)];
-    [self.view addSubview:imgView];
-    [imgView release];
+    [scrollView addSubview:imgView];
     
     mTextField = [[UITextField alloc]initWithFrame:CGRectMake(imgx, KYOffSet+imgViewHeight+40, imgViewWith-40, 40)];
     mTextField.borderStyle = UITextBorderStyleRoundedRect;
@@ -72,7 +69,7 @@
     mTextField.returnKeyType =UIReturnKeyDone;
     mTextField.delegate = self;
     [mTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-    [self.view addSubview:mTextField];
+    [scrollView addSubview:mTextField];
     
     UIButton* doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [doneButton setTitle:@"OK" forState:UIControlStateNormal];
@@ -82,7 +79,7 @@
     [doneButton.layer setCornerRadius:8.0];
     [doneButton.layer setBorderWidth:1.0];
     [doneButton.layer setBorderColor:[UIColor grayColor].CGColor];
-    [self.view addSubview:doneButton];
+    [scrollView addSubview:doneButton];
     
     UIButton* wxButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [wxButton setTitle:@"微信" forState:UIControlStateNormal];
@@ -94,7 +91,7 @@
     [wxButton.layer setBorderColor:[UIColor grayColor].CGColor];
     wxButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     [wxButton setTag:1];
-    [self.view addSubview:wxButton];
+    [scrollView addSubview:wxButton];
     
     UIButton* alipayButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [alipayButton setTitle:@"支付宝" forState:UIControlStateNormal];
@@ -106,7 +103,7 @@
     [alipayButton.layer setBorderColor:[UIColor grayColor].CGColor];
     alipayButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     [alipayButton setTag:2];
-    [self.view addSubview:alipayButton];
+    [scrollView addSubview:alipayButton];
     
     UIButton* upmpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [upmpButton setTitle:@"银联" forState:UIControlStateNormal];
@@ -118,7 +115,21 @@
     [upmpButton.layer setBorderColor:[UIColor grayColor].CGColor];
     upmpButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     [upmpButton setTag:3];
-    [self.view addSubview:upmpButton];
+    [scrollView addSubview:upmpButton];
+    
+    UIButton* bfbButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [bfbButton setTitle:@"百度钱包" forState:UIControlStateNormal];
+    [bfbButton addTarget:self action:@selector(normalPayAction:) forControlEvents:UIControlEventTouchUpInside];
+    [bfbButton setFrame:CGRectMake(imgx, KYOffSet+imgViewHeight+240, imgViewWith, KBtn_height)];
+    [bfbButton.layer setMasksToBounds:YES];
+    [bfbButton.layer setCornerRadius:8.0];
+    [bfbButton.layer setBorderWidth:1.0];
+    [bfbButton.layer setBorderColor:[UIColor grayColor].CGColor];
+    bfbButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
+    [bfbButton setTag:4];
+    [scrollView addSubview:bfbButton];
+    
+    [scrollView setContentSize:CGSizeMake(viewRect.size.width, KYOffSet+imgViewHeight+220+KBtn_height)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -135,15 +146,12 @@
     aiv.center = CGPointMake(mAlert.frame.size.width / 2.0f - 15, mAlert.frame.size.height / 2.0f + 10 );
     [aiv startAnimating];
     [mAlert addSubview:aiv];
-    [aiv release];
-    [mAlert release];
 }
 
 - (void)showAlertMessage:(NSString*)msg
 {
     mAlert = [[UIAlertView alloc] initWithTitle:kNote message:msg delegate:nil cancelButtonTitle:kConfirm otherButtonTitles:nil, nil];
     [mAlert show];
-    [mAlert release];
 }
 
 - (void)hideAlert
@@ -164,7 +172,9 @@
     } else if (tag == 2) {
         self.channel = @"alipay";
     } else if (tag == 3) {
-        self.channel = @"upmp";
+        self.channel = @"upacp";
+    } else if (tag == 4) {
+        self.channel = @"bfb";
     } else {
         return;
     }
@@ -182,68 +192,42 @@
         @"channel" : self.channel,
         @"amount"  : amountStr
     };
-    NSError* error;
-    NSData* data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    NSData* data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
     NSString *bodyData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-
+    
     [postRequest setHTTPBody:[NSData dataWithBytes:[bodyData UTF8String] length:strlen([bodyData UTF8String])]];
     [postRequest setHTTPMethod:@"POST"];
     [postRequest setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-
-    NSURLConnection* urlConn = [[NSURLConnection alloc] initWithRequest:postRequest delegate:self];
-    [urlConn start];
+    
+    ViewController * __weak weakSelf = self;
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     [self showAlertWait];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse*)response
-{
-    NSHTTPURLResponse* rsp = (NSHTTPURLResponse*)response;
-    long code = [rsp statusCode];
-    if (code != 200)
-    {
-        [self hideAlert];
-        [self showAlertMessage:kErrorNet];
-        [connection cancel];
-        [connection release];
-        connection = nil;
-    }
-    else
-    {
-        if (mData != nil)
-        {
-            [mData release];
-            mData = nil;
+    [NSURLConnection sendAsynchronousRequest:postRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+        [weakSelf hideAlert];
+        if (httpResponse.statusCode != 200) {
+            [weakSelf showAlertMessage:kErrorNet];
+            return;
         }
-        mData = [[NSMutableData alloc] init];
-    }
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [mData appendData:data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    [self hideAlert];
-    NSString* data = [[NSMutableString alloc] initWithData:mData encoding:NSUTF8StringEncoding];
-    NSLog(@"data=%@", data);
-    if (data != nil && data.length > 0)
-    {
-        [Pingpp createPayment:data viewController:self appURLScheme:kWXAppId delegate:(AppDelegate*)[[UIApplication sharedApplication] delegate]];
-    }
-    [data release];
-    [connection release];
-    connection = nil;
-
-}
-
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    [self hideAlert];
-    [self showAlertMessage:kErrorNet];
-    [connection release];
-    connection = nil;
+        if (connectionError != nil) {
+            NSLog(@"error = %@", connectionError);
+            [weakSelf showAlertMessage:kErrorNet];
+            return;
+        }
+        NSString* charge = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"charge = %@", charge);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [Pingpp createPayment:charge viewController:weakSelf appURLScheme:kUrlScheme withCompletion:^(NSString *result, PingppError *error) {
+                NSLog(@"completion block: %@", result);
+                if (error == nil) {
+                    NSLog(@"PingppError is nil");
+                } else {
+                    NSLog(@"PingppError: code=%lu msg=%@", (unsigned  long)error.code, [error getMsg]);
+                }
+                [weakSelf showAlertMessage:result];
+            }];
+        });
+    }];
 }
 
 - (void)okButtonAction:(id)sender

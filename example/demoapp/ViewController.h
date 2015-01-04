@@ -11,7 +11,6 @@
 {
     UIAlertView* mAlert;
     UITextField *mTextField;
-    NSMutableData* mData;
 }
 
 @property(nonatomic, retain)NSString *channel;
