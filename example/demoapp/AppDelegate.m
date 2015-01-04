@@ -6,29 +6,20 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Pingpp.h"
 #import "ViewController.h"
 
 @implementation AppDelegate
 
-- (void)dealloc
-{
-    [_window release];
-    [_viewController release];
-    [super dealloc];
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
     ViewController* root = [[ViewController alloc] init];
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:root];
-    [root release];
 
     self.viewController = nav;
-    [nav release];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -61,15 +52,20 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
-    [Pingpp handleOpenURL:url delegate:self];
-    return YES;
-}
-
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    [Pingpp handleOpenURL:url delegate:self];
+    [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
+        // result : success, fail, cancel, invalid
+        NSString *msg;
+        if (error == nil) {
+            NSLog(@"PingppError is nil");
+            msg = result;
+        } else {
+            NSLog(@"PingppError: code=%lu msg=%@", (unsigned long)error.code, [error getMsg]);
+            msg = [NSString stringWithFormat:@"result=%@ PingppError: code=%lu msg=%@", result, (unsigned long)error.code, [error getMsg]];
+        }
+        [(ViewController*)self.viewController.visibleViewController showAlertMessage:msg];
+    }];
     return  YES;
 }
 
