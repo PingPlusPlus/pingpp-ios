@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'iPinus' target in the 'iPinus' project
+// Prefix header for all source files of the 'demoapp' target in the 'demoapp' project
 //
 
 #import <Availability.h>
