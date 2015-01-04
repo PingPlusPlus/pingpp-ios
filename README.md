@@ -25,6 +25,10 @@ iOS SDK 要求 iOS 6 及以上版本
 
 ## 更新日志
 
+### 2.0.1
+* 更改：<br>
+方法 `+handleOpenURL:withCompletion:` 中 `completion` 可以传 `nil`
+
 ### 2.0.0
 * 更改：<br>
 支持 arm64<br>
