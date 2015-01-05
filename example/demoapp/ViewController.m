@@ -43,6 +43,7 @@ static NSDictionary *itemPrices = nil;
 
     UITapGestureRecognizer *blankTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleBlankTap:)];
     [self.view addGestureRecognizer:blankTap];
+    [[self scrollView] setScrollEnabled:YES];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -66,7 +67,7 @@ static NSDictionary *itemPrices = nil;
         
         [self setViewsLoaded:YES];
     }
-    
+    [[self scrollView] setContentSize:CGSizeMake([[self scrollView] frame].size.width, [[[self view] viewWithTag:101] frame].size.height * 3 + 50)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

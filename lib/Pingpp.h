@@ -22,6 +22,14 @@ typedef NS_ENUM(NSUInteger, PingppErrorOption)
     PingppErrUnknownError
 };
 
+typedef NS_OPTIONS(NSUInteger, PingppBtnOption)
+{
+    PingppBtnAlipay = 1 << 0,
+    PingppBtnWx = 1 << 1,
+    PingppBtnUp = 1 << 2,
+    PingppBtnBfb = 1 << 3
+};
+
 @interface PingppError : NSObject
 
 @property(readonly, assign) PingppErrorOption code;

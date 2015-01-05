@@ -44,10 +44,9 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-//    [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
-//        NSLog(@"result = %@, error : %@", result, error == nil ? @"nil" : [error getMsg]);
-//    }];
-    [Pingpp handleOpenURL:url withCompletion:nil];
+    [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
+        NSLog(@"result = %@, error : %@", result, error == nil ? @"nil" : [error getMsg]);
+    }];
     return YES;
 }
 
