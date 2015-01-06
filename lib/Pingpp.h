@@ -183,4 +183,12 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
         viewController:(UIViewController *)viewController
      completionHandler:(PingppCompletion)handler;
 
+/**
+ *  选择需要显示的渠道按钮，默认所包含渠道全部开启
+ *
+ *  @param option
+ *  例 [Pingpp enableBtn:PingppBtnAlipay|PingppBtnWx];
+ */
++ (void)enableBtn:(PingppBtnOption)option;
+
 @end
