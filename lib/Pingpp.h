@@ -7,8 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, PingppErrorOption)
-{
+typedef NS_ENUM(NSUInteger, PingppErrorOption) {
     PingppErrInvalidCharge,
     PingppErrInvalidCredential,
     PingppErrInvalidChannel,
@@ -22,8 +21,7 @@ typedef NS_ENUM(NSUInteger, PingppErrorOption)
     PingppErrUnknownError
 };
 
-typedef NS_OPTIONS(NSUInteger, PingppBtnOption)
-{
+typedef NS_OPTIONS(NSUInteger, PingppBtnOption) {
     PingppBtnAlipay = 1 << 0,
     PingppBtnWx = 1 << 1,
     PingppBtnUp = 1 << 2,
