@@ -69,11 +69,4 @@
     return  YES;
 }
 
-- (void)paymentResult:(NSString *)result
-{
-    NSLog(@"paymentResult: %@", result);
-    NSString* msg = [NSString stringWithFormat:@"Pay Result:%@", result];
-    [(ViewController*)self.viewController.visibleViewController showAlertMessage:msg];
-}
-
 @end
