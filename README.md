@@ -18,6 +18,10 @@ iOS SDK 要求 iOS 6 及以上版本
 
 ## 更新日志
 
+### 2.0.1(20150112)
+* 更改：<br>
+更换银联静态库文件
+
 ### 2.0.1
 * 更改：<br>
 方法 `+handleOpenURL:withCompletion:` 中 `completion` 可以传 `nil`
