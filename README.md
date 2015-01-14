@@ -16,6 +16,10 @@ iOS SDK 要求 iOS 6 及以上版本
 
 关于如何使用 SDK 请参考 [技术文档](https://pingxx.com/document) 或者参考 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。
 
+## 注意事项
+
+由于百度钱包 SDK 不支持 iOS 模拟器，目前带有百度钱包的 Ping++ SDK 只能运行于真机。
+
 ## 更新日志
 
 ### 2.0.2
