@@ -114,7 +114,7 @@ static NSDictionary *itemPrices = nil;
             @"运费", @[@"¥ 0.00"]
         ]
     ];
-    [Pingpp payWithOrderNo:orderNo amount:[self totalAmount] extra:extra serverURL:kServerUrl completionHandler:^(NSString *result, PingppError *error) {
+    [Pingpp payWithOrderNo:orderNo amount:[self totalAmount] display:extra serverURL:kServerUrl completionHandler:^(NSString *result, PingppError *error) {
         NSLog(@">>>>>>> %@", result);
     }];
 }
