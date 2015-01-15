@@ -116,31 +116,31 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
 /**
  *  调用「壹收款」
  *
- *  @param orderNo          唯一订单号
- *  @param amount           订单总金额
- *  @param extra            额外显示信息，格式：[["left0", ["right0", "right1"]], ["left1", ["right0"]]]
- *  @param serverURL        接收「壹收款」请求并生成和返回 charge 的 URL
+ *  @param orderNo            唯一订单号
+ *  @param amount             订单总金额
+ *  @param contents           额外显示信息，格式：[["left0", ["right0", "right1"]], ["left1", ["right0"]]]
+ *  @param url                接收「壹收款」请求并生成和返回 charge 的 URL
  *  @param completionHandler  支付结果回调 Block
  */
 + (void)payWithOrderNo:(NSString *)orderNo
                 amount:(NSUInteger)amount
-                 extra:(NSArray *)extra
+               display:(NSArray *)contents
              serverURL:(NSString *)url
      completionHandler:(PingppCompletion)handler;
 
 /**
  *  调用「壹收款」
  *
- *  @param orderNo          唯一订单号
- *  @param amount           订单总金额
- *  @param extra            额外显示信息，格式：[["left0", ["right0", "right1"]], ["left1", ["right0"]]]
- *  @param serverURL        接收「壹收款」请求并生成和返回 charge 的 URL
- *  @param scheme           URL Scheme，支付宝渠道回调需要，没有支付宝情况下可为 nil
+ *  @param orderNo            唯一订单号
+ *  @param amount             订单总金额
+ *  @param contents           额外显示信息，格式：[["left0", ["right0", "right1"]], ["left1", ["right0"]]]
+ *  @param url                接收「壹收款」请求并生成和返回 charge 的 URL
+ *  @param scheme             URL Scheme，支付宝渠道回调需要，没有支付宝情况下可为 nil
  *  @param completionHandler  支付结果回调 Block
  */
 + (void)payWithOrderNo:(NSString *)orderNo
                 amount:(NSUInteger)amount
-                 extra:(NSArray *)extra
+               display:(NSArray *)contents
              serverURL:(NSString *)url
           appURLScheme:(NSString *)scheme
      completionHandler:(PingppCompletion)handler;
@@ -148,16 +148,16 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
 /**
  *  调用「壹收款」
  *
- *  @param orderNo          唯一订单号
- *  @param amount           订单总金额
- *  @param extra            额外显示信息，格式：[["left0", ["right0", "right1"]], ["left1", ["right0"]]]
- *  @param serverURL        接收「壹收款」请求并生成和返回 charge 的 URL
- *  @param viewController   当前 viewController
+ *  @param orderNo            唯一订单号
+ *  @param amount             订单总金额
+ *  @param contents           额外显示信息，格式：[["left0", ["right0", "right1"]], ["left1", ["right0"]]]
+ *  @param url                接收「壹收款」请求并生成和返回 charge 的 URL
+ *  @param viewController     当前 viewController
  *  @param completionHandler  支付结果回调 Block
  */
 + (void)payWithOrderNo:(NSString *)orderNo
                 amount:(NSUInteger)amount
-                 extra:(NSArray *)extra
+               display:(NSArray *)contents
              serverURL:(NSString *)url
         viewController:(UIViewController *)viewController
      completionHandler:(PingppCompletion)handler;
@@ -165,17 +165,17 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
 /**
  *  调用「壹收款」
  *
- *  @param orderNo          唯一订单号
- *  @param amount           订单总金额
- *  @param extra            额外显示信息，格式：[["left0", ["right0", "right1"]], ["left1", ["right0"]]]
- *  @param serverURL        接收「壹收款」请求并生成和返回 charge 的 URL
- *  @param scheme           URL Scheme，支付宝渠道回调需要，没有支付宝情况下可为 nil
- *  @param viewController   当前 viewController
+ *  @param orderNo            唯一订单号
+ *  @param amount             订单总金额
+ *  @param contents           额外显示信息，格式：[["left0", ["right0", "right1"]], ["left1", ["right0"]]]
+ *  @param url                接收「壹收款」请求并生成和返回 charge 的 URL
+ *  @param scheme             URL Scheme，支付宝渠道回调需要，没有支付宝情况下可为 nil
+ *  @param viewController     当前 viewController
  *  @param completionHandler  支付结果回调 Block
  */
 + (void)payWithOrderNo:(NSString *)orderNo
                 amount:(NSUInteger)amount
-                 extra:(NSArray *)extra
+               display:(NSArray *)contents
              serverURL:(NSString *)url
           appURLScheme:(NSString *)scheme
         viewController:(UIViewController *)viewController
