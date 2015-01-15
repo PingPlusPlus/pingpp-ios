@@ -16,7 +16,18 @@ iOS SDK 要求 iOS 6 及以上版本
 
 关于如何使用 SDK 请参考 [技术文档](https://pingplusplus.com/document) 或者参考 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。
 
-## 更新日志
+## 「壹收款」 更新日志
+
+### 0.9.4
+* 新增：<br>
+添加微信安装提示<br>
+添加隐藏按钮接口
+
+## SDK 更新日志
+
+### 2.0.2
+* 更改：<br>
+新的测试模式
 
 ### 2.0.0
 * 更改：<br>
