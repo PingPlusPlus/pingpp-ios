@@ -14,10 +14,8 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
 
 ## 渠道选择
 
-* 支付宝、微信支付、银联和百付宝：[下载](https://github.com/PingPlusPlus/pingpp-ios/archive/all.zip)
+* 支付宝、微信支付、银联和百付宝：[下载](https://github.com/PingPlusPlus/pingpp-ios/archive/master.zip)
 * 支付宝、微信支付、银联：[下载](https://github.com/PingPlusPlus/pingpp-ios/archive/alipay_wx_upmp.zip)
-* 支付宝、微信支付：[下载](https://github.com/PingPlusPlus/pingpp-ios/archive/alipay_wx.zip)
-* 支付宝、微信支付、百付宝：[下载](https://github.com/PingPlusPlus/pingpp-ios/archive/alipay_wx_bfb.zip)
 
 ## 接入方法
 
