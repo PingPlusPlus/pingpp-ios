@@ -100,4 +100,6 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  */
 + (void)setBdWalletNavTitleColor:(UIColor *)color;
 
++ (instancetype)sharedInstance;
+
 @end
