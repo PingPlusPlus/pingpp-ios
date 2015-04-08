@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Pingpp"
-  s.version      = "2.0.3"
+  s.version      = "2.0.4"
   s.summary      = "Pingplusplus iOS SDK"
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -13,13 +13,14 @@ Pod::Spec.new do |s|
   s.author       = { "Afon Weng" => "xufeng.weng@pingxx.com" }
   s.platform     = :ios, "5.1.1"
   s.source       = { :git => "https://github.com/PingPlusPlus/pingpp-ios.git", :tag => "#{s.version}_all" }
-  s.source_files = "lib/Pingpp.h", "lib/Dependencies/**/*.{h,m}"
-  s.public_header_files     = "lib/Pingpp.h"
+  s.source_files = "lib/*.h", "lib/Dependencies/**/*.{h,m}"
+  s.public_header_files     = "lib/*.h"
   s.private_header_files    = "lib/Dependencies/**/*.h"
   s.vendored_libraries      = "lib/**/*.a"
   s.ios.vendored_frameworks = "lib/Channels/AlipaySDK.framework"
-  s.resource     = "lib/**/*.bundle"
-  s.frameworks   = "CFNetwork", "SystemConfiguration", "Security", "CoreTelephony", "AddressBook", "AddressBookUI", "AudioToolbox", "CoreAudio", "CoreGraphics", "ImageIO", "MapKit", "MessageUI", "MobileCoreServices", "QuartzCore"
+  s.resource                = "lib/**/*.bundle"
+  s.frameworks              = "CFNetwork", "SystemConfiguration", "Security", "CoreTelephony", "AddressBook", "AddressBookUI", "AudioToolbox", "CoreAudio", "CoreGraphics", "ImageIO", "MapKit", "MessageUI", "MobileCoreServices", "QuartzCore"
+  s.ios.weak_frameworks     = 'PassKit'
   s.ios.library  = "c++", "stdc++", "z"
   s.xcconfig     = { "OTHER_LDFLAGS" => "-lObjC" }
 end
