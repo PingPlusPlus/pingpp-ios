@@ -4,6 +4,8 @@
 //
 //  Created by afon on 14/11/20.
 //
+#ifndef Pingpp_Pingpp_h
+#define Pingpp_Pingpp_h
 
 #import <Foundation/Foundation.h>
 
@@ -103,3 +105,4 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
 + (instancetype)sharedInstance;
 
 @end
+#endif

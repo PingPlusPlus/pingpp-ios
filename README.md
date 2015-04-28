@@ -61,4 +61,5 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
 
 ## 注意事项
 
-由于百度钱包 SDK 不支持 iOS 模拟器，目前带有百度钱包的 Ping++ SDK 只能运行于真机。
+- 由于百度钱包 SDK 不支持 iOS 模拟器，目前带有百度钱包的 Ping++ SDK 只能运行于真机。
+- 如不需要 Apple Pay，可以将 `libpingpp+applepay.a` 和 `Pingpp+ApplePay.h` 删除。

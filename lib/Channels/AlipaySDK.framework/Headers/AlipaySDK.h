@@ -8,7 +8,8 @@
 
 
 ////////////////////////////////////////////////////////
-////////////////version：2.0  date：2014.10.22///////////
+////////////////version:2.1  motify:2014.12.24//////////
+///////////////////Merry Christmas=。=//////////////////
 ////////////////////////////////////////////////////////
 
 
@@ -25,12 +26,11 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
  */
 + (AlipaySDK *)defaultService;
 
-
 /**
  *  支付接口
  *
  *  @param orderStr       订单信息
- *  @param schemeStr      调用支付的app注册在info。plist中的scheme
+ *  @param schemeStr      调用支付的app注册在info.plist中的scheme
  *  @param compltionBlock 支付结果回调Block
  */
 - (void)payOrder:(NSString *)orderStr
@@ -43,7 +43,8 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
  *  @param resultUrl 支付结果url，传入后由SDK解析，统一在上面的pay方法的callback中回调
  *  @param completionBlock 跳钱包支付结果回调，保证跳转钱包支付过程中，即使调用方app被系统kill时，能通过这个回调取到支付结果。
  */
-- (void)processOrderWithPaymentResult:(NSURL *)resultUrl standbyCallback:(CompletionBlock)completionBlock;
+- (void)processOrderWithPaymentResult:(NSURL *)resultUrl
+                      standbyCallback:(CompletionBlock)completionBlock;
 
 /**
  *  是否已经使用过
@@ -66,13 +67,19 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
  */
 - (void)setUrl:(NSString *)url;
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////授权1.0//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 /**
  *  快登授权
  *  @param authInfo        需授权信息
  *  @param completionBlock 授权结果回调
  */
-- (void) authWithInfo:(APayAuthInfo *)authInfo
+- (void)authWithInfo:(APayAuthInfo *)authInfo
              callback:(CompletionBlock)completionBlock;
+
 
 /**
  *  处理授权信息Url
@@ -80,5 +87,31 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
  *  @param resultUrl 钱包返回的授权结果url
  *  @param completionBlock 跳授权结果回调，保证跳转钱包授权过程中，即使调用方app被系统kill时，能通过这个回调取到支付结果。
  */
-- (void)processAuthResult:(NSURL *)resultUrl standbyCallback:(CompletionBlock)completionBlock;
+- (void)processAuthResult:(NSURL *)resultUrl
+          standbyCallback:(CompletionBlock)completionBlock;
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////授权2.0//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ *  快登授权2.0
+ *
+ *  @param infoStr         授权请求信息字符串
+ *  @param schemeStr       调用授权的app注册在info.plist中的scheme
+ *  @param completionBlock 授权结果回调
+ */
+- (void)auth_V2WithInfo:(NSString *)infoStr
+             fromScheme:(NSString *)schemeStr
+               callback:(CompletionBlock)completionBlock;
+
+/**
+ *  处理授权信息Url
+ *
+ *  @param resultUrl 钱包返回的授权结果url
+ *  @param completionBlock 跳授权结果回调，保证跳转钱包授权过程中，即使调用方app被系统kill时，能通过这个回调取到支付结果。
+ */
+- (void)processAuth_V2Result:(NSURL *)resultUrl
+             standbyCallback:(CompletionBlock)completionBlock;
+
 @end

@@ -1,3 +1,8 @@
+### 2.0.4 (20150428)
+* 更改：<br>
+分离 Apple Pay 静态库<br>
+更新 AlipaySDK.framework
+
 ### 2.0.4
 * 新增：<br>
 支持 Apple Pay
