@@ -40,3 +40,7 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
 4. 添加 Other Linker Flags：在 Build Settings 搜索 Other Linker Flags ，添加 `-ObjC`。
 
 **关于如何使用 SDK 请参考 [技术文档](https://pingxx.com/document) 或者 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。**
+
+## 注意事项
+ 
+- 如不需要 Apple Pay，可以将 `libpingpp+applepay.a` 和 `Pingpp+ApplePay.h` 删除。
