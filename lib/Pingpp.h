@@ -7,6 +7,7 @@
 #ifndef Pingpp_Pingpp_h
 #define Pingpp_Pingpp_h
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, PingppErrorOption)
@@ -101,8 +102,6 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  设置百度钱包Title颜色
  */
 + (void)setBdWalletNavTitleColor:(UIColor *)color;
-
-+ (instancetype)sharedInstance;
 
 @end
 #endif
