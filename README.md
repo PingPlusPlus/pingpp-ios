@@ -38,7 +38,7 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
 
 #### 手动导入
 1. 获取 SDK
-下载 SDK, 里面包含了 lib 文件夹和 example 文件夹。lib 文件夹里面是 SDK 的文件
+下载 SDK, 里面包含了 lib 文件夹和 example 文件夹。lib 文件夹里面是 SDK 的文件。
 2. 依赖 Frameworks：
 
     必需：
@@ -83,3 +83,4 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
 ## 注意事项
 
 - 由于百度钱包 SDK 不支持 iOS 模拟器，目前带有百度钱包的 Ping++ SDK 只能运行于真机。
+- 如果不需要 Apple Pay，请不要导入 Apple Pay 的静态库。以免提交到 App Store 时审核不通过。
