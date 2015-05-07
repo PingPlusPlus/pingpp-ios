@@ -18,7 +18,7 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', :git => 'https://github.com/PingPlusPlus/pingpp-ios.git'
+    pod 'Pingpp', '~> 2.0.5'
     ```
 
     默认会包含支付宝、微信、银联和百度钱包。你也可以自己选择渠道。<br>
@@ -26,10 +26,10 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
     例如：
 
     ```
-    pod 'Pingpp/Alipay', :git => 'https://github.com/PingPlusPlus/pingpp-ios.git'
-    pod 'Pingpp/Wx', :git => 'https://github.com/PingPlusPlus/pingpp-ios.git'
-    pod 'Pingpp/UnionPay', :git => 'https://github.com/PingPlusPlus/pingpp-ios.git'
-    pod 'Pingpp/ApplePay', :git => 'https://github.com/PingPlusPlus/pingpp-ios.git'
+    pod 'Pingpp/Alipay', '~> 2.0.5'
+    pod 'Pingpp/Wx', '~> 2.0.5'
+    pod 'Pingpp/UnionPay', '~> 2.0.5'
+    pod 'Pingpp/ApplePay', '~> 2.0.5'
     ```
 
 2. 运行 `pod install`
