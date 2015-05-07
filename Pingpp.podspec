@@ -28,13 +28,13 @@ Pod::Spec.new do |s|
 
   s.subspec 'ApplePay' do |applepay|
     applepay.ios.weak_frameworks = 'PassKit'
+    applepay.source_files = 'lib/Channels/ApplePay/*.h'
     applepay.public_header_files = 'lib/Channels/ApplePay/*.h'
     applepay.vendored_libraries = 'lib/Channels/ApplePay/*.a'
     applepay.dependency 'Pingpp/Core'
   end
 
   s.subspec 'Alipay' do |alipay|
-    alipay.public_header_files = 'lib/Channels/Alipay/*.h'
     alipay.vendored_libraries = 'lib/Channels/Alipay/*.a'
     alipay.ios.vendored_frameworks = 'lib/Channels/Alipay/AlipaySDK.framework'
     alipay.resource = 'lib/Channels/Alipay/AlipaySDK.bundle'
@@ -42,14 +42,12 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Wx' do |wx|
-    wx.public_header_files = 'lib/Channels/Wx/*.h'
     wx.vendored_libraries = 'lib/Channels/Wx/*.a'
     wx.ios.library = 'sqlite3'
     wx.dependency 'Pingpp/Core'
   end
 
   s.subspec 'UnionPay' do |unionpay|
-    unionpay.public_header_files = 'lib/Channels/UnionPay/*.h'
     unionpay.vendored_libraries = 'lib/Channels/UnionPay/*.a'
     unionpay.dependency 'Pingpp/Core'
   end
