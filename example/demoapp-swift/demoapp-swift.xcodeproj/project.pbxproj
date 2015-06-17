@@ -709,22 +709,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Alipay",
+					"$(PROJECT_DIR)/../../lib/Channels/Alipay",
 				);
 				INFOPLIST_FILE = "demoapp-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Alipay",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/ApplePay",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Bfb/Dependencies/ASIHttpRequest",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Bfb/Dependencies/BaiduMobStat/BaiduMobStat",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Bfb/Dependencies/BaiduMobStat",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Bfb/Dependencies/JSONKit",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Bfb",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/UnionPay",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Wx",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib",
+					"$(PROJECT_DIR)/../../lib/Channels/Alipay",
+					"$(PROJECT_DIR)/../../lib/Channels/ApplePay",
+					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/ASIHttpRequest",
+					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/BaiduMobStat/BaiduMobStat",
+					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/BaiduMobStat",
+					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/JSONKit",
+					"$(PROJECT_DIR)/../../lib/Channels/Bfb",
+					"$(PROJECT_DIR)/../../lib/Channels/UnionPay",
+					"$(PROJECT_DIR)/../../lib/Channels/Wx",
+					"$(PROJECT_DIR)/../../lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -738,22 +738,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Alipay",
+					"$(PROJECT_DIR)/../../lib/Channels/Alipay",
 				);
 				INFOPLIST_FILE = "demoapp-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Alipay",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/ApplePay",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Bfb/Dependencies/ASIHttpRequest",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Bfb/Dependencies/BaiduMobStat/BaiduMobStat",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Bfb/Dependencies/BaiduMobStat",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Bfb/Dependencies/JSONKit",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Bfb",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/UnionPay",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib/Channels/Wx",
-					"/Users/Afon/pingplusplus/pingpp-ios/lib",
+					"$(PROJECT_DIR)/../../lib/Channels/Alipay",
+					"$(PROJECT_DIR)/../../lib/Channels/ApplePay",
+					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/ASIHttpRequest",
+					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/BaiduMobStat/BaiduMobStat",
+					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/BaiduMobStat",
+					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/JSONKit",
+					"$(PROJECT_DIR)/../../lib/Channels/Bfb",
+					"$(PROJECT_DIR)/../../lib/Channels/UnionPay",
+					"$(PROJECT_DIR)/../../lib/Channels/Wx",
+					"$(PROJECT_DIR)/../../lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
