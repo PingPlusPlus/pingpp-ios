@@ -78,8 +78,10 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *
  *  @param url              结果url
  *  @param completionBlock  支付结果回调 Block，保证跳转支付过程中，当app被kill掉时，能通过这个接口得到支付结果
+ *
+ *  @return                 当无法处理 URL 或者 URL 格式不正确时，会返回 NO。
  */
-+ (void)handleOpenURL:(NSURL *)url withCompletion:(PingppCompletion)completion;
++ (BOOL)handleOpenURL:(NSURL *)url withCompletion:(PingppCompletion)completion;
 
 /**
  *  版本号
