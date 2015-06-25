@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.0.5'
+  s.version      = '2.0.6'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
