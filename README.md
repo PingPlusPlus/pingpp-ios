@@ -22,6 +22,10 @@ iOS SDK 要求 iOS 6 及以上版本
 
 ## 「壹收款」 更新日志
 
+### 0.9.6
+* 更改：<br>
+兼容 libWeChatSDK.a 1.5 版本
+
 ### 0.9.5
 * 更改：<br>
 修正 completion 中 result 的值
