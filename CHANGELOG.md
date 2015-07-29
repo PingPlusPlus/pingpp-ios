@@ -1,3 +1,11 @@
+### 2.1.0
+* 新增：<br>
+添加 Debug 模式，可打印出 log，方便调试。开启方法：`[Pingpp setDebugMode:YES];`
+* 更改：<br>
+charge 可以用 NSDictionary 格式传入<br>
+更新支付宝、微信（不支持 armv7s）和百度钱包 SDK<br>
+不包含微信静态库文件也可以调用支付
+
 ### 2.0.6
 * 更改：<br>
 添加 handleOpenURL 返回值

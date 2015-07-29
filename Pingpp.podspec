@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.0.6'
+  s.version      = '2.1.0'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -43,6 +43,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Wx' do |wx|
     wx.vendored_libraries = 'lib/Channels/Wx/*.a'
+    wx.public_header_files = 'lib/Channels/Wx/*.h'
     wx.ios.library = 'sqlite3'
     wx.dependency 'Pingpp/Core'
   end
