@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E6936431B69E49500C540A9 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6936421B69E49500C540A9 /* libsqlite3.0.dylib */; };
 		1E6EE7481AEFEAEB00CDAD07 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EE70C1AEFEAEB00CDAD07 /* AlipaySDK.bundle */; };
 		1E6EE7491AEFEAEB00CDAD07 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6EE70D1AEFEAEB00CDAD07 /* AlipaySDK.framework */; };
 		1E6EE74A1AEFEAEB00CDAD07 /* libpingpp+alipay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6EE70E1AEFEAEB00CDAD07 /* libpingpp+alipay.a */; };
@@ -72,6 +73,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E6936421B69E49500C540A9 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		1E6EE70C1AEFEAEB00CDAD07 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		1E6EE70D1AEFEAEB00CDAD07 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		1E6EE70E1AEFEAEB00CDAD07 /* libpingpp+alipay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+alipay.a"; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E6936431B69E49500C540A9 /* libsqlite3.0.dylib in Frameworks */,
 				1E6EE7691AEFEBBA00CDAD07 /* PassKit.framework in Frameworks */,
 				5FA5762F1A58F73E000B36ED /* libstdc++.dylib in Frameworks */,
 				5FA5762D1A58F738000B36ED /* libc++.dylib in Frameworks */,
@@ -376,6 +379,7 @@
 		5F61B01F19C81A4F0035CD99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E6936421B69E49500C540A9 /* libsqlite3.0.dylib */,
 				1E6EE7681AEFEBBA00CDAD07 /* PassKit.framework */,
 				5FA5762E1A58F73E000B36ED /* libstdc++.dylib */,
 				5FA5762C1A58F738000B36ED /* libc++.dylib */,
