@@ -1,3 +1,7 @@
+### 2.1.1
+* 更改：<br>
+修正 charge 格式不正确时的回调
+
 ### 2.1.0
 * 新增：<br>
 添加 Debug 模式，可打印出 log，方便调试。开启方法：`[Pingpp setDebugMode:YES];`
