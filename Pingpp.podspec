@@ -44,6 +44,7 @@ Pod::Spec.new do |s|
   s.subspec 'Wx' do |wx|
     wx.vendored_libraries = 'lib/Channels/Wx/*.a'
     wx.public_header_files = 'lib/Channels/Wx/*.h'
+    wx.source_files = 'lib/Channels/Wx/*.h'
     wx.ios.library = 'sqlite3'
     wx.dependency 'Pingpp/Core'
   end
@@ -56,6 +57,7 @@ Pod::Spec.new do |s|
   s.subspec 'Bfb' do |bfb|
     bfb.frameworks = 'CoreTelephony', 'AddressBook', 'AddressBookUI', 'AudioToolbox', 'CoreAudio', 'CoreGraphics', 'ImageIO', 'MapKit', 'MessageUI', 'MobileCoreServices', 'QuartzCore'
     bfb.public_header_files = 'lib/Channels/Bfb/Dependencies/**/*.h'
+    bfb.source_files = 'lib/Channels/Bfb/Dependencies/**/*.h'
     bfb.resource = 'lib/Channels/Bfb/*.bundle'
     bfb.vendored_libraries = 'lib/Channels/Bfb/**/*.a'
     bfb.dependency 'Pingpp/Core'

@@ -82,7 +82,7 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
 
 ### 额外配置
 1. iOS 9 以上版本如果需要使用支付宝和微信渠道，需要在 `Info.plist` 添加以下代码：
-    
+
     ```
     <key>LSApplicationQueriesSchemes</key>
     <array>
@@ -92,7 +92,7 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
     </array>
     ```
 2. iOS 9 限制了 http 协议的访问，如果 App 需要访问 `http://`，需要在 `Info.plist` 添加如下代码：
-    
+
     ```
     <key>NSAppTransportSecurity</key>
     <dict>
@@ -100,6 +100,12 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
         <true/>
     </dict>
     ```
+3. 如果编译失败，遇到错误信息为：
+
+    ```
+    XXXXXXX does not contain bitcode. You must rebuild it with bitcode enabled (Xcode setting ENABLE_BITCODE), obtain an updated library from the vendor, or disable bitcode for this target.
+    ```
+    请到 Xcode 项目的 Build Settings 标签页搜索 bitcode，将 Enable Bitcode 设置为 NO。
 
 **关于如何使用 SDK 请参考 [技术文档](https://pingxx.com/document) 或者 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。**
 
