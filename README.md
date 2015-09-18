@@ -3,10 +3,6 @@ Pingpp iOS SDK
 
 ****
 
-## \*\*通知\*\*
-收到银联的通知，银联将在近期再次对移动支付标准控件进行更新。  
-当前的银联控件版本是 3.1.0，使用银联渠道的用户先不要急着更新，等银联发出新版本的控件后再做更新。  
-
 ## 简介
 
 lib 文件夹下是 iOS SDK 文件，<br>
@@ -52,15 +48,15 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
     CFNetwork.framework
     SystemConfiguration.framework
     Security.framework
-    libc++.dylib
-    libz.dylib
-    libsqlite3.0.dylib
+    libc++.tbd
+    libz.tbd
+    libsqlite3.0.tbd
     ```
 
     百度钱包所需：
 
     ```
-    libstdc++.dylib
+    libstdc++.tbd
     CoreTelephony.framework
     AddressBook.framework
     AddressBookUI.framework

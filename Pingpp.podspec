@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.1.2'
+  s.version      = '2.1.3'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -55,7 +55,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'Bfb' do |bfb|
     bfb.frameworks = 'CoreTelephony', 'AddressBook', 'AddressBookUI', 'AudioToolbox', 'CoreAudio', 'CoreGraphics', 'ImageIO', 'MapKit', 'MessageUI', 'MobileCoreServices', 'QuartzCore'
-    bfb.source_files = 'lib/Channels/Bfb/Dependencies/**/*.{h,m}'
     bfb.public_header_files = 'lib/Channels/Bfb/Dependencies/**/*.h'
     bfb.resource = 'lib/Channels/Bfb/*.bundle'
     bfb.vendored_libraries = 'lib/Channels/Bfb/**/*.a'
