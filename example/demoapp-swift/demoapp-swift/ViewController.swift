@@ -25,29 +25,34 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
 
-        var postDict : AnyObject = NSDictionary(objectsAndKeys: "alipay", "channel", "10", "amount")
-        let postData = NSJSONSerialization.dataWithJSONObject(postDict, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
+        let postDict : AnyObject = NSDictionary(objects: ["alipay", "10"], forKeys: ["channel", "amount"])
+        var postData: NSData = NSData()
+        do {
+            try postData = NSJSONSerialization.dataWithJSONObject(postDict, options: NSJSONWritingOptions.PrettyPrinted)
+        } catch {
+            print("Serialization error")
+        }
         
         let url = NSURL(string: kBackendChargeURL)
-        let session = NSURLSession.sharedSession();
-        var request = NSMutableURLRequest(URL: url!)
+        let session = NSURLSession.sharedSession()
+        let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.HTTPBody = postData
 
         let sessionTask = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             if data != nil {
-                let charge = NSString(data: data, encoding: NSUTF8StringEncoding)
-                println(charge! as String)
+                let charge = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print(charge! as String)
                 Pingpp.createPayment(charge! as String, appURLScheme: kAppURLScheme) { (result, error) -> Void in
-                    println(result)
+                    print(result)
                     if error != nil {
-                        println(error.code.rawValue)
-                        println(error.getMsg())
+                        print(error.code.rawValue)
+                        print(error.getMsg())
                     }
                 }
             } else {
-                println("response data is nil")
+                print("response data is nil")
             }
         }
         sessionTask.resume()
