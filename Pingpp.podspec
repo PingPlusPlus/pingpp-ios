@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.1.3'
+  s.version      = '2.1.4'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.1.1'
   s.source       = { :git => 'https://github.com/PingPlusPlus/pingpp-ios.git', :tag => s.version }
   s.requires_arc = true
-  s.default_subspec = 'Core', 'Alipay', 'Wx', 'UnionPay', 'Bfb'
+  s.default_subspec = 'Core', 'Alipay', 'Wx', 'UnionPay'
 
   s.subspec 'Core' do |core|
     core.source_files = 'lib/*.h'
