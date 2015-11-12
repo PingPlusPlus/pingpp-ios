@@ -11,7 +11,7 @@
 #import "Util.h"
 
 #warning 请修改此处 URL 地址
-#define kServerUrl @"YOUR-SERVER-URL"
+static NSString *kServerChargeURL = @"YOUR-SERVER-CHARGE-URL";
 
 #warning 请修改 Info 里的 URL Types，添加自己的 URL Schemes，Ping++ 会自动获取第一个，你也可以手动调用接口设置，请参见 Pingpp.h 说明
 
@@ -40,10 +40,12 @@ static NSDictionary *itemPrices = nil;
     if (itemPrices == nil) {
         itemPrices = @{@"item1":@"10", @"item2":@"26900", @"item3":@"29900"};
     }
-
+    
     UITapGestureRecognizer *blankTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleBlankTap:)];
     [self.view addGestureRecognizer:blankTap];
     [[self scrollView] setScrollEnabled:YES];
+    
+    [Pingpp setDebugMode:YES];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -107,16 +109,25 @@ static NSDictionary *itemPrices = nil;
     }
     NSString *orderNo = [ViewController rand_str:12]; // orderNo 一般在服务器生成
     NSArray *extra = @[
-        @[
-            @"商品", [self itemCounts]
-        ],
-        @[
-            @"运费", @[@"¥ 0.00"]
-        ]
-    ];
-    [Pingpp payWithOrderNo:orderNo amount:[self totalAmount] display:extra serverURL:kServerUrl completionHandler:^(NSString *result, PingppError *error) {
-        NSLog(@">>>>>>> %@", result);
-    }];
+                       @[
+                           @"商品", [self itemCounts]
+                           ],
+                       @[
+                           @"运费", @[@"¥ 0.00"]
+                           ]
+                       ];
+    
+    [Pingpp setNetworkTimeout:5];
+    [Pingpp payWithOrderNo:orderNo
+                    amount:[self totalAmount]
+                   display:extra
+                 serverURL:kServerChargeURL
+              customParams:@{@"custom_key_1":@"custom_value_1",@"custom_key_2":@"custom_value_2"}
+              appURLScheme:@"pingppdemoapp" // Info.plist 中的 CFBundleURLSchemes 对应
+            viewController:self
+         completionHandler:^(NSString *result, PingppError *error) {
+             NSLog(@">>>>>>> %@", result);
+         }];
 }
 
 + (NSString *)rand_str:(int) l {
@@ -171,8 +182,8 @@ static NSDictionary *itemPrices = nil;
     [self setItemCounts:array];
     
     NSUInteger amount = [itemPrices[@"item1"] intValue] * [count1 intValue]
-                      + [itemPrices[@"item2"] intValue] * [count2 intValue]
-                      + [itemPrices[@"item3"] intValue] * [count3 intValue];
+    + [itemPrices[@"item2"] intValue] * [count2 intValue]
+    + [itemPrices[@"item3"] intValue] * [count3 intValue];
     [self setTotalAmount:amount];
     NSString *amountStr = [NSString stringWithFormat:@"¥ %.02f", (CGFloat)[self totalAmount]/100];
     [[self amountLabel] setNumberOfLines:0];

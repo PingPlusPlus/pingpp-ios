@@ -44,8 +44,6 @@
 		1E3B52511A59AE0400B31C02 /* libpingpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3B52361A59AE0300B31C02 /* libpingpp.a */; };
 		1E3B52521A59AE0400B31C02 /* Pingpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E3B52371A59AE0300B31C02 /* Pingpp.bundle */; };
 		1E4E4B861A4FFCB900ED4CB5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B851A4FFCB900ED4CB5 /* Security.framework */; };
-		1E4E4B881A4FFCC700ED4CB5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B871A4FFCC700ED4CB5 /* libz.dylib */; };
-		1E4E4B8A1A4FFCD100ED4CB5 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B891A4FFCD100ED4CB5 /* libstdc++.dylib */; };
 		1E4E4B8C1A4FFCDA00ED4CB5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B8B1A4FFCDA00ED4CB5 /* CoreTelephony.framework */; };
 		1E4E4B8E1A4FFCE100ED4CB5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B8D1A4FFCE100ED4CB5 /* MobileCoreServices.framework */; };
 		1E4E4B901A4FFCF300ED4CB5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B8F1A4FFCF300ED4CB5 /* CoreGraphics.framework */; };
@@ -58,7 +56,11 @@
 		1EC7274B1A46C253002E4701 /* demoappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC7274A1A46C253002E4701 /* demoappTests.m */; };
 		1EC727701A46D6CF002E4701 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC7276F1A46D6CF002E4701 /* CFNetwork.framework */; };
 		1EC727721A46D6D8002E4701 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC727711A46D6D8002E4701 /* SystemConfiguration.framework */; };
-		1EC727741A46D6E1002E4701 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC727731A46D6E1002E4701 /* libc++.dylib */; };
+		1EF79B4E1BF480700042161A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B4D1BF480700042161A /* libsqlite3.0.tbd */; };
+		1EF79B501BF4807D0042161A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B4F1BF4807D0042161A /* libc++.tbd */; };
+		1EF79B521BF480860042161A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B511BF480860042161A /* libz.tbd */; };
+		1EF79B541BF480920042161A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B531BF480920042161A /* libstdc++.tbd */; };
+		1EF79B561BF480E60042161A /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B551BF480E60042161A /* AlipaySDK.framework */; };
 		5FA576B71A5973A8000B36ED /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA576B61A5973A8000B36ED /* Util.m */; };
 /* End PBXBuildFile section */
 
@@ -128,8 +130,6 @@
 		1E3B52371A59AE0300B31C02 /* Pingpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Pingpp.bundle; path = ../../lib/Pingpp.bundle; sourceTree = "<group>"; };
 		1E3B52381A59AE0300B31C02 /* Pingpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pingpp.h; path = ../../lib/Pingpp.h; sourceTree = "<group>"; };
 		1E4E4B851A4FFCB900ED4CB5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		1E4E4B871A4FFCC700ED4CB5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		1E4E4B891A4FFCD100ED4CB5 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		1E4E4B8B1A4FFCDA00ED4CB5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		1E4E4B8D1A4FFCE100ED4CB5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1E4E4B8F1A4FFCF300ED4CB5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -148,7 +148,11 @@
 		1EC7274A1A46C253002E4701 /* demoappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demoappTests.m; sourceTree = "<group>"; };
 		1EC7276F1A46D6CF002E4701 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1EC727711A46D6D8002E4701 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		1EC727731A46D6E1002E4701 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		1EF79B4D1BF480700042161A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		1EF79B4F1BF4807D0042161A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1EF79B511BF480860042161A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1EF79B531BF480920042161A /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		1EF79B551BF480E60042161A /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		5FA576B51A5973A8000B36ED /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		5FA576B61A5973A8000B36ED /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,10 +162,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF79B541BF480920042161A /* libstdc++.tbd in Frameworks */,
+				1EF79B521BF480860042161A /* libz.tbd in Frameworks */,
+				1EF79B501BF4807D0042161A /* libc++.tbd in Frameworks */,
+				1EF79B4E1BF480700042161A /* libsqlite3.0.tbd in Frameworks */,
 				1E3B52051A59AD0600B31C02 /* MessageUI.framework in Frameworks */,
 				1E3B52411A59AE0300B31C02 /* libTouchJSON.a in Frameworks */,
 				1E3B52031A59ACFF00B31C02 /* MapKit.framework in Frameworks */,
 				1E3B52011A59ACF400B31C02 /* CoreAudio.framework in Frameworks */,
+				1EF79B561BF480E60042161A /* AlipaySDK.framework in Frameworks */,
 				1E3B52421A59AE0300B31C02 /* libJSONKit.a in Frameworks */,
 				1E3B51FF1A59ACF000B31C02 /* AudioToolbox.framework in Frameworks */,
 				1E3B52401A59AE0300B31C02 /* libBaiduMobStatForSDK.a in Frameworks */,
@@ -172,14 +181,11 @@
 				1E4E4B901A4FFCF300ED4CB5 /* CoreGraphics.framework in Frameworks */,
 				1E4E4B8E1A4FFCE100ED4CB5 /* MobileCoreServices.framework in Frameworks */,
 				1E4E4B8C1A4FFCDA00ED4CB5 /* CoreTelephony.framework in Frameworks */,
-				1E4E4B8A1A4FFCD100ED4CB5 /* libstdc++.dylib in Frameworks */,
 				1E3B523D1A59AE0300B31C02 /* libUPPayPlugin.a in Frameworks */,
 				1E3B523C1A59AE0300B31C02 /* libBaiduWalletSDK.a in Frameworks */,
 				1E3B52511A59AE0400B31C02 /* libpingpp.a in Frameworks */,
 				1E3B523E1A59AE0300B31C02 /* libWeChatSDK.a in Frameworks */,
-				1E4E4B881A4FFCC700ED4CB5 /* libz.dylib in Frameworks */,
 				1E4E4B861A4FFCB900ED4CB5 /* Security.framework in Frameworks */,
-				1EC727741A46D6E1002E4701 /* libc++.dylib in Frameworks */,
 				1EC727721A46D6D8002E4701 /* SystemConfiguration.framework in Frameworks */,
 				1EC727701A46D6CF002E4701 /* CFNetwork.framework in Frameworks */,
 				1E3B523F1A59AE0300B31C02 /* libASIHttpRequest.a in Frameworks */,
@@ -209,6 +215,7 @@
 		1E3B52061A59AE0300B31C02 /* Channels */ = {
 			isa = PBXGroup;
 			children = (
+				1EF79B551BF480E60042161A /* AlipaySDK.framework */,
 				1E3B52071A59AE0300B31C02 /* AlipaySDK.bundle */,
 				1E3B52091A59AE0300B31C02 /* BaiduWalletSDKBundle.bundle */,
 				1E3B520A1A59AE0300B31C02 /* libBaiduWalletSDK.a */,
@@ -381,6 +388,10 @@
 		1EC727751A46D6F5002E4701 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EF79B531BF480920042161A /* libstdc++.tbd */,
+				1EF79B511BF480860042161A /* libz.tbd */,
+				1EF79B4F1BF4807D0042161A /* libc++.tbd */,
+				1EF79B4D1BF480700042161A /* libsqlite3.0.tbd */,
 				1E3B52041A59AD0600B31C02 /* MessageUI.framework */,
 				1E3B52021A59ACFF00B31C02 /* MapKit.framework */,
 				1E3B52001A59ACF400B31C02 /* CoreAudio.framework */,
@@ -392,10 +403,7 @@
 				1E4E4B8F1A4FFCF300ED4CB5 /* CoreGraphics.framework */,
 				1E4E4B8D1A4FFCE100ED4CB5 /* MobileCoreServices.framework */,
 				1E4E4B8B1A4FFCDA00ED4CB5 /* CoreTelephony.framework */,
-				1E4E4B891A4FFCD100ED4CB5 /* libstdc++.dylib */,
-				1E4E4B871A4FFCC700ED4CB5 /* libz.dylib */,
 				1E4E4B851A4FFCB900ED4CB5 /* Security.framework */,
-				1EC727731A46D6E1002E4701 /* libc++.dylib */,
 				1EC727711A46D6D8002E4701 /* SystemConfiguration.framework */,
 				1EC7276F1A46D6CF002E4701 /* CFNetwork.framework */,
 			);
@@ -653,6 +661,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../lib/Channels",
@@ -670,11 +679,7 @@
 					"$(PROJECT_DIR)/../lib/Dependencies/JSONKit",
 					"$(PROJECT_DIR)/../lib",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-force_load",
-					"$(PROJECT_DIR)/../lib/Channels/AlipaySDK.framework/AlipaySDK",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -686,6 +691,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../lib/Channels",
@@ -702,11 +708,7 @@
 					"$(PROJECT_DIR)/../lib/Dependencies/JSONKit",
 					"$(PROJECT_DIR)/../lib",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-force_load",
-					"$(PROJECT_DIR)/../lib/Channels/AlipaySDK.framework/AlipaySDK",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
