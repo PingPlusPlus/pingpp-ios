@@ -21,8 +21,6 @@
 		1E3B52511A59AE0400B31C02 /* libpingpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3B52361A59AE0300B31C02 /* libpingpp.a */; };
 		1E3B52521A59AE0400B31C02 /* Pingpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E3B52371A59AE0300B31C02 /* Pingpp.bundle */; };
 		1E4E4B861A4FFCB900ED4CB5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B851A4FFCB900ED4CB5 /* Security.framework */; };
-		1E4E4B881A4FFCC700ED4CB5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B871A4FFCC700ED4CB5 /* libz.dylib */; };
-		1E4E4B8A1A4FFCD100ED4CB5 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B891A4FFCD100ED4CB5 /* libstdc++.dylib */; };
 		1E4E4B8C1A4FFCDA00ED4CB5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B8B1A4FFCDA00ED4CB5 /* CoreTelephony.framework */; };
 		1E4E4B8E1A4FFCE100ED4CB5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B8D1A4FFCE100ED4CB5 /* MobileCoreServices.framework */; };
 		1E4E4B901A4FFCF300ED4CB5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4E4B8F1A4FFCF300ED4CB5 /* CoreGraphics.framework */; };
@@ -35,11 +33,14 @@
 		1EC7274B1A46C253002E4701 /* demoappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC7274A1A46C253002E4701 /* demoappTests.m */; };
 		1EC727701A46D6CF002E4701 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC7276F1A46D6CF002E4701 /* CFNetwork.framework */; };
 		1EC727721A46D6D8002E4701 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC727711A46D6D8002E4701 /* SystemConfiguration.framework */; };
-		1EC727741A46D6E1002E4701 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC727731A46D6E1002E4701 /* libc++.dylib */; };
 		1EF79B491BF45E250042161A /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1EF79B451BF45E250042161A /* AlipaySDK.bundle */; };
 		1EF79B4A1BF45E250042161A /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B461BF45E250042161A /* AlipaySDK.framework */; };
 		1EF79B4B1BF45E250042161A /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B471BF45E250042161A /* libUPPayPlugin.a */; };
 		1EF79B4C1BF45E250042161A /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B481BF45E250042161A /* libWeChatSDK.a */; };
+		1EF79B581BF482EB0042161A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B571BF482EB0042161A /* libz.tbd */; };
+		1EF79B5A1BF482F40042161A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B591BF482F40042161A /* libsqlite3.tbd */; };
+		1EF79B5C1BF482FB0042161A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B5B1BF482FB0042161A /* libc++.tbd */; };
+		1EF79B601BF483090042161A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF79B5F1BF483090042161A /* libstdc++.tbd */; };
 		5FA576B71A5973A8000B36ED /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA576B61A5973A8000B36ED /* Util.m */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +70,6 @@
 		1E3B52371A59AE0300B31C02 /* Pingpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Pingpp.bundle; path = ../../lib/Pingpp.bundle; sourceTree = "<group>"; };
 		1E3B52381A59AE0300B31C02 /* Pingpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pingpp.h; path = ../../lib/Pingpp.h; sourceTree = "<group>"; };
 		1E4E4B851A4FFCB900ED4CB5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		1E4E4B871A4FFCC700ED4CB5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		1E4E4B891A4FFCD100ED4CB5 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		1E4E4B8B1A4FFCDA00ED4CB5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		1E4E4B8D1A4FFCE100ED4CB5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1E4E4B8F1A4FFCF300ED4CB5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,11 +88,14 @@
 		1EC7274A1A46C253002E4701 /* demoappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demoappTests.m; sourceTree = "<group>"; };
 		1EC7276F1A46D6CF002E4701 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1EC727711A46D6D8002E4701 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		1EC727731A46D6E1002E4701 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		1EF79B451BF45E250042161A /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		1EF79B461BF45E250042161A /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		1EF79B471BF45E250042161A /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
 		1EF79B481BF45E250042161A /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		1EF79B571BF482EB0042161A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1EF79B591BF482F40042161A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1EF79B5B1BF482FB0042161A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1EF79B5F1BF483090042161A /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		5FA576B51A5973A8000B36ED /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		5FA576B61A5973A8000B36ED /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +105,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF79B601BF483090042161A /* libstdc++.tbd in Frameworks */,
+				1EF79B5C1BF482FB0042161A /* libc++.tbd in Frameworks */,
+				1EF79B5A1BF482F40042161A /* libsqlite3.tbd in Frameworks */,
+				1EF79B581BF482EB0042161A /* libz.tbd in Frameworks */,
 				1E3B52051A59AD0600B31C02 /* MessageUI.framework in Frameworks */,
 				1E3B52031A59ACFF00B31C02 /* MapKit.framework in Frameworks */,
 				1EF79B4A1BF45E250042161A /* AlipaySDK.framework in Frameworks */,
@@ -116,12 +122,9 @@
 				1E4E4B8E1A4FFCE100ED4CB5 /* MobileCoreServices.framework in Frameworks */,
 				1E4E4B8C1A4FFCDA00ED4CB5 /* CoreTelephony.framework in Frameworks */,
 				1EF79B4B1BF45E250042161A /* libUPPayPlugin.a in Frameworks */,
-				1E4E4B8A1A4FFCD100ED4CB5 /* libstdc++.dylib in Frameworks */,
 				1EF79B4C1BF45E250042161A /* libWeChatSDK.a in Frameworks */,
 				1E3B52511A59AE0400B31C02 /* libpingpp.a in Frameworks */,
-				1E4E4B881A4FFCC700ED4CB5 /* libz.dylib in Frameworks */,
 				1E4E4B861A4FFCB900ED4CB5 /* Security.framework in Frameworks */,
-				1EC727741A46D6E1002E4701 /* libc++.dylib in Frameworks */,
 				1EC727721A46D6D8002E4701 /* SystemConfiguration.framework in Frameworks */,
 				1EC727701A46D6CF002E4701 /* CFNetwork.framework in Frameworks */,
 			);
@@ -225,6 +228,10 @@
 		1EC727751A46D6F5002E4701 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EF79B5F1BF483090042161A /* libstdc++.tbd */,
+				1EF79B5B1BF482FB0042161A /* libc++.tbd */,
+				1EF79B591BF482F40042161A /* libsqlite3.tbd */,
+				1EF79B571BF482EB0042161A /* libz.tbd */,
 				1E3B52041A59AD0600B31C02 /* MessageUI.framework */,
 				1E3B52021A59ACFF00B31C02 /* MapKit.framework */,
 				1E3B52001A59ACF400B31C02 /* CoreAudio.framework */,
@@ -236,10 +243,7 @@
 				1E4E4B8F1A4FFCF300ED4CB5 /* CoreGraphics.framework */,
 				1E4E4B8D1A4FFCE100ED4CB5 /* MobileCoreServices.framework */,
 				1E4E4B8B1A4FFCDA00ED4CB5 /* CoreTelephony.framework */,
-				1E4E4B891A4FFCD100ED4CB5 /* libstdc++.dylib */,
-				1E4E4B871A4FFCC700ED4CB5 /* libz.dylib */,
 				1E4E4B851A4FFCB900ED4CB5 /* Security.framework */,
-				1EC727731A46D6E1002E4701 /* libc++.dylib */,
 				1EC727711A46D6D8002E4701 /* SystemConfiguration.framework */,
 				1EC7276F1A46D6CF002E4701 /* CFNetwork.framework */,
 			);
