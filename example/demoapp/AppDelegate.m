@@ -44,10 +44,12 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
-        NSLog(@"result = %@, error : %@", result, error == nil ? @"nil" : [error getMsg]);
-    }];
-    return YES;
+    BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:nil];
+    return canHandleURL;
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options {
+    BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:nil];
+    return canHandleURL;
+}
 @end

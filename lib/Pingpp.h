@@ -82,7 +82,7 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @param url              结果url
  *  @param completionBlock  支付结果回调 Block，保证跳转支付过程中，当app被kill掉时，能通过这个接口得到支付结果
  */
-+ (void)handleOpenURL:(NSURL *)url withCompletion:(PingppCompletion)completion;
++ (BOOL)handleOpenURL:(NSURL *)url withCompletion:(PingppCompletion)completion;
 
 /**
  *  版本号
@@ -182,11 +182,45 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
      completionHandler:(PingppCompletion)handler;
 
 /**
+ *  调用「壹收款」
+ *
+ *  @param orderNo            唯一订单号
+ *  @param amount             订单总金额
+ *  @param contents           额外显示信息，格式：[["left0", ["right0", "right1"]], ["left1", ["right0"]]]
+ *  @param url                接收「壹收款」请求并生成和返回 charge 的 URL
+ *  @param customParams       传到 serverURL 的额外自定义参数
+ *  @param scheme             URL Scheme，支付宝渠道回调需要，没有支付宝情况下可为 nil
+ *  @param viewController     当前 viewController
+ *  @param completionHandler  支付结果回调 Block
+ */
++ (void)payWithOrderNo:(NSString *)orderNo
+                amount:(NSUInteger)amount
+               display:(NSArray *)contents
+             serverURL:(NSString *)url
+          customParams:(NSDictionary *)customParams
+          appURLScheme:(NSString *)scheme
+        viewController:(UIViewController *)viewController
+     completionHandler:(PingppCompletion)handler;
+
+/**
+ *  设置网络请求延时
+ *
+ *  @param timeout  延时时间，单位：秒
+ */
++ (void)setNetworkTimeout:(NSTimeInterval)timeout;
+/**
  *  选择需要显示的渠道按钮，默认所包含渠道全部开启
  *
  *  @param option
  *  例 [Pingpp enableBtn:PingppBtnAlipay|PingppBtnWx];
  */
 + (void)enableBtn:(PingppBtnOption)option;
+
+/**
+ *  设置 Debug 模式
+ *
+ *  @param enabled    是否启用
+ */
++ (void)setDebugMode:(BOOL)enabled;
 
 @end
