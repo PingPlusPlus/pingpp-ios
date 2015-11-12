@@ -18,6 +18,14 @@ iOS SDK 要求 iOS 6 及以上版本
 
 ## 「壹收款」 更新日志
 
+### 0.9.8
+* 更改：  
+更新银联 SDK 到 3.1.1 版本  
+添加 customParams  
+添加 timeout 设置  
+添加 debug 模式，用于打印 log  
+银联渠道 channel 字段更改为 upacp
+
 ### 0.9.7
 * 更改：  
 更新银联 SDK 到 3.1.0 版本
