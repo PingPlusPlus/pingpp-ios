@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.1.4'
+  s.version      = '2.2.0'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.1.1'
   s.source       = { :git => 'https://github.com/PingPlusPlus/pingpp-ios.git', :tag => s.version }
   s.requires_arc = true
-  s.default_subspec = 'Core', 'Alipay', 'Wx', 'UnionPay'
+  s.default_subspec = 'Core', 'Alipay', 'UnionPay'
 
   s.subspec 'Core' do |core|
     core.source_files = 'lib/*.h'
@@ -23,7 +23,8 @@ Pod::Spec.new do |s|
     core.resource = 'lib/*.bundle'
     core.frameworks = 'CFNetwork', 'SystemConfiguration', 'Security'
     core.ios.library = 'c++', 'stdc++', 'z'
-    core.xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
+    core.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
+    core.dependency 'Pingpp/Network'
   end
 
   s.subspec 'ApplePay' do |applepay|
@@ -32,6 +33,7 @@ Pod::Spec.new do |s|
     applepay.public_header_files = 'lib/Channels/ApplePay/*.h'
     applepay.vendored_libraries = 'lib/Channels/ApplePay/*.a'
     applepay.dependency 'Pingpp/Core'
+    applepay.dependency 'Pingpp/Network'
   end
 
   s.subspec 'Alipay' do |alipay|
@@ -46,6 +48,7 @@ Pod::Spec.new do |s|
     wx.public_header_files = 'lib/Channels/Wx/*.h'
     wx.source_files = 'lib/Channels/Wx/*.h'
     wx.ios.library = 'sqlite3'
+    wx.frameworks = 'CoreTelephony'
     wx.dependency 'Pingpp/Core'
   end
 
@@ -62,4 +65,30 @@ Pod::Spec.new do |s|
     bfb.vendored_libraries = 'lib/Channels/Bfb/**/*.a'
     bfb.dependency 'Pingpp/Core'
   end
+
+  s.subspec 'Network' do |ss|
+    ss.source_files = 'lib/Channels/Network/*.h'
+    ss.public_header_files = 'lib/Channels/Network/*.h'
+    ss.vendored_libraries = 'lib/Channels/Network/*.a'
+  end
+
+  s.subspec 'Cnp' do |ss|
+    ss.frameworks = 'AudioToolbox'
+    ss.source_files = 'lib/Channels/Cnp/*.h'
+    ss.public_header_files = 'lib/Channels/Cnp/*.h'
+    ss.vendored_libraries = 'lib/Channels/Cnp/*.a'
+    ss.resource = 'lib/Channels/Cnp/*.bundle'
+    ss.dependency 'Pingpp/Core'
+    ss.dependency 'Pingpp/Network'
+  end
+
+  s.subspec 'One' do |ss|
+    ss.frameworks = 'QuartzCore'
+    ss.source_files = 'lib/One/*.h'
+    ss.public_header_files = 'lib/One/*.h'
+    ss.vendored_libraries = 'lib/One/*.a'
+    ss.dependency 'Pingpp/Core'
+    ss.dependency 'Pingpp/Network'
+  end
+
 end

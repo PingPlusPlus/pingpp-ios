@@ -25,6 +25,11 @@ typedef NS_ENUM(NSUInteger, PingppErrorOption)
     PingppErrUnknownError
 };
 
+typedef NS_ENUM(NSUInteger, PingppRequestContentTypeOption) {
+    PingppRequestContentTypeJSON,
+    PingppRequestContentTypeForm
+};
+
 @interface PingppError : NSObject
 
 @property(readonly, assign) PingppErrorOption code;
@@ -36,18 +41,8 @@ typedef NS_ENUM(NSUInteger, PingppErrorOption)
 
 typedef void (^PingppCompletion)(NSString *result, PingppError *error);
 
-@protocol PingppDelegate <NSObject>
-
-- (void)paymentResult:(NSString *)result;
-
-@end
 
 @interface Pingpp : NSObject
-
-/**
- *  deprecated
- */
-+ (void)createPayment:(NSString *)charge viewController:(UIViewController *)viewController appURLScheme:(NSString *)scheme delegate:(id<PingppDelegate>)delegate __attribute__((deprecated));
 
 /**
  *  支付调用接口
@@ -67,11 +62,6 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @param completionBlock  支付结果回调 Block
  */
 + (void)createPayment:(NSObject *)charge appURLScheme:(NSString *)scheme withCompletion:(PingppCompletion)completion;
-
-/**
- *  deprecated
- */
-+ (void)handleOpenURL:(NSURL *)url delegate:(id<PingppDelegate>)delegate  __attribute__((deprecated));
 
 /**
  *  回调结果接口(支付宝/微信/测试模式)
@@ -107,6 +97,37 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @param enabled    是否启用
  */
 + (void)setDebugMode:(BOOL)enabled;
+
+/**
+ *  设置 App ID
+ *  @param  appId  Ping++ 的应用 ID，请登录 https://dashboard.pingxx.com 查看
+ */
++ (void)setAppId:(NSString *)appId;
+
++ (NSString *)appId;
+
+/**
+ *  设置请求的 Content-Type
+ *  @param  type  可设置为 JSON 或 Form，默认为 JSON
+ */
++ (void)setRequestContentType:(PingppRequestContentTypeOption)type;
+
++ (PingppRequestContentTypeOption)requestContentType;
+
+/**
+ *  允许 https 自签证书，当你的 chargeURL 为 https 且为自签证书时使用该方法设置
+ *  @param  allowInvalidCertificates BOOL
+ */
++ (void)setAllowInvalidCertificates:(BOOL)allowInvalidCertificates;
+
++ (BOOL)allowInvalidCertificates;
+
+/**
+ *  设置网络请求延时（使用壹收款或者应用内快捷支付时有用）
+ *
+ *  @param timeout  延时时间，单位：秒
+ */
++ (void)setNetworkTimeout:(NSTimeInterval)timeout;
 
 /**
  *  设置百度钱包导航条背景

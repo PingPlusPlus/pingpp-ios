@@ -10,7 +10,7 @@ example 文件夹里面是一个简单的接入示例，该示例仅供参考。
 
 ## 版本要求
 
-iOS SDK 要求 iOS 5.1.1 及以上版本
+iOS SDK 要求 iOS 6.0 及以上版本
 
 ## 接入方法
 ### 安装
@@ -18,18 +18,17 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', '~> 2.1.0'
+    pod 'Pingpp', '~> 2.2.0'
     ```
 
     默认会包含支付宝、微信、银联和百度钱包。你也可以自己选择渠道。  
-    目前有 `ApplePay`、`Alipay`、`Wx`、`UnionPay`、`Bfb` 五个子模块可选择。  
+    目前有 `Alipay`、`Wx`、`UnionPay`、`Bfb`、`ApplePay`、`Cnp`、`One` 五个子模块可选择。  
     例如：
 
     ```
-    pod 'Pingpp/Alipay', '~> 2.1.0'
-    pod 'Pingpp/Wx', '~> 2.1.0'
-    pod 'Pingpp/UnionPay', '~> 2.1.0'
-    pod 'Pingpp/ApplePay', '~> 2.1.0'
+    pod 'Pingpp/Alipay', '~> 2.2.0'
+    pod 'Pingpp/UnionPay', '~> 2.2.0'
+    pod 'Pingpp/One', '~> 2.2.0'
     ```
 
 2. 运行 `pod install`
@@ -48,6 +47,7 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
     CFNetwork.framework
     SystemConfiguration.framework
     Security.framework
+    QuartzCore.framework
     libc++.tbd
     libz.tbd
     libsqlite3.0.tbd
@@ -67,7 +67,6 @@ iOS SDK 要求 iOS 5.1.1 及以上版本
     MapKit.framework
     MessageUI.framework
     MobileCoreServices.framework
-    QuartzCore.framework
     ```
 
     Apple Pay 所需：
