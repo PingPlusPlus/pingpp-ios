@@ -80,6 +80,9 @@ Pod::Spec.new do |s|
     ss.resource = 'lib/Channels/Cnp/*.bundle'
     ss.dependency 'Pingpp/Core'
     ss.dependency 'Pingpp/Network'
+    ss.xcconfig = {
+      'CLANG_CXX_LIBRARY' => 'libstdc++'
+    }
   end
 
   s.subspec 'One' do |ss|

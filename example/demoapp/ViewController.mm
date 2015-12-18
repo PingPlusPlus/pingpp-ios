@@ -201,20 +201,21 @@
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     [self showAlertWait];
     [NSURLConnection sendAsynchronousRequest:postRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-        [weakSelf hideAlert];
-        if (httpResponse.statusCode != 200) {
-            [weakSelf showAlertMessage:kErrorNet];
-            return;
-        }
-        if (connectionError != nil) {
-            NSLog(@"error = %@", connectionError);
-            [weakSelf showAlertMessage:kErrorNet];
-            return;
-        }
-        NSString* charge = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"charge = %@", charge);
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+            [weakSelf hideAlert];
+            if (httpResponse.statusCode != 200) {
+                NSLog(@"statusCode=%ld error = %@", (long)httpResponse.statusCode, connectionError);
+                [weakSelf showAlertMessage:kErrorNet];
+                return;
+            }
+            if (connectionError != nil) {
+                NSLog(@"error = %@", connectionError);
+                [weakSelf showAlertMessage:kErrorNet];
+                return;
+            }
+            NSString* charge = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"charge = %@", charge);
             [Pingpp createPayment:charge viewController:weakSelf appURLScheme:kUrlScheme withCompletion:^(NSString *result, PingppError *error) {
                 NSLog(@"completion block: %@", result);
                 if (error == nil) {

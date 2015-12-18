@@ -21,6 +21,8 @@
     self.viewController = nav;
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    [Pingpp setDebugMode:YES];
     return YES;
 }
 
