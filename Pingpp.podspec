@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     core.public_header_files = 'lib/*.h'
     core.vendored_libraries = 'lib/*.a'
     core.resource = 'lib/*.bundle'
-    core.frameworks = 'CFNetwork', 'SystemConfiguration', 'Security', 'AdSupport'
+    core.frameworks = 'CFNetwork', 'SystemConfiguration', 'Security'
     core.ios.library = 'c++', 'stdc++', 'z'
     core.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
     core.dependency 'Pingpp/Network'
