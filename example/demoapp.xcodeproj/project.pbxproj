@@ -38,7 +38,7 @@
 		5FA576241A58F551000B36ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FA576191A58F551000B36ED /* InfoPlist.strings */; };
 		5FA576251A58F551000B36ED /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA5761B1A58F551000B36ED /* ViewController_iPad.xib */; };
 		5FA576261A58F551000B36ED /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA5761C1A58F551000B36ED /* ViewController_iPhone.xib */; };
-		5FA576311A58FA7C000B36ED /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FA576301A58FA7C000B36ED /* ViewController.mm */; };
+		5FA576311A58FA7C000B36ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA576301A58FA7C000B36ED /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,7 +104,7 @@
 		5FA5761B1A58F551000B36ED /* ViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPad.xib; sourceTree = "<group>"; };
 		5FA5761C1A58F551000B36ED /* ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
 		5FA5761D1A58F551000B36ED /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5FA576301A58FA7C000B36ED /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		5FA576301A58FA7C000B36ED /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,7 +338,7 @@
 				5FA576101A58F551000B36ED /* AppDelegate.h */,
 				5FA576111A58F551000B36ED /* AppDelegate.m */,
 				5FA5761D1A58F551000B36ED /* ViewController.h */,
-				5FA576301A58FA7C000B36ED /* ViewController.mm */,
+				5FA576301A58FA7C000B36ED /* ViewController.m */,
 				5FA576121A58F551000B36ED /* demoapp-Info.pch */,
 				5FA576131A58F551000B36ED /* demoapp-Info.plist */,
 				5FA576141A58F551000B36ED /* Images.xcassets */,
@@ -433,7 +433,7 @@
 			files = (
 				5FA576221A58F551000B36ED /* main.m in Sources */,
 				5FA5761F1A58F551000B36ED /* AppDelegate.m in Sources */,
-				5FA576311A58FA7C000B36ED /* ViewController.mm in Sources */,
+				5FA576311A58FA7C000B36ED /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
