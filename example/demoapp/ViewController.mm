@@ -182,13 +182,13 @@
     if (amount == 0) {
         return;
     }
-    NSString *amountStr = [NSString stringWithFormat:@"%lld", amount];
+//    NSString *amountStr = [NSString stringWithFormat:@"%lld", amount];
     NSURL* url = [NSURL URLWithString:kUrl];
     NSMutableURLRequest * postRequest=[NSMutableURLRequest requestWithURL:url];
 
     NSDictionary* dict = @{
         @"channel" : self.channel,
-        @"amount"  : amountStr
+        @"amount"  : @(amount)
     };
     NSData* data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
     NSString *bodyData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
