@@ -67,9 +67,9 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Network' do |ss|
-    ss.source_files = 'lib/Channels/Network/*.h'
-    ss.public_header_files = 'lib/Channels/Network/*.h'
-    ss.vendored_libraries = 'lib/Channels/Network/*.a'
+    ss.source_files = 'lib/Dependencies/Network/*.h'
+    ss.public_header_files = 'lib/Dependencies/Network/*.h'
+    ss.vendored_libraries = 'lib/Dependencies/Network/*.a'
   end
 
   s.subspec 'Cnp' do |ss|

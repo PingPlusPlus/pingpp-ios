@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E420C1B1C46448200E71EC0 /* libpingpp+network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E420C191C46448200E71EC0 /* libpingpp+network.a */; };
 		1E698EEE1C23DE7A0072F404 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E698EAF1C23DE7A0072F404 /* AlipaySDK.bundle */; };
 		1E698EEF1C23DE7A0072F404 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EB01C23DE7A0072F404 /* AlipaySDK.framework */; };
 		1E698EF01C23DE7A0072F404 /* libpingpp+alipay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EB11C23DE7A0072F404 /* libpingpp+alipay.a */; };
@@ -19,7 +20,6 @@
 		1E698EF91C23DE7A0072F404 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EC51C23DE7A0072F404 /* libSDWebImage.a */; };
 		1E698EFB1C23DE7A0072F404 /* libBaiduWalletSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698ED61C23DE7A0072F404 /* libBaiduWalletSDK.a */; };
 		1E698EFC1C23DE7A0072F404 /* libpingpp+bfb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698ED71C23DE7A0072F404 /* libpingpp+bfb.a */; };
-		1E698F001C23DE7A0072F404 /* libpingpp+network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EDE1C23DE7A0072F404 /* libpingpp+network.a */; };
 		1E698F011C23DE7A0072F404 /* libpingpp+up.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EE11C23DE7A0072F404 /* libpingpp+up.a */; };
 		1E698F021C23DE7A0072F404 /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EE21C23DE7A0072F404 /* libUPPayPlugin.a */; };
 		1E698F051C23DE7A0072F404 /* libpingppcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EE81C23DE7A0072F404 /* libpingppcore.a */; };
@@ -63,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E420C191C46448200E71EC0 /* libpingpp+network.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+network.a"; sourceTree = "<group>"; };
+		1E420C1A1C46448200E71EC0 /* PingppURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingppURLResponse.h; sourceTree = "<group>"; };
 		1E698EAF1C23DE7A0072F404 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		1E698EB01C23DE7A0072F404 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		1E698EB11C23DE7A0072F404 /* libpingpp+alipay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+alipay.a"; sourceTree = "<group>"; };
@@ -93,8 +95,6 @@
 		1E698ED51C23DE7A0072F404 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		1E698ED61C23DE7A0072F404 /* libBaiduWalletSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduWalletSDK.a; sourceTree = "<group>"; };
 		1E698ED71C23DE7A0072F404 /* libpingpp+bfb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+bfb.a"; sourceTree = "<group>"; };
-		1E698EDE1C23DE7A0072F404 /* libpingpp+network.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+network.a"; sourceTree = "<group>"; };
-		1E698EDF1C23DE7A0072F404 /* PingppURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingppURLResponse.h; sourceTree = "<group>"; };
 		1E698EE11C23DE7A0072F404 /* libpingpp+up.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+up.a"; sourceTree = "<group>"; };
 		1E698EE21C23DE7A0072F404 /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
 		1E698EE81C23DE7A0072F404 /* libpingppcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpingppcore.a; sourceTree = "<group>"; };
@@ -155,6 +155,7 @@
 				1EAA25051AF2143800952143 /* CoreGraphics.framework in Frameworks */,
 				1EAA25031AF2142B00952143 /* CoreTelephony.framework in Frameworks */,
 				1E698F011C23DE7A0072F404 /* libpingpp+up.a in Frameworks */,
+				1E420C1B1C46448200E71EC0 /* libpingpp+network.a in Frameworks */,
 				1EAA25011AF2142000952143 /* Security.framework in Frameworks */,
 				1EAA24FF1AF2140D00952143 /* libz.dylib in Frameworks */,
 				1EAA24FD1AF2140800952143 /* libsqlite3.dylib in Frameworks */,
@@ -169,7 +170,6 @@
 				1E698EF01C23DE7A0072F404 /* libpingpp+alipay.a in Frameworks */,
 				1E698EF91C23DE7A0072F404 /* libSDWebImage.a in Frameworks */,
 				1E698EF31C23DE7A0072F404 /* libASIHttpRequest.a in Frameworks */,
-				1E698F001C23DE7A0072F404 /* libpingpp+network.a in Frameworks */,
 				1E698EFC1C23DE7A0072F404 /* libpingpp+bfb.a in Frameworks */,
 				1E698EF61C23DE7A0072F404 /* libTouchJSON.a in Frameworks */,
 				1E698F051C23DE7A0072F404 /* libpingppcore.a in Frameworks */,
@@ -186,11 +186,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E420C171C46448200E71EC0 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				1E420C181C46448200E71EC0 /* Network */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		1E420C181C46448200E71EC0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1E420C191C46448200E71EC0 /* libpingpp+network.a */,
+				1E420C1A1C46448200E71EC0 /* PingppURLResponse.h */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		1E698EAC1C23DE7A0072F404 /* Pingpp */ = {
 			isa = PBXGroup;
 			children = (
 				1E698EAD1C23DE7A0072F404 /* Channels */,
 				1E698EE81C23DE7A0072F404 /* libpingppcore.a */,
+				1E420C171C46448200E71EC0 /* Dependencies */,
 				1E698EE91C23DE7A0072F404 /* One */,
 				1E698EEC1C23DE7A0072F404 /* Pingpp.bundle */,
 				1E698EED1C23DE7A0072F404 /* Pingpp.h */,
@@ -205,7 +223,6 @@
 				1E698EAE1C23DE7A0072F404 /* Alipay */,
 				1E698EB21C23DE7A0072F404 /* ApplePay */,
 				1E698EB51C23DE7A0072F404 /* Bfb */,
-				1E698EDD1C23DE7A0072F404 /* Network */,
 				1E698EE01C23DE7A0072F404 /* UnionPay */,
 			);
 			path = Channels;
@@ -308,15 +325,6 @@
 				1E698ED51C23DE7A0072F404 /* UIImageView+WebCache.h */,
 			);
 			path = SDWebImage;
-			sourceTree = "<group>";
-		};
-		1E698EDD1C23DE7A0072F404 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				1E698EDE1C23DE7A0072F404 /* libpingpp+network.a */,
-				1E698EDF1C23DE7A0072F404 /* PingppURLResponse.h */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		1E698EE01C23DE7A0072F404 /* UnionPay */ = {
@@ -679,7 +687,7 @@
 					"$(PROJECT_DIR)/../../lib/Channels/Wx",
 					"$(PROJECT_DIR)/../../lib",
 					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/SDWebImage",
-					"$(PROJECT_DIR)/../../lib/Channels/Network",
+					"$(PROJECT_DIR)/../../lib/Dependencies/Network",
 					"$(PROJECT_DIR)/../../lib/One",
 				);
 				OTHER_LDFLAGS = (
@@ -765,7 +773,7 @@
 					"$(PROJECT_DIR)/../../lib/Channels/Wx",
 					"$(PROJECT_DIR)/../../lib",
 					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/SDWebImage",
-					"$(PROJECT_DIR)/../../lib/Channels/Network",
+					"$(PROJECT_DIR)/../../lib/Dependencies/Network",
 					"$(PROJECT_DIR)/../../lib/One",
 				);
 				OTHER_LDFLAGS = (
