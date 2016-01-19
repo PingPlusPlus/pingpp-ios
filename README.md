@@ -48,6 +48,7 @@ iOS SDK 要求 iOS 6.0 及以上版本
     SystemConfiguration.framework
     Security.framework
     QuartzCore.framework
+    CoreTelephony.framework
     libc++.tbd
     libz.tbd
     libsqlite3.0.tbd
@@ -57,7 +58,6 @@ iOS SDK 要求 iOS 6.0 及以上版本
     百度钱包所需：
 
     ```
-    CoreTelephony.framework
     AddressBook.framework
     AddressBookUI.framework
     AudioToolbox.framework
@@ -104,7 +104,8 @@ iOS SDK 要求 iOS 6.0 及以上版本
     ```
     XXXXXXX does not contain bitcode. You must rebuild it with bitcode enabled (Xcode setting ENABLE_BITCODE), obtain an updated library from the vendor, or disable bitcode for this target.
     ```
-    请到 Xcode 项目的 Build Settings 标签页搜索 bitcode，将 Enable Bitcode 设置为 NO。
+    请到 Xcode 项目的 `Build Settings` 标签页搜索 bitcode，将 `Enable Bitcode` 设置为 `NO`。
+4. 如果不需要应用内快捷支付，请删除 `Channels/Cnp` 目录。否则，请把 `Build Settings` 中的 `CLANG_CXX_LIBRARY` 改成 `libstdc++`。
 
 **关于如何使用 SDK 请参考 [技术文档](https://pingxx.com/document) 或者 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。**
 
