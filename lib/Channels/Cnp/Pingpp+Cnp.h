@@ -16,7 +16,7 @@ typedef void (^PingppResultCompletion)(NSString *result, PingppURLResponse * __n
 typedef NS_ENUM(NSUInteger, PingppCardOperationOption) {
     PingppCardOperationAdd,
     PingppCardOperationRemove,
-    PingppCardOperationUnknown
+    PingppCardOperationSetDefault
 };
 
 typedef NS_ENUM(NSUInteger, PingppCardOperationResultOption) {
@@ -24,6 +24,17 @@ typedef NS_ENUM(NSUInteger, PingppCardOperationResultOption) {
     PingppCardOperationResultFailed,
     PingppCardOperationResultCancelled
 };
+
+typedef NS_ENUM(NSUInteger, PingppCardNetworkOption) {
+    PingppCardNetworkUnionPay = 1,
+    PingppCardNetworkInternational = 1<<1,
+};
+
+@protocol PingppCardManagerDelegate <NSObject>
+
+- (void)manageWithData:(NSDictionary *)data option:(PingppCardOperationOption)operationOption;
+
+@end
 
 @interface Pingpp (Cnp)
 
@@ -53,15 +64,29 @@ typedef NS_ENUM(NSUInteger, PingppCardOperationResultOption) {
  *  @param  customer  Customer JSON 字符串或 NSDictionary
  *  @param  error     JSON 解析失败时的错误信息
  */
-+ (void)setCustomer:(id)customer error:(NSError **)error;
++ (BOOL)setCustomer:(id)customer error:(NSError **)error;
 
 + (nullable NSDictionary *)customer;
+
+/**
+ * 设置 支持的银行卡类型
+ * @param type 可设置为  PingppCardNetworkUnionPay(内卡)
+ *                      PingppCardNetworkInternational(外卡)
+ */
++ (void)setPingppCardNetworkOption:(PingppCardNetworkOption)option;
++ (PingppCardNetworkOption)pingppCardNetworkOption;
 
 /**
  *  打开卡片管理中心
  *  必须先调用过 + (void)setCustomer:error:
  */
-+ (void)openCardManager;
++ (void)openCardManager:(UIViewController *)viewController;
+
+
+/**
+ * 设置卡片管理的代理
+ */
++(void)setCardManagerDelegate:(id)delegate;
 
 /**
  *  卡片管理回调
@@ -73,9 +98,9 @@ typedef NS_ENUM(NSUInteger, PingppCardOperationResultOption) {
 /**
  *  卡片管理结果处理
  *  @param  result   操作结果
- *  @param  data     服务端 SDK 处理得到的结果
+ *  @param  Customer 服务端 SDK 处理得到的结果
  */
-+ (void)continueOperation:(PingppCardOperationResultOption)result withData:(nullable id)data;
++ (void)continueOperation:(PingppCardOperationResultOption)result operationOption:(PingppCardOperationOption) operationOption withCustomer:(nullable id)Customer;
 
 @end
 NS_ASSUME_NONNULL_END
