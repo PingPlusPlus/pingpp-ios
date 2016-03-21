@@ -94,4 +94,10 @@ Pod::Spec.new do |s|
     ss.dependency 'Pingpp/Network'
   end
 
+  s.subspec 'Qgbc' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Qgbc/*.a'
+    ss.dependency 'Pingpp/Core'
+    ss.dependency 'Pingpp/Network'
+  end
+
 end
