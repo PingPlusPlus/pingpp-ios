@@ -18,17 +18,27 @@ iOS SDK 要求 iOS 6.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', '~> 2.2.0'
+    pod 'Pingpp', '~> 2.2.2'
     ```
 
-    默认会包含支付宝、微信、银联和百度钱包。你也可以自己选择渠道。  
-    目前有 `Alipay`、`Wx`、`UnionPay`、`Bfb`、`ApplePay`、`Cnp`、`One` 五个子模块可选择。  
+    默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
+    目前支持以下模块：
+    - `Alipay`（支付宝移动支付）
+    - `Wx`（微信 App 支付）
+    - `UnionPay`（银联手机支付）
+    - `Bfb`（百度钱包）
+    - `ApplePay`
+    - `Cnp`（应用内快捷支付）
+    - `Fqlpay`（分期乐）
+    - `Qgbc`（量化派）
+    - `One`（壹收款）
+
     例如：
 
     ```
-    pod 'Pingpp/Alipay', '~> 2.2.0'
-    pod 'Pingpp/UnionPay', '~> 2.2.0'
-    pod 'Pingpp/One', '~> 2.2.0'
+    pod 'Pingpp/Alipay', '~> 2.2.2'
+    pod 'Pingpp/UnionPay', '~> 2.2.2'
+    pod 'Pingpp/One', '~> 2.2.2'
     ```
 
 2. 运行 `pod install`

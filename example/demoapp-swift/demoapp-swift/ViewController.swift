@@ -44,11 +44,13 @@ class ViewController: UIViewController {
             if data != nil {
                 let charge = NSString(data: data!, encoding: NSUTF8StringEncoding)
                 print(charge! as String)
-                Pingpp.createPayment(charge! as String, appURLScheme: kAppURLScheme) { (result, error) -> Void in
-                    print(result)
-                    if error != nil {
-                        print(error.code.rawValue)
-                        print(error.getMsg())
+                dispatch_async(dispatch_get_main_queue()) {
+                    Pingpp.createPayment(charge! as String, appURLScheme: kAppURLScheme) { (result, error) -> Void in
+                        print(result)
+                        if error != nil {
+                            print(error.code.rawValue)
+                            print(error.getMsg())
+                        }
                     }
                 }
             } else {

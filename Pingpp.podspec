@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.0'
+  s.version      = '2.2.1'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -94,10 +94,15 @@ Pod::Spec.new do |s|
     ss.dependency 'Pingpp/Network'
   end
 
-  s.subspec 'Qgbc' do |ss|
-    ss.vendored_libraries = 'lib/Channels/Qgbc/*.a'
-    ss.dependency 'Pingpp/Core'
-    ss.dependency 'Pingpp/Network'
+ s.subspec 'Qgbc' do |qgbc|
+    qgbc.vendored_libraries = 'lib/Channels/Qgbc/*.a'
+    qgbc.dependency 'Pingpp/Core'
   end
+
+  s.subspec 'Fqlpay' do |fqlpay|
+    fqlpay.vendored_libraries = 'lib/Channels/Fqlpay/*.a'
+    fqlpay.dependency 'Pingpp/Core'
+  end
+
 
 end

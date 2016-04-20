@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00264D941CAA6CA700963B4A /* libpingpp+up.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00264D931CAA6CA700963B4A /* libpingpp+up.a */; };
+		00264D961CAA6CDA00963B4A /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00264D951CAA6CDA00963B4A /* libPaymentControl.a */; };
 		1E420C1B1C46448200E71EC0 /* libpingpp+network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E420C191C46448200E71EC0 /* libpingpp+network.a */; };
 		1E698EEE1C23DE7A0072F404 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E698EAF1C23DE7A0072F404 /* AlipaySDK.bundle */; };
 		1E698EEF1C23DE7A0072F404 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EB01C23DE7A0072F404 /* AlipaySDK.framework */; };
@@ -20,8 +22,6 @@
 		1E698EF91C23DE7A0072F404 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EC51C23DE7A0072F404 /* libSDWebImage.a */; };
 		1E698EFB1C23DE7A0072F404 /* libBaiduWalletSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698ED61C23DE7A0072F404 /* libBaiduWalletSDK.a */; };
 		1E698EFC1C23DE7A0072F404 /* libpingpp+bfb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698ED71C23DE7A0072F404 /* libpingpp+bfb.a */; };
-		1E698F011C23DE7A0072F404 /* libpingpp+up.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EE11C23DE7A0072F404 /* libpingpp+up.a */; };
-		1E698F021C23DE7A0072F404 /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EE21C23DE7A0072F404 /* libUPPayPlugin.a */; };
 		1E698F051C23DE7A0072F404 /* libpingppcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EE81C23DE7A0072F404 /* libpingppcore.a */; };
 		1E698F061C23DE7A0072F404 /* libpingpp+one.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EEA1C23DE7A0072F404 /* libpingpp+one.a */; };
 		1E698F071C23DE7A0072F404 /* Pingpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E698EEC1C23DE7A0072F404 /* Pingpp.bundle */; };
@@ -63,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00264D931CAA6CA700963B4A /* libpingpp+up.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+up.a"; sourceTree = "<group>"; };
+		00264D951CAA6CDA00963B4A /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
 		1E420C191C46448200E71EC0 /* libpingpp+network.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+network.a"; sourceTree = "<group>"; };
 		1E420C1A1C46448200E71EC0 /* PingppURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingppURLResponse.h; sourceTree = "<group>"; };
 		1E698EAF1C23DE7A0072F404 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -95,8 +97,6 @@
 		1E698ED51C23DE7A0072F404 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		1E698ED61C23DE7A0072F404 /* libBaiduWalletSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduWalletSDK.a; sourceTree = "<group>"; };
 		1E698ED71C23DE7A0072F404 /* libpingpp+bfb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+bfb.a"; sourceTree = "<group>"; };
-		1E698EE11C23DE7A0072F404 /* libpingpp+up.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+up.a"; sourceTree = "<group>"; };
-		1E698EE21C23DE7A0072F404 /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
 		1E698EE81C23DE7A0072F404 /* libpingppcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpingppcore.a; sourceTree = "<group>"; };
 		1E698EEA1C23DE7A0072F404 /* libpingpp+one.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+one.a"; sourceTree = "<group>"; };
 		1E698EEB1C23DE7A0072F404 /* Pingpp+One.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pingpp+One.h"; sourceTree = "<group>"; };
@@ -149,19 +149,19 @@
 				1EAA250F1AF2146300952143 /* AudioToolbox.framework in Frameworks */,
 				1E698EF11C23DE7A0072F404 /* libpingpp+applepay.a in Frameworks */,
 				1EAA250D1AF2145500952143 /* MessageUI.framework in Frameworks */,
+				00264D941CAA6CA700963B4A /* libpingpp+up.a in Frameworks */,
 				1EAA25091AF2144500952143 /* QuartzCore.framework in Frameworks */,
 				1E698F061C23DE7A0072F404 /* libpingpp+one.a in Frameworks */,
 				1EAA25071AF2144000952143 /* ImageIO.framework in Frameworks */,
 				1EAA25051AF2143800952143 /* CoreGraphics.framework in Frameworks */,
 				1EAA25031AF2142B00952143 /* CoreTelephony.framework in Frameworks */,
-				1E698F011C23DE7A0072F404 /* libpingpp+up.a in Frameworks */,
+				00264D961CAA6CDA00963B4A /* libPaymentControl.a in Frameworks */,
 				1E420C1B1C46448200E71EC0 /* libpingpp+network.a in Frameworks */,
 				1EAA25011AF2142000952143 /* Security.framework in Frameworks */,
 				1EAA24FF1AF2140D00952143 /* libz.dylib in Frameworks */,
 				1EAA24FD1AF2140800952143 /* libsqlite3.dylib in Frameworks */,
 				1EAA24FB1AF2140100952143 /* libstdc++.dylib in Frameworks */,
 				1EAA24F91AF213FB00952143 /* CFNetwork.framework in Frameworks */,
-				1E698F021C23DE7A0072F404 /* libUPPayPlugin.a in Frameworks */,
 				1EAA24F81AF213F600952143 /* SystemConfiguration.framework in Frameworks */,
 				1EAA24F71AF213EB00952143 /* libc++.dylib in Frameworks */,
 				1E698EFB1C23DE7A0072F404 /* libBaiduWalletSDK.a in Frameworks */,
@@ -330,8 +330,8 @@
 		1E698EE01C23DE7A0072F404 /* UnionPay */ = {
 			isa = PBXGroup;
 			children = (
-				1E698EE11C23DE7A0072F404 /* libpingpp+up.a */,
-				1E698EE21C23DE7A0072F404 /* libUPPayPlugin.a */,
+				00264D951CAA6CDA00963B4A /* libPaymentControl.a */,
+				00264D931CAA6CA700963B4A /* libpingpp+up.a */,
 			);
 			path = UnionPay;
 			sourceTree = "<group>";
@@ -699,7 +699,6 @@
 					"-l\"JSONKit\"",
 					"-l\"SDWebImage\"",
 					"-l\"TouchJSON\"",
-					"-l\"UPPayPlugin\"",
 					"-l\"c++\"",
 					"-l\"pingpp+alipay\"",
 					"-l\"pingpp+bfb\"",
@@ -785,7 +784,6 @@
 					"-l\"JSONKit\"",
 					"-l\"SDWebImage\"",
 					"-l\"TouchJSON\"",
-					"-l\"UPPayPlugin\"",
 					"-l\"c++\"",
 					"-l\"pingpp+alipay\"",
 					"-l\"pingpp+bfb\"",
