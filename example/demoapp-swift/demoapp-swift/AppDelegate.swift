@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // 以下方法调用相关说明请查看 Objective-C 相关文件
     // iOS 8 及以下请用这个
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return Pingpp.handleOpenURL(url, withCompletion: nil)

@@ -94,7 +94,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Pingpp/Network'
   end
 
- s.subspec 'Qgbc' do |qgbc|
+  s.subspec 'Qgbc' do |qgbc|
     qgbc.vendored_libraries = 'lib/Channels/Qgbc/*.a'
     qgbc.dependency 'Pingpp/Core'
   end
@@ -103,6 +103,5 @@ Pod::Spec.new do |s|
     fqlpay.vendored_libraries = 'lib/Channels/Fqlpay/*.a'
     fqlpay.dependency 'Pingpp/Core'
   end
-
 
 end
