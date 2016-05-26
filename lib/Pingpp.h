@@ -18,11 +18,14 @@ typedef NS_ENUM(NSUInteger, PingppErrorOption)
     PingppErrWxNotInstalled,
     PingppErrWxAppNotSupported,
     PingppErrCancelled,
+    PingppErrUnknownCancel,
     PingppErrViewControllerIsNil,
     PingppErrTestmodeNotifyFailed,
     PingppErrChannelReturnFail,
     PingppErrConnectionError,
-    PingppErrUnknownError
+    PingppErrUnknownError,
+    PingppErrActivation,
+    PingppErrRequestTimeout
 };
 
 typedef NS_ENUM(NSUInteger, PingppRequestContentTypeOption) {
@@ -144,5 +147,9 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  */
 + (void)setBdWalletNavTitleColor:(UIColor *)color;
 
+/**
+ * 设置webView navigationItem 颜色
+ */
++ (void)setWebViewItemColor:(UIColor *)itemColor buttonColor:(UIColor*)bntColor;
 @end
 #endif

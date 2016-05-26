@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.2'
+  s.version      = '2.2.4'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -36,34 +36,30 @@ Pod::Spec.new do |s|
     applepay.dependency 'Pingpp/Network'
   end
 
-  s.subspec 'Alipay' do |alipay|
-    alipay.vendored_libraries = 'lib/Channels/Alipay/*.a'
-    alipay.ios.vendored_frameworks = 'lib/Channels/Alipay/AlipaySDK.framework'
-    alipay.resource = 'lib/Channels/Alipay/AlipaySDK.bundle'
-    alipay.dependency 'Pingpp/Core'
+  s.subspec 'Alipay' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Alipay/*.a'
+    ss.ios.vendored_frameworks = 'lib/Channels/Alipay/AlipaySDK.framework'
+    ss.resource = 'lib/Channels/Alipay/AlipaySDK.bundle'
+    ss.frameworks = 'CoreMotion', 'CoreTelephony'
+    ss.dependency 'Pingpp/Core'
   end
 
-  s.subspec 'Wx' do |wx|
-    wx.vendored_libraries = 'lib/Channels/Wx/*.a'
-    wx.public_header_files = 'lib/Channels/Wx/*.h'
-    wx.source_files = 'lib/Channels/Wx/*.h'
-    wx.ios.library = 'sqlite3'
-    wx.frameworks = 'CoreTelephony'
-    wx.dependency 'Pingpp/Core'
+  s.subspec 'Wx' do |ss|
+    ss.dependency 'Pingpp/Core'
   end
 
-  s.subspec 'UnionPay' do |unionpay|
-    unionpay.vendored_libraries = 'lib/Channels/UnionPay/*.a'
-    unionpay.dependency 'Pingpp/Core'
+  s.subspec 'UnionPay' do |ss|
+    ss.vendored_libraries = 'lib/Channels/UnionPay/*.a'
+    ss.dependency 'Pingpp/Core'
   end
 
-  s.subspec 'Bfb' do |bfb|
-    bfb.frameworks = 'CoreTelephony', 'AddressBook', 'AddressBookUI', 'AudioToolbox', 'CoreAudio', 'CoreGraphics', 'ImageIO', 'MapKit', 'MessageUI', 'MobileCoreServices', 'QuartzCore'
-    bfb.public_header_files = 'lib/Channels/Bfb/Dependencies/**/*.h'
-    bfb.source_files = 'lib/Channels/Bfb/Dependencies/**/*.h'
-    bfb.resource = 'lib/Channels/Bfb/*.bundle'
-    bfb.vendored_libraries = 'lib/Channels/Bfb/**/*.a'
-    bfb.dependency 'Pingpp/Core'
+  s.subspec 'Bfb' do |ss|
+    ss.frameworks = 'CoreTelephony', 'AddressBook', 'AddressBookUI', 'AudioToolbox', 'CoreAudio', 'CoreGraphics', 'ImageIO', 'MapKit', 'MessageUI', 'MobileCoreServices', 'QuartzCore'
+    ss.public_header_files = 'lib/Channels/Bfb/Dependencies/**/*.h'
+    ss.source_files = 'lib/Channels/Bfb/Dependencies/**/*.h'
+    ss.resource = 'lib/Channels/Bfb/*.bundle'
+    ss.vendored_libraries = 'lib/Channels/Bfb/**/*.a'
+    ss.dependency 'Pingpp/Core'
   end
 
   s.subspec 'Network' do |ss|
@@ -94,14 +90,27 @@ Pod::Spec.new do |s|
     ss.dependency 'Pingpp/Network'
   end
 
-  s.subspec 'Qgbc' do |qgbc|
-    qgbc.vendored_libraries = 'lib/Channels/Qgbc/*.a'
-    qgbc.dependency 'Pingpp/Core'
+ s.subspec 'Qgbc' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Qgbc/*.a'
+    ss.dependency 'Pingpp/Core'
+    ss.dependency 'Pingpp/WebView'
   end
 
-  s.subspec 'Fqlpay' do |fqlpay|
-    fqlpay.vendored_libraries = 'lib/Channels/Fqlpay/*.a'
-    fqlpay.dependency 'Pingpp/Core'
+  s.subspec 'Fqlpay' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Fqlpay/*.a'
+    ss.dependency 'Pingpp/Core'
+    ss.dependency 'Pingpp/WebView'
+  end
+
+  s.subspec 'Mmdpay' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Mmdpay/*.a'
+    ss.dependency 'Pingpp/Core'
+    ss.dependency 'Pingpp/WebView'
+  end
+
+  s.subspec 'WebView' do |ss|
+    ss.vendored_libraries = 'lib/Dependencies/WebView/*.a'
+    ss.dependency 'Pingpp/Core'
   end
 
 end

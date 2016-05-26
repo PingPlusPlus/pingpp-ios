@@ -18,7 +18,7 @@ iOS SDK 要求 iOS 6.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', '~> 2.2.2'
+    pod 'Pingpp', '~> 2.2.4'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
@@ -31,14 +31,15 @@ iOS SDK 要求 iOS 6.0 及以上版本
     - `Cnp`（应用内快捷支付）
     - `Fqlpay`（分期乐）
     - `Qgbc`（量化派）
+    - `Mmdpay`（么么贷）
     - `One`（壹收款）
 
     例如：
 
     ```
-    pod 'Pingpp/Alipay', '~> 2.2.2'
-    pod 'Pingpp/UnionPay', '~> 2.2.2'
-    pod 'Pingpp/One', '~> 2.2.2'
+    pod 'Pingpp/Alipay', '~> 2.2.4'
+    pod 'Pingpp/UnionPay', '~> 2.2.4'
+    pod 'Pingpp/One', '~> 2.2.4'
     ```
 
 2. 运行 `pod install`
@@ -63,6 +64,8 @@ iOS SDK 要求 iOS 6.0 及以上版本
     libz.tbd
     libsqlite3.0.tbd
     libstdc++.tbd
+    CoreTelephony.framework
+    CoreMotion.framework
     ```
 
     百度钱包所需：

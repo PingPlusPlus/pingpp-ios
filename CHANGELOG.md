@@ -1,3 +1,9 @@
+### 2.2.4
+- 新增：添加么么贷（mmdpay_wap）
+- 更改：分期渠道通过 webView 打开
+- 更改：iOS 9 以下 livemode 字段兼容以下值 [true, false, 1, 0]
+- 更改：更新支付宝 SDK（支持 ipv6），依赖框架（CoreTelephony.framework, CoreMotion.framework）
+
 ### 2.2.2
 * 新增：  
 添加分期乐 (fqlpay_wap)    
