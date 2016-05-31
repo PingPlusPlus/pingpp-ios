@@ -739,6 +739,8 @@
 					"\"Security\"",
 					"-framework",
 					"\"SystemConfiguration\"",
+					"-framework",
+					"\"CoreMotion\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pingplusplus.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -824,6 +826,8 @@
 					"\"Security\"",
 					"-framework",
 					"\"SystemConfiguration\"",
+					"-framework",
+					"\"CoreMotion\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pingplusplus.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -24,8 +24,6 @@
 		1E698E9F1C23D85F0072F404 /* libBaiduWalletSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698E7A1C23D85F0072F404 /* libBaiduWalletSDK.a */; };
 		1E698EA01C23D85F0072F404 /* libpingpp+bfb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698E7B1C23D85F0072F404 /* libpingpp+bfb.a */; };
 		1E698EA51C23D85F0072F404 /* libpingpp+up.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698E851C23D85F0072F404 /* libpingpp+up.a */; };
-		1E698EA71C23D85F0072F404 /* libpingpp+wx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698E881C23D85F0072F404 /* libpingpp+wx.a */; };
-		1E698EA81C23D85F0072F404 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698E891C23D85F0072F404 /* libWeChatSDK.a */; };
 		1E698EA91C23D85F0072F404 /* libpingppcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698E8C1C23D85F0072F404 /* libpingppcore.a */; };
 		1E698EAA1C23D85F0072F404 /* libpingpp+one.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698E8E1C23D85F0072F404 /* libpingpp+one.a */; };
 		1E698EAB1C23D85F0072F404 /* Pingpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E698E901C23D85F0072F404 /* Pingpp.bundle */; };
@@ -77,10 +75,6 @@
 		1E698E7A1C23D85F0072F404 /* libBaiduWalletSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduWalletSDK.a; sourceTree = "<group>"; };
 		1E698E7B1C23D85F0072F404 /* libpingpp+bfb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+bfb.a"; sourceTree = "<group>"; };
 		1E698E851C23D85F0072F404 /* libpingpp+up.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+up.a"; sourceTree = "<group>"; };
-		1E698E881C23D85F0072F404 /* libpingpp+wx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+wx.a"; sourceTree = "<group>"; };
-		1E698E891C23D85F0072F404 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		1E698E8A1C23D85F0072F404 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		1E698E8B1C23D85F0072F404 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		1E698E8C1C23D85F0072F404 /* libpingppcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpingppcore.a; sourceTree = "<group>"; };
 		1E698E8E1C23D85F0072F404 /* libpingpp+one.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+one.a"; sourceTree = "<group>"; };
 		1E698E8F1C23D85F0072F404 /* Pingpp+One.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pingpp+One.h"; sourceTree = "<group>"; };
@@ -116,8 +110,6 @@
 				5F61B02519C81A500035CD99 /* UIKit.framework in Frameworks */,
 				1E698E9A1C23D85F0072F404 /* libTouchJSON.a in Frameworks */,
 				1E698EA91C23D85F0072F404 /* libpingppcore.a in Frameworks */,
-				1E698EA81C23D85F0072F404 /* libWeChatSDK.a in Frameworks */,
-				1E698EA71C23D85F0072F404 /* libpingpp+wx.a in Frameworks */,
 				1E698E941C23D85F0072F404 /* libpingpp+alipay.a in Frameworks */,
 				1E698E9F1C23D85F0072F404 /* libBaiduWalletSDK.a in Frameworks */,
 				1E698E9C1C23D85F0072F404 /* libJSONKit.a in Frameworks */,
@@ -283,10 +275,6 @@
 		1E698E871C23D85F0072F404 /* Wx */ = {
 			isa = PBXGroup;
 			children = (
-				1E698E881C23D85F0072F404 /* libpingpp+wx.a */,
-				1E698E891C23D85F0072F404 /* libWeChatSDK.a */,
-				1E698E8A1C23D85F0072F404 /* WXApi.h */,
-				1E698E8B1C23D85F0072F404 /* WXApiObject.h */,
 			);
 			path = Wx;
 			sourceTree = "<group>";
@@ -636,6 +624,8 @@
 					"\"Security\"",
 					"-framework",
 					"\"SystemConfiguration\"",
+					"-framework",
+					"\"CoreMotion\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingplusplus.demoapp;
 				PRODUCT_NAME = demoapp;
@@ -725,6 +715,8 @@
 					"\"Security\"",
 					"-framework",
 					"\"SystemConfiguration\"",
+					"-framework",
+					"\"CoreMotion\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingplusplus.demoapp;
 				PRODUCT_NAME = demoapp;
