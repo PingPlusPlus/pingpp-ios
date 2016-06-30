@@ -18,7 +18,7 @@ iOS SDK 要求 iOS 6.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', '~> 2.2.4'
+    pod 'Pingpp', '~> 2.2.5'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
@@ -32,14 +32,16 @@ iOS SDK 要求 iOS 6.0 及以上版本
     - `Fqlpay`（分期乐）
     - `Qgbc`（量化派）
     - `Mmdpay`（么么贷）
+    - `CmbWallet`（招行一网通）
+    - `BfbWap`（百度钱包 Wap 支付）            
     - `One`（壹收款）
 
     例如：
 
     ```
-    pod 'Pingpp/Alipay', '~> 2.2.4'
-    pod 'Pingpp/UnionPay', '~> 2.2.4'
-    pod 'Pingpp/One', '~> 2.2.4'
+    pod 'Pingpp/Alipay', '~> 2.2.5'
+    pod 'Pingpp/UnionPay', '~> 2.2.5'
+    pod 'Pingpp/One', '~> 2.2.5'
     ```
 
 2. 运行 `pod install`
@@ -118,8 +120,19 @@ iOS SDK 要求 iOS 6.0 及以上版本
     XXXXXXX does not contain bitcode. You must rebuild it with bitcode enabled (Xcode setting ENABLE_BITCODE), obtain an updated library from the vendor, or disable bitcode for this target.
     ```
     请到 Xcode 项目的 `Build Settings` 标签页搜索 bitcode，将 `Enable Bitcode` 设置为 `NO`。
-4. 如果不需要应用内快捷支付，请删除 `Channels/Cnp` 目录。否则，请把 `Build Settings` 中的 `CLANG_CXX_LIBRARY` 改成 `libstdc++`。
+4. 如果不需要应用内快捷支付，请删除 `Channels/Cnp` 目录。否则，请把 `Build Settings` 中的 `CLANG_CXX_LIBRARY` 改成 `libstdc++`。  
+5. `CmbWallet`（招行一网通） 需要把 招行一网通 提供的秘钥`CMBPublicKey` 添加到 `Info.plist`  如以下代码:
 
+    ```
+    <key>CMBPublicKey</key>          
+        <string>IwxiAyJIT4tlwJSCbRRE0jZFTvYjt02/CrlutsMzd5O4B9PaVyUmIKSasdasdasdhWTyp3Bb9T7c9ujiUJOJ8y7893grwEae9yiOBoBmByVsCMTaxnc+lMr7A9ifk48Tz61WxsxnQTyYzrIVbuerQIUi3PSORwcPMRqi+XLX8qPXkNpLT9dMvjOasdasdasdUaAdPFc2YFHwl9dHf2ydQsxh1BHvaVO0OO+GtZ04ZKjxRyJW2HfghKLJijl;XTjrWSNizcdoefFKQsTdzvcPNvx7PsxuXKo9SosheeS/SHPk9sGNdwvL55yEBA8gNs0XZbkxJYjuwrwsQInC/N6QSaI0f0kyTA==</string>
+    <key>LSApplicationCategoryType</key>
+    ```
+    
+6. `CmbWallet`（招行一网通）  手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 
+7. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets`
+        
+        
 **关于如何使用 SDK 请参考 [开发者中心](https://www.pingxx.com/docs/index) 或者 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。**
 
 ## 注意事项

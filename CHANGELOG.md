@@ -1,3 +1,8 @@
+### 2.2.5
+- 新增：招行一网通（cmb_wallet）
+- 新增：百度钱包 wap版（bfb_wap）
+- 更改：分期乐(fqlpay_wap) 优化支付结果页面
+
 ### 2.2.4
 - 新增：添加么么贷（mmdpay_wap）
 - 更改：分期渠道通过 webView 打开
