@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.5'
+  s.version      = '2.2.6'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -27,13 +27,19 @@ Pod::Spec.new do |s|
     core.dependency 'Pingpp/Network'
   end
 
-  s.subspec 'ApplePay' do |applepay|
-    applepay.ios.weak_frameworks = 'PassKit'
-    applepay.source_files = 'lib/Channels/ApplePay/*.h'
-    applepay.public_header_files = 'lib/Channels/ApplePay/*.h'
-    applepay.vendored_libraries = 'lib/Channels/ApplePay/*.a'
-    applepay.dependency 'Pingpp/Core'
-    applepay.dependency 'Pingpp/Network'
+#  s.subspec 'ApplePay' do |applepay|
+#    applepay.ios.weak_frameworks = 'PassKit'
+#    applepay.source_files = 'lib/Channels/ApplePay/*.h'
+#    applepay.public_header_files = 'lib/Channels/ApplePay/*.h'
+#    applepay.vendored_libraries = 'lib/Channels/ApplePay/*.a'
+#    applepay.dependency 'Pingpp/Core'
+#    applepay.dependency 'Pingpp/Network'
+#  end
+
+  s.subspec 'ApplePay' do|ss|
+    ss.vendored_libraries = 'lib/Channels/ApplePay/*.a'
+    ss.frameworks = 'Passkit'
+    ss.dependency 'Pingpp/Core'
   end
 
   s.subspec 'Alipay' do |ss|
@@ -110,6 +116,12 @@ Pod::Spec.new do |s|
 
   s.subspec 'BfbWap' do |ss|
     ss.vendored_libraries = 'lib/Channels/BfbWap/*.a'
+    ss.dependency 'Pingpp/Core'
+    ss.dependency 'Pingpp/WebView'
+  end
+
+  s.subspec 'Yeepay' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Yeepay/*.a'
     ss.dependency 'Pingpp/Core'
     ss.dependency 'Pingpp/WebView'
   end
