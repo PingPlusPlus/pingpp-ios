@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.6'
+  s.version      = '2.2.7'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -26,15 +26,6 @@ Pod::Spec.new do |s|
     core.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
     core.dependency 'Pingpp/Network'
   end
-
-#  s.subspec 'ApplePay' do |applepay|
-#    applepay.ios.weak_frameworks = 'PassKit'
-#    applepay.source_files = 'lib/Channels/ApplePay/*.h'
-#    applepay.public_header_files = 'lib/Channels/ApplePay/*.h'
-#    applepay.vendored_libraries = 'lib/Channels/ApplePay/*.a'
-#    applepay.dependency 'Pingpp/Core'
-#    applepay.dependency 'Pingpp/Network'
-#  end
 
   s.subspec 'ApplePay' do|ss|
     ss.vendored_libraries = 'lib/Channels/ApplePay/*.a'
@@ -132,6 +123,17 @@ Pod::Spec.new do |s|
     ss.resource = 'lib/Channels/CmbWallet/SecreteKeyBoard'
     ss.dependency 'Pingpp/Core'
     ss.dependency 'Pingpp/WebView'
+  end
+
+  s.subspec 'Jdpay' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Jdpay/*.a'
+    ss.dependency 'Pingpp/Core'
+    ss.dependency 'Pingpp/WebView'
+  end
+
+  s.subspec 'QQWallet' do |ss|
+    ss.vendored_libraries = 'lib/Channels/QQWallet/*.a'
+    ss.dependency 'Pingpp/Core'
   end
 
   s.subspec 'WebView' do |ss|

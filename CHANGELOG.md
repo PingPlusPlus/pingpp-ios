@@ -1,3 +1,7 @@
+### 2.2.7
+- 新增：QQ钱包 （qpay）
+- 新增：京东支付 wap版（jdpay_wap）
+
 ### 2.2.6
 - 新增：分期渠道 添加 processing 状态 (交易处理中)
 - 更改：更新 ApplePay SDK
