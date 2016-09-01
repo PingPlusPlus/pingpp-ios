@@ -25,16 +25,15 @@ iOS SDK 要求 iOS 6.0 及以上版本
     - `Wx`（微信 App 支付）
     - `QQWallet`（QQ钱包 App 支付）
     - `UnionPay`（银联手机支付）
-    - `Bfb`（百度钱包）
     - `ApplePay`
     - `Cnp`（应用内快捷支付）
     - `Fqlpay`（分期乐）
     - `Qgbc`（量化派）
     - `Mmdpay`（么么贷）
     - `CmbWallet`（招行一网通）
-    - `BfbWap`（百度钱包 Wap 支付） 
-    - `Yeepay`（易宝支付 Wap 支付）   
-    - `Jdpay`（京东支付 Wap 支付）   
+    - `BfbWap`（百度钱包 Wap 支付）
+    - `Yeepay`（易宝支付 Wap 支付）
+    - `Jdpay`（京东支付 Wap 支付）
     - `One`（壹收款）
 
     例如：
@@ -49,7 +48,7 @@ iOS SDK 要求 iOS 6.0 及以上版本
 3. 从现在开始使用 `.xcworkspace` 打开项目，而不是 `.xcodeproj`
 4. 添加 URL Schemes：在 Xcode 中，选择你的工程设置项，选中 "TARGETS" 一栏，在 "Info" 标签栏的 "URL Types" 添加 "URL Schemes"，如果使用微信，填入所注册的微信应用程序 id，如果不使用微信，则自定义，允许英文字母和数字，首字母必须是英文字母，建议起名稍复杂一些，尽量避免与其他程序冲突。
 5. 2.1.0 及以上版本，可打开 Debug 模式，打印出 log，方便调试。开启方法：`[Pingpp setDebugMode:YES];`。
-6. 2.2.8 及以上版本，可选择是否 在web渠道中 支付完成后 点击 "返回商户" 按钮 直接关闭支付页面   开启方法：`[Pingpp ignoreResultUrl: YES];` 。
+6. 2.2.8 及以上版本，可选择是否在 WAP 渠道中支付完成后，点击“返回商户”按钮，直接关闭支付页面。开启方法：`[Pingpp ignoreResultUrl: YES];` 。
 
 #### 手动导入
 1. 获取 SDK  
@@ -130,11 +129,11 @@ iOS SDK 要求 iOS 6.0 及以上版本
         <string>IwxiAyJIT4tlwJSCbRRE0jZFTvYjt02/CrlutsMzd5O4B9PaVyUmIKSasdasdasdhWTyp3Bb9T7c9ujiUJOJ8y7893grwEae9yiOBoBmByVsCMTaxnc+lMr7A9ifk48Tz61WxsxnQTyYzrIVbuerQIUi3PSORwcPMRqi+XLX8qPXkNpLT9dMvjOasdasdasdUaAdPFc2YFHwl9dHf2ydQsxh1BHvaVO0OO+GtZ04ZKjxRyJW2HfghKLJijl;XTjrWSNizcdoefFKQsTdzvcPNvx7PsxuXKo9SosheeS/SHPk9sGNdwvL55yEBA8gNs0XZbkxJYjuwrwsQInC/N6QSaI0f0kyTA==</string>
     <key>LSApplicationCategoryType</key>
     ```
-    
-6. `CmbWallet`（招行一网通）  手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 
+
+6. `CmbWallet`（招行一网通）  手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets`
 7. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets`
-        
-        
+
+
 **关于如何使用 SDK 请参考 [开发者中心](https://www.pingxx.com/docs/index) 或者 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。**
 
 ## 注意事项

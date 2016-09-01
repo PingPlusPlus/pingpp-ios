@@ -50,15 +50,6 @@ Pod::Spec.new do |s|
     ss.dependency 'Pingpp/Core'
   end
 
-  s.subspec 'Bfb' do |ss|
-    ss.frameworks = 'CoreTelephony', 'AddressBook', 'AddressBookUI', 'AudioToolbox', 'CoreAudio', 'CoreGraphics', 'ImageIO', 'MapKit', 'MessageUI', 'MobileCoreServices', 'QuartzCore'
-    ss.public_header_files = 'lib/Channels/Bfb/Dependencies/**/*.h'
-    ss.source_files = 'lib/Channels/Bfb/Dependencies/**/*.h'
-    ss.resource = 'lib/Channels/Bfb/*.bundle'
-    ss.vendored_libraries = 'lib/Channels/Bfb/**/*.a'
-    ss.dependency 'Pingpp/Core'
-  end
-
   s.subspec 'Network' do |ss|
     ss.source_files = 'lib/Dependencies/Network/*.h'
     ss.public_header_files = 'lib/Dependencies/Network/*.h'
