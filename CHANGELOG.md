@@ -1,3 +1,11 @@
+### 2.2.8
+- 更改：更新 Apple Pay SDK
+- 更改：所有web渠道添加[Pingpp ignoreResultUrl: YES] 方法   
+- 更改：优化 在某些情况下 会导致[Pingpp handleOpenURL:url withCompletion:nil]崩溃的问题 
+- 更改：优化 壹收款 支付成功页面
+- 更改：优化 SDK 支付失败后的回调信息
+- 删除：bfb渠道(百度钱包) 可以用(bfb_wap)代替
+
 ### 2.2.7
 - 新增：QQ钱包 （qpay）
 - 新增：京东支付 wap版（jdpay_wap）

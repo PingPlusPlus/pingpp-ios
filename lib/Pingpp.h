@@ -25,8 +25,9 @@ typedef NS_ENUM(NSUInteger, PingppErrorOption)
     PingppErrConnectionError,
     PingppErrUnknownError,
     PingppErrActivation,
-    PingppErrRequestTimeout,
-    PingppErrProcessing
+    PingppErrRequestTimeOut,
+    PingppErrProcessing,
+    PingppErrQqNotInstalled,
 };
 
 typedef NS_ENUM(NSUInteger, PingppRequestContentTypeOption) {
