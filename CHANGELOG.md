@@ -1,3 +1,9 @@
+### 2.2.9
+- 新增：账户余额系统(SKD兼容 charge 与 order 对象)
+- 更改：Ping++ DebugLog 信息优化
+- 更改：优化百度钱包网页支付
+- 更改：优化京东支付网页支付
+
 ### 2.2.8
 - 更改：更新 Apple Pay SDK
 - 更改：所有web渠道添加[Pingpp ignoreResultUrl: YES] 方法   
