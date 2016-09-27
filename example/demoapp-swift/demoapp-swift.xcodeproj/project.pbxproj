@@ -7,30 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00264D941CAA6CA700963B4A /* libpingpp+up.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00264D931CAA6CA700963B4A /* libpingpp+up.a */; };
-		00264D961CAA6CDA00963B4A /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00264D951CAA6CDA00963B4A /* libPaymentControl.a */; };
-		1E420C1B1C46448200E71EC0 /* libpingpp+network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E420C191C46448200E71EC0 /* libpingpp+network.a */; };
-		1E698EEE1C23DE7A0072F404 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E698EAF1C23DE7A0072F404 /* AlipaySDK.bundle */; };
-		1E698EEF1C23DE7A0072F404 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EB01C23DE7A0072F404 /* AlipaySDK.framework */; };
-		1E698EF01C23DE7A0072F404 /* libpingpp+alipay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EB11C23DE7A0072F404 /* libpingpp+alipay.a */; };
-		1E698EF11C23DE7A0072F404 /* libpingpp+applepay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EB31C23DE7A0072F404 /* libpingpp+applepay.a */; };
-		1E698EF21C23DE7A0072F404 /* BaiduWalletSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E698EB61C23DE7A0072F404 /* BaiduWalletSDKBundle.bundle */; };
-		1E698EF31C23DE7A0072F404 /* libASIHttpRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EBA1C23DE7A0072F404 /* libASIHttpRequest.a */; };
-		1E698EF51C23DE7A0072F404 /* libBaiduMobStatForSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EBE1C23DE7A0072F404 /* libBaiduMobStatForSDK.a */; };
-		1E698EF61C23DE7A0072F404 /* libTouchJSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EBF1C23DE7A0072F404 /* libTouchJSON.a */; };
-		1E698EF81C23DE7A0072F404 /* libJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EC31C23DE7A0072F404 /* libJSONKit.a */; };
-		1E698EF91C23DE7A0072F404 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EC51C23DE7A0072F404 /* libSDWebImage.a */; };
-		1E698EFB1C23DE7A0072F404 /* libBaiduWalletSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698ED61C23DE7A0072F404 /* libBaiduWalletSDK.a */; };
-		1E698EFC1C23DE7A0072F404 /* libpingpp+bfb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698ED71C23DE7A0072F404 /* libpingpp+bfb.a */; };
-		1E698F051C23DE7A0072F404 /* libpingppcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EE81C23DE7A0072F404 /* libpingppcore.a */; };
-		1E698F061C23DE7A0072F404 /* libpingpp+one.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E698EEA1C23DE7A0072F404 /* libpingpp+one.a */; };
-		1E698F071C23DE7A0072F404 /* Pingpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E698EEC1C23DE7A0072F404 /* Pingpp.bundle */; };
+		0036269E1D9A55CC004E6244 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 003626831D9A55CC004E6244 /* AlipaySDK.bundle */; };
+		0036269F1D9A55CC004E6244 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003626841D9A55CC004E6244 /* AlipaySDK.framework */; };
+		003626A01D9A55CC004E6244 /* libpingpp+alipay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003626851D9A55CC004E6244 /* libpingpp+alipay.a */; };
+		003626A11D9A55CC004E6244 /* libpingpp+bfbWap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003626871D9A55CC004E6244 /* libpingpp+bfbWap.a */; };
+		003626A21D9A55CC004E6244 /* libpingpp+qqwallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003626891D9A55CC004E6244 /* libpingpp+qqwallet.a */; };
+		003626A31D9A55CC004E6244 /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0036268B1D9A55CC004E6244 /* libPaymentControl.a */; };
+		003626A41D9A55CC004E6244 /* libpingpp+up.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0036268C1D9A55CC004E6244 /* libpingpp+up.a */; };
+		003626A51D9A55CC004E6244 /* libpingpp+yeepay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0036268E1D9A55CC004E6244 /* libpingpp+yeepay.a */; };
+		003626A61D9A55CC004E6244 /* libpingpp+network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003626911D9A55CC004E6244 /* libpingpp+network.a */; };
+		003626A71D9A55CC004E6244 /* libpingpp+webview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003626941D9A55CC004E6244 /* libpingpp+webview.a */; };
+		003626A81D9A55CC004E6244 /* libpingppcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003626971D9A55CC004E6244 /* libpingppcore.a */; };
+		003626A91D9A55CC004E6244 /* libpingpp+one.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003626981D9A55CC004E6244 /* libpingpp+one.a */; };
+		003626AA1D9A55CC004E6244 /* Pingpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0036269B1D9A55CC004E6244 /* Pingpp.bundle */; };
 		1EAA24681AF2115B00952143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA24671AF2115B00952143 /* AppDelegate.swift */; };
 		1EAA246A1AF2115B00952143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA24691AF2115B00952143 /* ViewController.swift */; };
 		1EAA246D1AF2115B00952143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA246B1AF2115B00952143 /* Main.storyboard */; };
 		1EAA246F1AF2115B00952143 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA246E1AF2115B00952143 /* Images.xcassets */; };
 		1EAA24721AF2115B00952143 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA24701AF2115B00952143 /* LaunchScreen.xib */; };
-		1EAA247E1AF2115B00952143 /* demoapp_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA247D1AF2115B00952143 /* demoapp_swiftTests.swift */; };
 		1EAA24F71AF213EB00952143 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAA24F61AF213EB00952143 /* libc++.dylib */; };
 		1EAA24F81AF213F600952143 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAA24F11AF213BE00952143 /* SystemConfiguration.framework */; };
 		1EAA24F91AF213FB00952143 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAA24F31AF213C300952143 /* CFNetwork.framework */; };
@@ -52,56 +46,23 @@
 		1EAA25191AF214B300952143 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAA25181AF214B300952143 /* PassKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1EAA24781AF2115B00952143 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EAA245A1AF2115A00952143 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EAA24611AF2115B00952143;
-			remoteInfo = "demoapp-swift";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		00264D931CAA6CA700963B4A /* libpingpp+up.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+up.a"; sourceTree = "<group>"; };
-		00264D951CAA6CDA00963B4A /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
-		1E420C191C46448200E71EC0 /* libpingpp+network.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+network.a"; sourceTree = "<group>"; };
-		1E420C1A1C46448200E71EC0 /* PingppURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingppURLResponse.h; sourceTree = "<group>"; };
-		1E698EAF1C23DE7A0072F404 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		1E698EB01C23DE7A0072F404 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
-		1E698EB11C23DE7A0072F404 /* libpingpp+alipay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+alipay.a"; sourceTree = "<group>"; };
-		1E698EB31C23DE7A0072F404 /* libpingpp+applepay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+applepay.a"; sourceTree = "<group>"; };
-		1E698EB41C23DE7A0072F404 /* Pingpp+ApplePay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pingpp+ApplePay.h"; sourceTree = "<group>"; };
-		1E698EB61C23DE7A0072F404 /* BaiduWalletSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BaiduWalletSDKBundle.bundle; sourceTree = "<group>"; };
-		1E698EB91C23DE7A0072F404 /* ASIHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHttpRequest.h; sourceTree = "<group>"; };
-		1E698EBA1C23DE7A0072F404 /* libASIHttpRequest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libASIHttpRequest.a; sourceTree = "<group>"; };
-		1E698EBE1C23DE7A0072F404 /* libBaiduMobStatForSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStatForSDK.a; sourceTree = "<group>"; };
-		1E698EBF1C23DE7A0072F404 /* libTouchJSON.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTouchJSON.a; sourceTree = "<group>"; };
-		1E698EC21C23DE7A0072F404 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		1E698EC31C23DE7A0072F404 /* libJSONKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libJSONKit.a; sourceTree = "<group>"; };
-		1E698EC51C23DE7A0072F404 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSDWebImage.a; sourceTree = "<group>"; };
-		1E698EC71C23DE7A0072F404 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
-		1E698EC81C23DE7A0072F404 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
-		1E698EC91C23DE7A0072F404 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
-		1E698ECA1C23DE7A0072F404 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
-		1E698ECB1C23DE7A0072F404 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
-		1E698ECC1C23DE7A0072F404 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
-		1E698ECD1C23DE7A0072F404 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
-		1E698ECE1C23DE7A0072F404 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
-		1E698ECF1C23DE7A0072F404 /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
-		1E698ED01C23DE7A0072F404 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
-		1E698ED11C23DE7A0072F404 /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
-		1E698ED21C23DE7A0072F404 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
-		1E698ED31C23DE7A0072F404 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
-		1E698ED41C23DE7A0072F404 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
-		1E698ED51C23DE7A0072F404 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
-		1E698ED61C23DE7A0072F404 /* libBaiduWalletSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduWalletSDK.a; sourceTree = "<group>"; };
-		1E698ED71C23DE7A0072F404 /* libpingpp+bfb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+bfb.a"; sourceTree = "<group>"; };
-		1E698EE81C23DE7A0072F404 /* libpingppcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpingppcore.a; sourceTree = "<group>"; };
-		1E698EEA1C23DE7A0072F404 /* libpingpp+one.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+one.a"; sourceTree = "<group>"; };
-		1E698EEB1C23DE7A0072F404 /* Pingpp+One.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pingpp+One.h"; sourceTree = "<group>"; };
-		1E698EEC1C23DE7A0072F404 /* Pingpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Pingpp.bundle; sourceTree = "<group>"; };
-		1E698EED1C23DE7A0072F404 /* Pingpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pingpp.h; sourceTree = "<group>"; };
+		003626831D9A55CC004E6244 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		003626841D9A55CC004E6244 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		003626851D9A55CC004E6244 /* libpingpp+alipay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+alipay.a"; sourceTree = "<group>"; };
+		003626871D9A55CC004E6244 /* libpingpp+bfbWap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+bfbWap.a"; sourceTree = "<group>"; };
+		003626891D9A55CC004E6244 /* libpingpp+qqwallet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+qqwallet.a"; sourceTree = "<group>"; };
+		0036268B1D9A55CC004E6244 /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
+		0036268C1D9A55CC004E6244 /* libpingpp+up.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+up.a"; sourceTree = "<group>"; };
+		0036268E1D9A55CC004E6244 /* libpingpp+yeepay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+yeepay.a"; sourceTree = "<group>"; };
+		003626911D9A55CC004E6244 /* libpingpp+network.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+network.a"; sourceTree = "<group>"; };
+		003626921D9A55CC004E6244 /* PingppURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingppURLResponse.h; sourceTree = "<group>"; };
+		003626941D9A55CC004E6244 /* libpingpp+webview.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+webview.a"; sourceTree = "<group>"; };
+		003626971D9A55CC004E6244 /* libpingppcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpingppcore.a; sourceTree = "<group>"; };
+		003626981D9A55CC004E6244 /* libpingpp+one.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+one.a"; sourceTree = "<group>"; };
+		003626991D9A55CC004E6244 /* Pingpp+One.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pingpp+One.h"; sourceTree = "<group>"; };
+		0036269B1D9A55CC004E6244 /* Pingpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Pingpp.bundle; sourceTree = "<group>"; };
+		0036269C1D9A55CC004E6244 /* Pingpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pingpp.h; sourceTree = "<group>"; };
 		1EAA24621AF2115B00952143 /* demoapp-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demoapp-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAA24661AF2115B00952143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EAA24671AF2115B00952143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +70,6 @@
 		1EAA246C1AF2115B00952143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1EAA246E1AF2115B00952143 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1EAA24711AF2115B00952143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1EAA24771AF2115B00952143 /* demoapp-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "demoapp-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAA247C1AF2115B00952143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EAA247D1AF2115B00952143 /* demoapp_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoapp_swiftTests.swift; sourceTree = "<group>"; };
 		1EAA24F11AF213BE00952143 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -140,210 +100,144 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EAA25191AF214B300952143 /* PassKit.framework in Frameworks */,
+				0036269F1D9A55CC004E6244 /* AlipaySDK.framework in Frameworks */,
+				003626A91D9A55CC004E6244 /* libpingpp+one.a in Frameworks */,
 				1EAA25171AF2149100952143 /* AddressBookUI.framework in Frameworks */,
 				1EAA25151AF2148C00952143 /* AddressBook.framework in Frameworks */,
 				1EAA250B1AF2144C00952143 /* MobileCoreServices.framework in Frameworks */,
-				1E698EF81C23DE7A0072F404 /* libJSONKit.a in Frameworks */,
 				1EAA25131AF2147300952143 /* MapKit.framework in Frameworks */,
 				1EAA25111AF2146800952143 /* CoreAudio.framework in Frameworks */,
+				003626A61D9A55CC004E6244 /* libpingpp+network.a in Frameworks */,
+				003626A01D9A55CC004E6244 /* libpingpp+alipay.a in Frameworks */,
+				003626A31D9A55CC004E6244 /* libPaymentControl.a in Frameworks */,
 				1EAA250F1AF2146300952143 /* AudioToolbox.framework in Frameworks */,
-				1E698EF11C23DE7A0072F404 /* libpingpp+applepay.a in Frameworks */,
 				1EAA250D1AF2145500952143 /* MessageUI.framework in Frameworks */,
-				00264D941CAA6CA700963B4A /* libpingpp+up.a in Frameworks */,
 				1EAA25091AF2144500952143 /* QuartzCore.framework in Frameworks */,
-				1E698F061C23DE7A0072F404 /* libpingpp+one.a in Frameworks */,
 				1EAA25071AF2144000952143 /* ImageIO.framework in Frameworks */,
 				1EAA25051AF2143800952143 /* CoreGraphics.framework in Frameworks */,
+				003626A11D9A55CC004E6244 /* libpingpp+bfbWap.a in Frameworks */,
+				003626A21D9A55CC004E6244 /* libpingpp+qqwallet.a in Frameworks */,
+				003626A81D9A55CC004E6244 /* libpingppcore.a in Frameworks */,
 				1EAA25031AF2142B00952143 /* CoreTelephony.framework in Frameworks */,
-				00264D961CAA6CDA00963B4A /* libPaymentControl.a in Frameworks */,
-				1E420C1B1C46448200E71EC0 /* libpingpp+network.a in Frameworks */,
 				1EAA25011AF2142000952143 /* Security.framework in Frameworks */,
+				003626A71D9A55CC004E6244 /* libpingpp+webview.a in Frameworks */,
 				1EAA24FF1AF2140D00952143 /* libz.dylib in Frameworks */,
 				1EAA24FD1AF2140800952143 /* libsqlite3.dylib in Frameworks */,
 				1EAA24FB1AF2140100952143 /* libstdc++.dylib in Frameworks */,
 				1EAA24F91AF213FB00952143 /* CFNetwork.framework in Frameworks */,
+				003626A51D9A55CC004E6244 /* libpingpp+yeepay.a in Frameworks */,
 				1EAA24F81AF213F600952143 /* SystemConfiguration.framework in Frameworks */,
+				003626A41D9A55CC004E6244 /* libpingpp+up.a in Frameworks */,
 				1EAA24F71AF213EB00952143 /* libc++.dylib in Frameworks */,
-				1E698EFB1C23DE7A0072F404 /* libBaiduWalletSDK.a in Frameworks */,
-				1E698EEF1C23DE7A0072F404 /* AlipaySDK.framework in Frameworks */,
-				1E698EF51C23DE7A0072F404 /* libBaiduMobStatForSDK.a in Frameworks */,
-				1E698EF01C23DE7A0072F404 /* libpingpp+alipay.a in Frameworks */,
-				1E698EF91C23DE7A0072F404 /* libSDWebImage.a in Frameworks */,
-				1E698EF31C23DE7A0072F404 /* libASIHttpRequest.a in Frameworks */,
-				1E698EFC1C23DE7A0072F404 /* libpingpp+bfb.a in Frameworks */,
-				1E698EF61C23DE7A0072F404 /* libTouchJSON.a in Frameworks */,
-				1E698F051C23DE7A0072F404 /* libpingppcore.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1EAA24741AF2115B00952143 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E420C171C46448200E71EC0 /* Dependencies */ = {
+		003626861D9A55CC004E6244 /* Alipay */ = {
 			isa = PBXGroup;
 			children = (
-				1E420C181C46448200E71EC0 /* Network */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
-		1E420C181C46448200E71EC0 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				1E420C191C46448200E71EC0 /* libpingpp+network.a */,
-				1E420C1A1C46448200E71EC0 /* PingppURLResponse.h */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		1E698EAC1C23DE7A0072F404 /* Pingpp */ = {
-			isa = PBXGroup;
-			children = (
-				1E698EAD1C23DE7A0072F404 /* Channels */,
-				1E698EE81C23DE7A0072F404 /* libpingppcore.a */,
-				1E420C171C46448200E71EC0 /* Dependencies */,
-				1E698EE91C23DE7A0072F404 /* One */,
-				1E698EEC1C23DE7A0072F404 /* Pingpp.bundle */,
-				1E698EED1C23DE7A0072F404 /* Pingpp.h */,
-			);
-			name = Pingpp;
-			path = ../../../lib;
-			sourceTree = "<group>";
-		};
-		1E698EAD1C23DE7A0072F404 /* Channels */ = {
-			isa = PBXGroup;
-			children = (
-				1E698EAE1C23DE7A0072F404 /* Alipay */,
-				1E698EB21C23DE7A0072F404 /* ApplePay */,
-				1E698EB51C23DE7A0072F404 /* Bfb */,
-				1E698EE01C23DE7A0072F404 /* UnionPay */,
-			);
-			path = Channels;
-			sourceTree = "<group>";
-		};
-		1E698EAE1C23DE7A0072F404 /* Alipay */ = {
-			isa = PBXGroup;
-			children = (
-				1E698EAF1C23DE7A0072F404 /* AlipaySDK.bundle */,
-				1E698EB01C23DE7A0072F404 /* AlipaySDK.framework */,
-				1E698EB11C23DE7A0072F404 /* libpingpp+alipay.a */,
+				003626831D9A55CC004E6244 /* AlipaySDK.bundle */,
+				003626841D9A55CC004E6244 /* AlipaySDK.framework */,
+				003626851D9A55CC004E6244 /* libpingpp+alipay.a */,
 			);
 			path = Alipay;
 			sourceTree = "<group>";
 		};
-		1E698EB21C23DE7A0072F404 /* ApplePay */ = {
+		003626881D9A55CC004E6244 /* BfbWap */ = {
 			isa = PBXGroup;
 			children = (
-				1E698EB31C23DE7A0072F404 /* libpingpp+applepay.a */,
-				1E698EB41C23DE7A0072F404 /* Pingpp+ApplePay.h */,
+				003626871D9A55CC004E6244 /* libpingpp+bfbWap.a */,
 			);
-			path = ApplePay;
+			path = BfbWap;
 			sourceTree = "<group>";
 		};
-		1E698EB51C23DE7A0072F404 /* Bfb */ = {
+		0036268A1D9A55CC004E6244 /* QQWallet */ = {
 			isa = PBXGroup;
 			children = (
-				1E698EB61C23DE7A0072F404 /* BaiduWalletSDKBundle.bundle */,
-				1E698EB71C23DE7A0072F404 /* Dependencies */,
-				1E698ED61C23DE7A0072F404 /* libBaiduWalletSDK.a */,
-				1E698ED71C23DE7A0072F404 /* libpingpp+bfb.a */,
+				003626891D9A55CC004E6244 /* libpingpp+qqwallet.a */,
 			);
-			path = Bfb;
+			path = QQWallet;
 			sourceTree = "<group>";
 		};
-		1E698EB71C23DE7A0072F404 /* Dependencies */ = {
+		0036268D1D9A55CC004E6244 /* UnionPay */ = {
 			isa = PBXGroup;
 			children = (
-				1E698EB81C23DE7A0072F404 /* ASIHttpRequest */,
-				1E698EBC1C23DE7A0072F404 /* BaiduMobStat */,
-				1E698EC11C23DE7A0072F404 /* JSONKit */,
-				1E698EC41C23DE7A0072F404 /* SDWebImage */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
-		1E698EB81C23DE7A0072F404 /* ASIHttpRequest */ = {
-			isa = PBXGroup;
-			children = (
-				1E698EB91C23DE7A0072F404 /* ASIHttpRequest.h */,
-				1E698EBA1C23DE7A0072F404 /* libASIHttpRequest.a */,
-			);
-			path = ASIHttpRequest;
-			sourceTree = "<group>";
-		};
-		1E698EBC1C23DE7A0072F404 /* BaiduMobStat */ = {
-			isa = PBXGroup;
-			children = (
-				1E698EBD1C23DE7A0072F404 /* BaiduMobStat */,
-				1E698EBF1C23DE7A0072F404 /* libTouchJSON.a */,
-			);
-			path = BaiduMobStat;
-			sourceTree = "<group>";
-		};
-		1E698EBD1C23DE7A0072F404 /* BaiduMobStat */ = {
-			isa = PBXGroup;
-			children = (
-				1E698EBE1C23DE7A0072F404 /* libBaiduMobStatForSDK.a */,
-			);
-			path = BaiduMobStat;
-			sourceTree = "<group>";
-		};
-		1E698EC11C23DE7A0072F404 /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				1E698EC21C23DE7A0072F404 /* JSONKit.h */,
-				1E698EC31C23DE7A0072F404 /* libJSONKit.a */,
-			);
-			path = JSONKit;
-			sourceTree = "<group>";
-		};
-		1E698EC41C23DE7A0072F404 /* SDWebImage */ = {
-			isa = PBXGroup;
-			children = (
-				1E698EC51C23DE7A0072F404 /* libSDWebImage.a */,
-				1E698EC71C23DE7A0072F404 /* MKAnnotationView+WebCache.h */,
-				1E698EC81C23DE7A0072F404 /* NSData+ImageContentType.h */,
-				1E698EC91C23DE7A0072F404 /* SDImageCache.h */,
-				1E698ECA1C23DE7A0072F404 /* SDWebImageCompat.h */,
-				1E698ECB1C23DE7A0072F404 /* SDWebImageDecoder.h */,
-				1E698ECC1C23DE7A0072F404 /* SDWebImageDownloader.h */,
-				1E698ECD1C23DE7A0072F404 /* SDWebImageDownloaderOperation.h */,
-				1E698ECE1C23DE7A0072F404 /* SDWebImageManager.h */,
-				1E698ECF1C23DE7A0072F404 /* SDWebImageOperation.h */,
-				1E698ED01C23DE7A0072F404 /* SDWebImagePrefetcher.h */,
-				1E698ED11C23DE7A0072F404 /* UIButton+WebCache.h */,
-				1E698ED21C23DE7A0072F404 /* UIImage+GIF.h */,
-				1E698ED31C23DE7A0072F404 /* UIImage+MultiFormat.h */,
-				1E698ED41C23DE7A0072F404 /* UIImage+WebP.h */,
-				1E698ED51C23DE7A0072F404 /* UIImageView+WebCache.h */,
-			);
-			path = SDWebImage;
-			sourceTree = "<group>";
-		};
-		1E698EE01C23DE7A0072F404 /* UnionPay */ = {
-			isa = PBXGroup;
-			children = (
-				00264D951CAA6CDA00963B4A /* libPaymentControl.a */,
-				00264D931CAA6CA700963B4A /* libpingpp+up.a */,
+				0036268B1D9A55CC004E6244 /* libPaymentControl.a */,
+				0036268C1D9A55CC004E6244 /* libpingpp+up.a */,
 			);
 			path = UnionPay;
 			sourceTree = "<group>";
 		};
-		1E698EE91C23DE7A0072F404 /* One */ = {
+		0036268F1D9A55CC004E6244 /* Yeepay */ = {
 			isa = PBXGroup;
 			children = (
-				1E698EEA1C23DE7A0072F404 /* libpingpp+one.a */,
-				1E698EEB1C23DE7A0072F404 /* Pingpp+One.h */,
+				0036268E1D9A55CC004E6244 /* libpingpp+yeepay.a */,
+			);
+			path = Yeepay;
+			sourceTree = "<group>";
+		};
+		003626901D9A55CC004E6244 /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				003626861D9A55CC004E6244 /* Alipay */,
+				003626881D9A55CC004E6244 /* BfbWap */,
+				0036268A1D9A55CC004E6244 /* QQWallet */,
+				0036268D1D9A55CC004E6244 /* UnionPay */,
+				0036268F1D9A55CC004E6244 /* Yeepay */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		003626931D9A55CC004E6244 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				003626911D9A55CC004E6244 /* libpingpp+network.a */,
+				003626921D9A55CC004E6244 /* PingppURLResponse.h */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		003626951D9A55CC004E6244 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				003626941D9A55CC004E6244 /* libpingpp+webview.a */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		003626961D9A55CC004E6244 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				003626931D9A55CC004E6244 /* Network */,
+				003626951D9A55CC004E6244 /* WebView */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		0036269A1D9A55CC004E6244 /* One */ = {
+			isa = PBXGroup;
+			children = (
+				003626981D9A55CC004E6244 /* libpingpp+one.a */,
+				003626991D9A55CC004E6244 /* Pingpp+One.h */,
 			);
 			path = One;
 			sourceTree = "<group>";
+		};
+		0036269D1D9A55CC004E6244 /* Pingpp */ = {
+			isa = PBXGroup;
+			children = (
+				003626901D9A55CC004E6244 /* Channels */,
+				003626961D9A55CC004E6244 /* Dependencies */,
+				003626971D9A55CC004E6244 /* libpingppcore.a */,
+				0036269A1D9A55CC004E6244 /* One */,
+				0036269B1D9A55CC004E6244 /* Pingpp.bundle */,
+				0036269C1D9A55CC004E6244 /* Pingpp.h */,
+			);
+			name = Pingpp;
+			path = "/Users/yulitao/Desktop/pingpp-ios/example/demoapp/../../lib";
+			sourceTree = "<absolute>";
 		};
 		1EAA24591AF2115A00952143 = {
 			isa = PBXGroup;
@@ -359,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				1EAA24621AF2115B00952143 /* demoapp-swift.app */,
-				1EAA24771AF2115B00952143 /* demoapp-swiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,7 +260,7 @@
 		1EAA24641AF2115B00952143 /* demoapp-swift */ = {
 			isa = PBXGroup;
 			children = (
-				1E698EAC1C23DE7A0072F404 /* Pingpp */,
+				0036269D1D9A55CC004E6244 /* Pingpp */,
 				1EAA24671AF2115B00952143 /* AppDelegate.swift */,
 				1EAA24691AF2115B00952143 /* ViewController.swift */,
 				1EAA246B1AF2115B00952143 /* Main.storyboard */,
@@ -450,24 +343,6 @@
 			productReference = 1EAA24621AF2115B00952143 /* demoapp-swift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1EAA24761AF2115B00952143 /* demoapp-swiftTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1EAA24841AF2115B00952143 /* Build configuration list for PBXNativeTarget "demoapp-swiftTests" */;
-			buildPhases = (
-				1EAA24731AF2115B00952143 /* Sources */,
-				1EAA24741AF2115B00952143 /* Frameworks */,
-				1EAA24751AF2115B00952143 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1EAA24791AF2115B00952143 /* PBXTargetDependency */,
-			);
-			name = "demoapp-swiftTests";
-			productName = "demoapp-swiftTests";
-			productReference = 1EAA24771AF2115B00952143 /* demoapp-swiftTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -480,10 +355,8 @@
 				TargetAttributes = {
 					1EAA24611AF2115B00952143 = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					1EAA24761AF2115B00952143 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 1EAA24611AF2115B00952143;
+						DevelopmentTeam = 3XCAYELUBS;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -501,7 +374,6 @@
 			projectRoot = "";
 			targets = (
 				1EAA24611AF2115B00952143 /* demoapp-swift */,
-				1EAA24761AF2115B00952143 /* demoapp-swiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -511,19 +383,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E698EEE1C23DE7A0072F404 /* AlipaySDK.bundle in Resources */,
 				1EAA246D1AF2115B00952143 /* Main.storyboard in Resources */,
 				1EAA24721AF2115B00952143 /* LaunchScreen.xib in Resources */,
-				1E698F071C23DE7A0072F404 /* Pingpp.bundle in Resources */,
-				1E698EF21C23DE7A0072F404 /* BaiduWalletSDKBundle.bundle in Resources */,
+				0036269E1D9A55CC004E6244 /* AlipaySDK.bundle in Resources */,
+				003626AA1D9A55CC004E6244 /* Pingpp.bundle in Resources */,
 				1EAA246F1AF2115B00952143 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1EAA24751AF2115B00952143 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,23 +403,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1EAA24731AF2115B00952143 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1EAA247E1AF2115B00952143 /* demoapp_swiftTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1EAA24791AF2115B00952143 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1EAA24611AF2115B00952143 /* demoapp-swift */;
-			targetProxy = 1EAA24781AF2115B00952143 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1EAA246B1AF2115B00952143 /* Main.storyboard */ = {
@@ -666,6 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				DEVELOPMENT_TEAM = 3XCAYELUBS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -677,31 +526,20 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../lib/Channels/Alipay",
-					"$(PROJECT_DIR)/../../lib/Channels/ApplePay",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/ASIHttpRequest",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/BaiduMobStat/BaiduMobStat",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/BaiduMobStat",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/JSONKit",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb",
 					"$(PROJECT_DIR)/../../lib/Channels/UnionPay",
-					"$(PROJECT_DIR)/../../lib/Channels/Wx",
 					"$(PROJECT_DIR)/../../lib",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/SDWebImage",
 					"$(PROJECT_DIR)/../../lib/Dependencies/Network",
 					"$(PROJECT_DIR)/../../lib/One",
+					"$(PROJECT_DIR)/../../lib/Channels/BfbWap",
+					"$(PROJECT_DIR)/../../lib/Channels/QQWallet",
+					"$(PROJECT_DIR)/../../lib/Dependencies/Webview",
+					"$(PROJECT_DIR)/../../lib/Channels/Yeepay",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"ASIHttpRequest\"",
-					"-l\"BaiduMobStatForSDK\"",
-					"-l\"BaiduWalletSDK\"",
-					"-l\"JSONKit\"",
-					"-l\"SDWebImage\"",
-					"-l\"TouchJSON\"",
 					"-l\"c++\"",
 					"-l\"pingpp+alipay\"",
-					"-l\"pingpp+bfb\"",
 					"-l\"pingpp+network\"",
 					"-l\"pingpp+one\"",
 					"-l\"pingpp+up\"",
@@ -742,9 +580,11 @@
 					"-framework",
 					"\"CoreMotion\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pingplusplus.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pingplusplus.demoapp-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.0;
 				SWIFT_OBJC_BRIDGING_HEADER = "demoapp-swift/demoapp-swift-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -753,6 +593,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				DEVELOPMENT_TEAM = 3XCAYELUBS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -764,31 +605,20 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../lib/Channels/Alipay",
-					"$(PROJECT_DIR)/../../lib/Channels/ApplePay",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/ASIHttpRequest",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/BaiduMobStat/BaiduMobStat",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/BaiduMobStat",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/JSONKit",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb",
 					"$(PROJECT_DIR)/../../lib/Channels/UnionPay",
-					"$(PROJECT_DIR)/../../lib/Channels/Wx",
 					"$(PROJECT_DIR)/../../lib",
-					"$(PROJECT_DIR)/../../lib/Channels/Bfb/Dependencies/SDWebImage",
 					"$(PROJECT_DIR)/../../lib/Dependencies/Network",
 					"$(PROJECT_DIR)/../../lib/One",
+					"$(PROJECT_DIR)/../../lib/Channels/BfbWap",
+					"$(PROJECT_DIR)/../../lib/Channels/QQWallet",
+					"$(PROJECT_DIR)/../../lib/Dependencies/Webview",
+					"$(PROJECT_DIR)/../../lib/Channels/Yeepay",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"ASIHttpRequest\"",
-					"-l\"BaiduMobStatForSDK\"",
-					"-l\"BaiduWalletSDK\"",
-					"-l\"JSONKit\"",
-					"-l\"SDWebImage\"",
-					"-l\"TouchJSON\"",
 					"-l\"c++\"",
 					"-l\"pingpp+alipay\"",
-					"-l\"pingpp+bfb\"",
 					"-l\"pingpp+network\"",
 					"-l\"pingpp+one\"",
 					"-l\"pingpp+up\"",
@@ -829,45 +659,11 @@
 					"-framework",
 					"\"CoreMotion\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pingplusplus.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pingplusplus.demoapp-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.0;
 				SWIFT_OBJC_BRIDGING_HEADER = "demoapp-swift/demoapp-swift-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		1EAA24851AF2115B00952143 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "demoapp-swiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pingplusplus.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/demoapp-swift.app/demoapp-swift";
-			};
-			name = Debug;
-		};
-		1EAA24861AF2115B00952143 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "demoapp-swiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pingplusplus.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/demoapp-swift.app/demoapp-swift";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -888,15 +684,6 @@
 			buildConfigurations = (
 				1EAA24821AF2115B00952143 /* Debug */,
 				1EAA24831AF2115B00952143 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1EAA24841AF2115B00952143 /* Build configuration list for PBXNativeTarget "demoapp-swiftTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1EAA24851AF2115B00952143 /* Debug */,
-				1EAA24861AF2115B00952143 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

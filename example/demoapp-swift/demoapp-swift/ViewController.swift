@@ -24,36 +24,36 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
 
-        let postDict : AnyObject = NSDictionary(objects: ["alipay", "10"], forKeys: ["channel", "amount"])
+        let postDict : AnyObject = NSDictionary(objects: ["alipay", "10"], forKeys: ["channel" as NSCopying, "amount" as NSCopying])
         var postData: NSData = NSData()
         do {
-            try postData = NSJSONSerialization.dataWithJSONObject(postDict, options: NSJSONWritingOptions.PrettyPrinted)
+            try postData = JSONSerialization.data(withJSONObject: postDict, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
         } catch {
             print("Serialization error")
         }
         
         let url = NSURL(string: kBackendChargeURL)
-        let session = NSURLSession.sharedSession()
-        let request = NSMutableURLRequest(URL: url!)
-        request.HTTPMethod = "POST"
+        let session = URLSession.shared
+        let request = NSMutableURLRequest(url: url! as URL)
+        request.httpMethod = "POST"
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        request.HTTPBody = postData
+        request.httpBody = postData as Data
 
-        let sessionTask = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+        let sessionTask = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
             if data != nil {
-                let charge = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                let charge = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 print(charge! as String)
-                dispatch_async(dispatch_get_main_queue()) {
-                    Pingpp.createPayment(charge! as String, appURLScheme: kAppURLScheme) { (result, error) -> Void in
+                
+                    Pingpp.createPayment(charge! as String as String as NSObject!, appURLScheme: kAppURLScheme) { (result, error) -> Void in
                         print(result)
                         if error != nil {
-                            print(error.code.rawValue)
-                            print(error.getMsg())
+                            print(error?.code.rawValue)
+                            print(error?.getMsg())
                         }
                     }
-                }
+                
             } else {
                 print("response data is nil")
             }
