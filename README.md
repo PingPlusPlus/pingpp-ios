@@ -104,6 +104,7 @@ iOS SDK 要求 iOS 6.0 及以上版本
         <string>weixin</string>
         <string>wechat</string>
         <string>alipay</string>
+        <string>alipays</string>
         <string>mqq</string>
     </array>
     ```
