@@ -11,20 +11,19 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://pingxx.com'
   s.license      = 'COMMERCIAL'
   s.author       = { 'Afon Weng' => 'xufeng.weng@pingxx.com' }
-  s.platform     = :ios, '5.1.1'
-  s.source       = { :git => 'https://github.com/PingPlusPlus/pingpp-ios.git', :tag => s.version }
+  s.platform     = :ios, '7.0'
+  s.source       = { :http => "https://github.com/PingPlusPlus/pingpp-ios/archive/#{s.version}.zip" }
   s.requires_arc = true
   s.default_subspec = 'Core', 'Alipay', 'UnionPay'
 
   s.subspec 'Core' do |core|
-    core.source_files = 'lib/*.h'
-    core.public_header_files = 'lib/*.h'
-    core.vendored_libraries = 'lib/*.a'
+    core.source_files = 'lib/*.h', 'lib/Dependencies/Network/*.h'
+    core.public_header_files = 'lib/*.h', 'lib/Dependencies/Network/*.h'
+    core.vendored_libraries = 'lib/*.a', 'lib/Dependencies/Network/*.a'
     core.resource = 'lib/*.bundle'
     core.frameworks = 'CFNetwork', 'SystemConfiguration', 'Security'
     core.ios.library = 'c++', 'stdc++', 'z'
     core.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
-    core.dependency 'Pingpp/Network'
   end
 
   s.subspec 'ApplePay' do|ss|
@@ -50,35 +49,15 @@ Pod::Spec.new do |s|
     ss.dependency 'Pingpp/Core'
   end
 
-  s.subspec 'Network' do |ss|
-    ss.source_files = 'lib/Dependencies/Network/*.h'
-    ss.public_header_files = 'lib/Dependencies/Network/*.h'
-    ss.vendored_libraries = 'lib/Dependencies/Network/*.a'
-  end
-
-  s.subspec 'Cnp' do |ss|
-    ss.frameworks = 'AudioToolbox'
-    ss.source_files = 'lib/Channels/Cnp/*.h'
-    ss.public_header_files = 'lib/Channels/Cnp/*.h'
-    ss.vendored_libraries = 'lib/Channels/Cnp/*.a'
-    ss.resource = 'lib/Channels/Cnp/*.bundle'
-    ss.dependency 'Pingpp/Core'
-    ss.dependency 'Pingpp/Network'
-    ss.xcconfig = {
-      'CLANG_CXX_LIBRARY' => 'libstdc++'
-    }
-  end
-
   s.subspec 'One' do |ss|
     ss.frameworks = 'QuartzCore'
     ss.source_files = 'lib/One/*.h'
     ss.public_header_files = 'lib/One/*.h'
     ss.vendored_libraries = 'lib/One/*.a'
     ss.dependency 'Pingpp/Core'
-    ss.dependency 'Pingpp/Network'
   end
 
- s.subspec 'Qgbc' do |ss|
+  s.subspec 'Qgbc' do |ss|
     ss.vendored_libraries = 'lib/Channels/Qgbc/*.a'
     ss.dependency 'Pingpp/Core'
     ss.dependency 'Pingpp/WebView'
