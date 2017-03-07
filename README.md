@@ -8,7 +8,7 @@ __当前版本，不需要微信的 SDK，可以正常调用微信支付__
 
 ## 版本要求
 
-iOS SDK 要求 iOS 6.0 及以上版本
+iOS SDK 要求 iOS 7.0 及以上版本
 
 ## 接入方法
 ### 安装
@@ -16,7 +16,7 @@ iOS SDK 要求 iOS 6.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', '~> 2.2.10'
+    pod 'Pingpp', '~> 2.2.12'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
@@ -26,7 +26,6 @@ iOS SDK 要求 iOS 6.0 及以上版本
     - `QQWallet`（QQ钱包 App 支付）
     - `UnionPay`（银联手机支付）
     - `ApplePay`
-    - `Cnp`（应用内快捷支付）
     - `Fqlpay`（分期乐）
     - `Qgbc`（量化派）
     - `Mmdpay`（么么贷）
@@ -39,9 +38,9 @@ iOS SDK 要求 iOS 6.0 及以上版本
     例如：
 
     ```
-    pod 'Pingpp/Alipay', '~> 2.2.10'
-    pod 'Pingpp/UnionPay', '~> 2.2.10'
-    pod 'Pingpp/One', '~> 2.2.10'
+    pod 'Pingpp/Alipay', '~> 2.2.12'
+    pod 'Pingpp/UnionPay', '~> 2.2.12'
+    pod 'Pingpp/One', '~> 2.2.12'
     ```
 
 2. 运行 `pod install`
@@ -70,19 +69,6 @@ iOS SDK 要求 iOS 6.0 及以上版本
     CoreMotion.framework
     ```
 
-    百度钱包所需：
-
-    ```
-    AddressBook.framework
-    AddressBookUI.framework
-    AudioToolbox.framework
-    CoreAudio.framework
-    CoreGraphics.framework
-    ImageIO.framework
-    MapKit.framework
-    MessageUI.framework
-    MobileCoreServices.framework
-    ```
 
     Apple Pay 所需：
 
@@ -122,9 +108,8 @@ iOS SDK 要求 iOS 6.0 及以上版本
     ```
     XXXXXXX does not contain bitcode. You must rebuild it with bitcode enabled (Xcode setting ENABLE_BITCODE), obtain an updated library from the vendor, or disable bitcode for this target.
     ```
-    请到 Xcode 项目的 `Build Settings` 标签页搜索 bitcode，将 `Enable Bitcode` 设置为 `NO`。
-4. 如果不需要应用内快捷支付，请删除 `Channels/Cnp` 目录。否则，请把 `Build Settings` 中的 `CLANG_CXX_LIBRARY` 改成 `libstdc++`。  
-5. `CmbWallet`（招行一网通） 需要把 招行一网通 提供的秘钥`CMBPublicKey` 添加到 `Info.plist`  如以下代码:
+    请到 Xcode 项目的 `Build Settings` 标签页搜索 bitcode，将 `Enable Bitcode` 设置为 `NO`。  
+4. `CmbWallet`（招行一网通） 需要把 招行一网通 提供的秘钥`CMBPublicKey` 添加到 `Info.plist`  如以下代码:
 
     ```
     <key>CMBPublicKey</key>          
@@ -132,13 +117,13 @@ iOS SDK 要求 iOS 6.0 及以上版本
         </string>
     ```
 
-6. `CmbWallet`（招行一网通）  手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除
-7. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除
+5. `CmbWallet`（招行一网通）  手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除
+6. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除
 
 
 **关于如何使用 SDK 请参考 [开发者中心](https://www.pingxx.com/docs/index) 或者 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。**
 
 ## 注意事项
 
-- 由于百度钱包 SDK 不支持 iOS 模拟器，目前带有百度钱包的 Ping++ SDK 只能运行于真机。
 - 如果不需要 Apple Pay，请不要导入 Apple Pay 的静态库。以免提交到 App Store 时审核不通过。
+- 请勿直接使用客户端支付结果作为最终判定订单状态的依据，由于 Ping++ 没有参与你的客户端和第三方渠道的交互，无法保证客户端支付结果的安全性，建议订单状态的更新对比客户端的渠道同步回调信息和服务端的 Ping++ Webhooks 通知来确定是否修改。
