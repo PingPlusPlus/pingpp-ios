@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = 'COMMERCIAL'
   s.author       = { 'Afon Weng' => 'xufeng.weng@pingxx.com' }
   s.platform     = :ios, '7.0'
-  s.source       = { :git => 'https://github.com/PingPlusPlus/pingpp-ios.git', :tag => s.version }
+  s.source       = { :git => 'https://git.coding.net/pingplusplus/pingpp-ios.git', :tag => s.version }
   s.requires_arc = true
   s.default_subspec = 'Core', 'Alipay', 'UnionPay'
 
