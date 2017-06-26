@@ -16,7 +16,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', '~> 2.2.13'
+    pod 'Pingpp', '~> 2.2.14'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
@@ -38,9 +38,9 @@ iOS SDK 要求 iOS 7.0 及以上版本
     例如：
 
     ```
-    pod 'Pingpp/Alipay', '~> 2.2.13'
-    pod 'Pingpp/UnionPay', '~> 2.2.13'
-    pod 'Pingpp/One', '~> 2.2.13'
+    pod 'Pingpp/Alipay', '~> 2.2.14'
+    pod 'Pingpp/UnionPay', '~> 2.2.14'
+    pod 'Pingpp/One', '~> 2.2.14'
     ```
 
 2. 运行 `pod install`
@@ -109,7 +109,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
     XXXXXXX does not contain bitcode. You must rebuild it with bitcode enabled (Xcode setting ENABLE_BITCODE), obtain an updated library from the vendor, or disable bitcode for this target.
     ```
     请到 Xcode 项目的 `Build Settings` 标签页搜索 bitcode，将 `Enable Bitcode` 设置为 `NO`。  
-4. `CmbWallet`（招行一网通） 需要把 招行一网通 提供的秘钥`CMBPublicKey` 添加到 `Info.plist`  如以下代码:
+4. `CmbWallet`（招行一网通） 需要把 招行一网通 提供的秘钥`CMBPublicKey` 添加到 `Info.plist` 如果是混淆加密的则不需要 如以下代码:
 
     ```
     <key>CMBPublicKey</key>          
@@ -117,8 +117,8 @@ iOS SDK 要求 iOS 7.0 及以上版本
         </string>
     ```
 
-5. `CmbWallet`（招行一网通）  手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除
-6. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除
+5. `CmbWallet`（招行一网通）  手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可
+6. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可
 
 
 **关于如何使用 SDK 请参考 [开发者中心](https://www.pingxx.com/docs/index) 或者 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。**
