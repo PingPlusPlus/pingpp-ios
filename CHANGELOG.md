@@ -1,3 +1,6 @@
+### 2.2.15
+- 更改：更新 Apple Pay SDK
+
 ### 2.2.14
 - 更改：更新 Alipay SDK (1. 修复H5 scheme_url 跳转失败报错问题。2. 去除一些不必要的warning.)
 - 更改：更新 Unionpay SDK (更新3.3.8：优化性能。)
