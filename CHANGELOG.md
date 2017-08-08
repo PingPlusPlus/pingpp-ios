@@ -1,3 +1,8 @@
+### 2.2.16
+- 更改：更新 Alipay SDK (1. 增加防重入功能，确保当前支付或授权不被打扰；2. 增加跳转防控措施；)
+- 更改：更新 Unionpay SDK (优化性能。)
+- 新增：壹收款 添加 花呗分期渠道 (Channel 不变还是 alipay 需要额外 在自定义参数中添加 installment  = true) 
+
 ### 2.2.15
 - 更改：更新 Apple Pay SDK
 

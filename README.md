@@ -16,7 +16,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', '~> 2.2.15'
+    pod 'Pingpp', '~> 2.2.16'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
@@ -38,9 +38,9 @@ iOS SDK 要求 iOS 7.0 及以上版本
     例如：
 
     ```
-    pod 'Pingpp/Alipay', '~> 2.2.15'
-    pod 'Pingpp/UnionPay', '~> 2.2.15'
-    pod 'Pingpp/One', '~> 2.2.15'
+    pod 'Pingpp/Alipay', '~> 2.2.16'
+    pod 'Pingpp/UnionPay', '~> 2.2.16'
+    pod 'Pingpp/One', '~> 2.2.16'
     ```
 
 2. 运行 `pod install`
@@ -67,6 +67,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
     libsqlite3.0.tbd
     libstdc++.tbd
     CoreMotion.framework
+    CoreLocation.framework
     ```
 
 
@@ -126,4 +127,10 @@ iOS SDK 要求 iOS 7.0 及以上版本
 ## 注意事项
 
 - 如果不需要 Apple Pay，请不要导入 Apple Pay 的静态库。以免提交到 App Store 时审核不通过。
+- 如果 集成 Apple Pay 测试时请注意 以下几点
+    1、测试时必须是真机进行测试
+    2、检查相关的证书是否正确
+    3、手机必须是 iPhone6 以上 ，并且系统 iOS 9以上
+    4、支付时必须绑定了真实的银行卡且有充足的余额
+
 - 请勿直接使用客户端支付结果作为最终判定订单状态的依据，支付状态以服务端为准!!!在收到客户端同步返回结果时，请向自己的服务端请求来查询订单状态。
