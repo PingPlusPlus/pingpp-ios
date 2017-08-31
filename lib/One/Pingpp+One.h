@@ -23,6 +23,9 @@ typedef NS_OPTIONS(NSUInteger, PingppBtnOption) {
     PingppBtnUpmp = 1 << 4
 };
 
+typedef NS_ENUM(NSUInteger, PingppExtraChannel){
+    PingppExtraChannelHuabai,
+};
 @interface Pingpp (One)
 
 /**
@@ -68,10 +71,12 @@ typedef NS_OPTIONS(NSUInteger, PingppBtnOption) {
 + (void)enableBtn:(PingppBtnOption)option;
 
 /**
- *  开启应用内快捷支付
- *  @param  enable  YES/NO，是否开启。(仅在导入了相应的静态库之后有用。)
+ *  设置已有渠道的扩展(如:花呗分期)
+ *  @param extend 支付渠道的扩展 (如:花呗分期)
+ *  @param index 改扩展渠道显示的位置
  */
-+ (void)enableCnp:(BOOL)enable;
++ (void) enableExtraChannel:(PingppExtraChannel)extend index:(NSInteger)index;
+
 
 @end
 
