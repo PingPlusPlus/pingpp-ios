@@ -40,6 +40,13 @@ Pod::Spec.new do |s|
     ss.dependency 'Pingpp/Core'
   end
 
+  s.subspec 'Alipay-no-fmwk' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Alipay/*.a'
+    ss.resource = 'lib/Channels/Alipay/AlipaySDK.bundle'
+    ss.frameworks = 'CoreMotion', 'CoreTelephony'
+    ss.dependency 'Pingpp/Core'
+  end
+
   s.subspec 'Wx' do |ss|
     ss.dependency 'Pingpp/Core'
   end
