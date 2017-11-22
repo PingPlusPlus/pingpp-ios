@@ -1,4 +1,8 @@
-### 2.2.17 
+### 2.2.18
+- 更改：更新支付宝 SDK 到 15.5.0 已适配iPhoneX，支持IPv6_only网络和ATS安全标准
+- 删除：分期渠道 ( Fqlpay , Qgbc , Mmdpay)
+
+### 2.2.17
 - 更改：兼容 Ping++ 最新账户系统版本 1.4 
 - 新增：添加 支持商户系统 recharge 功能 现在可以传入 (charge | order | recharge)  
 - 更改：修改 壹收款 花呗分期 显示接口
