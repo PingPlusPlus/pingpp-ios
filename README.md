@@ -22,6 +22,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
     目前支持以下模块：
     - `Alipay`（支付宝移动支付）
+    - `AlipayNoUTDID`（支付宝移动支付，独立 `UTDID.framework`）
     - `Wx`（微信 App 支付）
     - `QQWallet`（QQ钱包 App 支付）
     - `UnionPay`（银联手机支付）
@@ -122,12 +123,17 @@ iOS SDK 要求 iOS 7.0 及以上版本
 **关于如何使用 SDK 请参考 [开发者中心](https://www.pingxx.com/docs/index) 或者 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。**
 
 ## 注意事项
+### * 如果不需要 Apple Pay，请不要导入 Apple Pay 的静态库。以免提交到 App Store 时审核不通过。
 
-- 如果不需要 Apple Pay，请不要导入 Apple Pay 的静态库。以免提交到 App Store 时审核不通过。
-- 如果 集成 Apple Pay 测试时请注意 以下几点
-    1、测试时必须是真机进行测试
-    2、检查相关的证书是否正确
-    3、手机必须是 iPhone6 以上 ，并且系统 iOS 9以上
-    4、支付时必须绑定了真实的银行卡且有充足的余额
+### * 如果 集成 Apple Pay 测试时请注意 以下几点
+1. 测试时必须是真机进行测试
+2. 检查相关的证书是否正确
+3. 手机必须是 iPhone 6 以上 ，并且系统 iOS 9 以上
+4. 支付时必须绑定了真实的银行卡且有充足的余额
 
-- 请勿直接使用客户端支付结果作为最终判定订单状态的依据，支付状态以服务端为准!!!在收到客户端同步返回结果时，请向自己的服务端请求来查询订单状态。
+### * 请勿直接使用客户端支付结果作为最终判定订单状态的依据，支付状态以服务端为准!!!在收到客户端同步返回结果时，请向自己的服务端请求来查询订单状态。
+
+### * 支付宝渠道发生包冲突的情况
+使用阿里百川等阿里系的 SDK 时，可能会出现冲突，请尝试使用 `pod 'Pingpp/AlipayNoUTDID'` 代替 `pod 'Pingpp/Alipay'`。
+
+因为 `CocoaPods` 的限制，只有编译通过的才能上传成功，所以使用时，需要删除项目中已经存在的 `UTDID.framework`。

@@ -34,17 +34,16 @@ Pod::Spec.new do |s|
 
   s.subspec 'Alipay' do |ss|
     ss.vendored_libraries = 'lib/Channels/Alipay/*.a'
-    ss.ios.vendored_frameworks = 'lib/Channels/Alipay/AlipaySDK.framework'
-    ss.resource = 'lib/Channels/Alipay/AlipaySDK.bundle'
     ss.frameworks = 'CoreMotion', 'CoreTelephony'
     ss.dependency 'Pingpp/Core'
+    ss.dependency 'PingppAlipaySDK', '~> 15.5'
   end
 
-  s.subspec 'Alipay-no-fmwk' do |ss|
+  s.subspec 'AlipayNoUTDID' do |ss|
     ss.vendored_libraries = 'lib/Channels/Alipay/*.a'
-    ss.resource = 'lib/Channels/Alipay/AlipaySDK.bundle'
     ss.frameworks = 'CoreMotion', 'CoreTelephony'
     ss.dependency 'Pingpp/Core'
+    ss.dependency 'PingppAlipaySDKNoUTDID', '~> 15.5'
   end
 
   s.subspec 'Wx' do |ss|
