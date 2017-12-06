@@ -12,7 +12,8 @@ Pod::Spec.new do |s|
   s.license      = 'COMMERCIAL'
   s.author       = { 'Afon Weng' => 'xufeng.weng@pingxx.com' }
   s.platform     = :ios, '7.0'
-  s.source       = { :git => 'https://git.coding.net/pingplusplus/pingpp-ios.git', :tag => s.version }
+  s.source       = { :http => "https://coding.net/u/pingplusplus/p/pingpp-assets/git/raw/master/archives/pingpp-ios/#{s.version}/pingpp-ios-libs.zip",
+                     :sha1 => "1558320c16da2f163ca377dce9148916a9f364d6" }
   s.requires_arc = true
   s.default_subspec = 'Core', 'Alipay', 'UnionPay'
 
@@ -28,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'ApplePay' do|ss|
     ss.vendored_libraries = 'lib/Channels/ApplePay/*.a'
-    ss.frameworks = 'Passkit'
+    ss.frameworks = 'PassKit'
     ss.dependency 'Pingpp/Core'
   end
 
