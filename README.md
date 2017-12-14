@@ -16,12 +16,13 @@ iOS SDK 要求 iOS 7.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', '~> 2.2.18'
+    pod 'Pingpp', '~> 2.2.19'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
     目前支持以下模块：
     - `Alipay`（支付宝移动支付）
+    - `CBAlipay`（支付宝移动支付 - 境外支付）
     - `AlipayNoUTDID`（支付宝移动支付，独立 `UTDID.framework`）
     - `Wx`（微信 App 支付）
     - `QQWallet`（QQ钱包 App 支付）
@@ -36,9 +37,9 @@ iOS SDK 要求 iOS 7.0 及以上版本
     例如：
 
     ```
-    pod 'Pingpp/Alipay', '~> 2.2.18'
-    pod 'Pingpp/UnionPay', '~> 2.2.18'
-    pod 'Pingpp/One', '~> 2.2.18'
+    pod 'Pingpp/Alipay', '~> 2.2.19'
+    pod 'Pingpp/UnionPay', '~> 2.2.19'
+    pod 'Pingpp/One', '~> 2.2.19'
     ```
 
 2. 运行 `pod install`
@@ -91,6 +92,11 @@ iOS SDK 要求 iOS 7.0 及以上版本
         <string>alipay</string>
         <string>alipays</string>
         <string>mqq</string>
+        <string>uppaysdk</string>
+        <string>uppaywallet</string>
+        <string>uppayx1</string>
+        <string>uppayx2</string>
+        <string>uppayx3</string>
     </array>
     ```
 2. iOS 9 限制了 http 协议的访问，如果 App 需要访问 `http://`，需要在 `Info.plist` 添加如下代码：

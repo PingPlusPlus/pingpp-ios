@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.18'
+  s.version      = '2.2.19'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -38,6 +38,10 @@ Pod::Spec.new do |s|
     ss.frameworks = 'CoreMotion', 'CoreTelephony'
     ss.dependency 'Pingpp/Core'
     ss.dependency 'PingppAlipaySDK', '~> 15.5'
+  end
+
+  s.subspec 'CBAlipay' do |ss|
+    ss.dependency 'Pingpp/Alipay'
   end
 
   s.subspec 'AlipayNoUTDID' do |ss|
