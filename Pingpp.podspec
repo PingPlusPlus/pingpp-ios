@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.19'
+  s.version      = '2.2.20'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -60,11 +60,11 @@ Pod::Spec.new do |s|
     ss.dependency 'Pingpp/Core'
   end
 
-  s.subspec 'One' do |ss|
+  s.subspec 'UI' do |ss|
     ss.frameworks = 'QuartzCore'
-    ss.source_files = 'lib/One/*.h'
-    ss.public_header_files = 'lib/One/*.h'
-    ss.vendored_libraries = 'lib/One/*.a'
+    ss.source_files = 'lib/UI/*.h'
+    ss.public_header_files = 'lib/UI/*.h'
+    ss.vendored_libraries = 'lib/UI/*.a'
     ss.dependency 'Pingpp/Core'
   end
 
