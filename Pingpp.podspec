@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Afon Weng' => 'xufeng.weng@pingxx.com' }
   s.platform     = :ios, '7.0'
   s.source       = { :http => "https://coding.net/u/pingplusplus/p/pingpp-assets/git/raw/master/archives/pingpp-ios/#{s.version}/pingpp-ios-libs.zip",
-                     :sha1 => "458a5c6d2b1063cd1596e77fe7df52d790d0cf3f" }
+                     :sha1 => "fd5ea0fd06dbbdae38f25a81fc91ec86f7f1aac9" }
   s.requires_arc = true
   s.default_subspec = 'Core', 'Alipay', 'UnionPay'
 

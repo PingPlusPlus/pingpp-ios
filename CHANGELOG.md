@@ -1,10 +1,12 @@
+# ChangeLog
+
 ### 2.2.20
 - 删除：删除 壹收款 模块
 - 更改：添加 Ping++ UI 模块
 - 更改：更新银联 SDK 到 3.3.11 版本
 - 新增：UI 模块 不含渠道选择列表方法
 - 新增：`qpay` 渠道
-- 新增： `Apple Pay` 渠道
+- 新增：`Apple Pay` 渠道
 - 新增：`pingpp_ui`  渠道
 
 
@@ -17,14 +19,14 @@
 - 删除：分期渠道 ( Fqlpay , Qgbc , Mmdpay)
 
 ### 2.2.17
-- 更改：兼容 Ping++ 最新账户系统版本 1.4 
+- 更改：兼容 Ping++ 最新账户系统版本 1.4
 - 新增：添加 支持商户系统 recharge 功能 现在可以传入 (charge | order | recharge)  
 - 更改：修改 壹收款 花呗分期 显示接口
 
 ### 2.2.16
 - 更改：更新 Alipay SDK (1. 增加防重入功能，确保当前支付或授权不被打扰；2. 增加跳转防控措施；)
 - 更改：更新 Unionpay SDK (优化性能。)
-- 新增：壹收款 添加 花呗分期渠道 (Channel 不变还是 alipay 需要额外 在自定义参数中添加 installment  = true) 
+- 新增：壹收款 添加 花呗分期渠道 (Channel 不变还是 alipay 需要额外 在自定义参数中添加 installment  = true)
 
 ### 2.2.15
 - 更改：更新 Apple Pay SDK
