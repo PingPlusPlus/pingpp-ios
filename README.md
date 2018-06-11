@@ -29,7 +29,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', '~> 2.2.20'
+    pod 'Pingpp', '~> 2.2.21'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
@@ -46,18 +46,18 @@ iOS SDK 要求 iOS 7.0 及以上版本
     - `Yeepay`（易宝支付 Wap 支付）
     - `Jdpay`（京东支付 Wap 支付）
     - `UI`（Ping++ SDK UI 版）
-    
+
 
     例如：
 
     ```
-    pod 'Pingpp/Alipay', '~> 2.2.20'
-    pod 'Pingpp/UnionPay', '~> 2.2.20'
-   
+    pod 'Pingpp/Alipay', '~> 2.2.21'
+    pod 'Pingpp/UnionPay', '~> 2.2.21'
+
     ```
     Ping++ SDK UI 版
     ```
-    pod 'Pingpp/UI', '~> '2.2.20'
+    pod 'Pingpp/UI', '~> '2.2.21'
     ```
 
 2. 运行 `pod install`
@@ -81,7 +81,6 @@ iOS SDK 要求 iOS 7.0 及以上版本
     libc++.tbd
     libz.tbd
     libsqlite3.0.tbd
-    libstdc++.tbd
     CoreMotion.framework
     CoreLocation.framework
     ```
@@ -127,7 +126,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
  *  @param  channels  渠道数组，与 API 的 channel 字段对应。 例: @[@"wx",@"alipay", @"upacp", @"bfb_wap"]
  */
 [Pingpp enableChannels:channels];
- 
+
 //调起支付页面
 [Pingpp payWithOrderNo:orderNo // 订单号
                     amount:100 // 金额
@@ -136,7 +135,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
               appURLScheme:appURLScheme // Info.plist 中填写的 URL Scheme，支付宝渠道和测试模式需要
             viewController:self // 当前的 ViewController
          completionHandler:^(NSString * _Nonnull result, PingppURLResponse * _Nullable response, NSError * _Nullable error) {
- 
+
         // 根据result判断支付是否成功
         NSLog(@"result=%@", result);
         if (response && response.responseString) {
