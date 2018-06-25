@@ -114,11 +114,13 @@ iOS SDK 要求 iOS 7.0 及以上版本
                }
 }];
 ```
+
 ### <h3 id='4.2'>使用 Ping++ UI版 SDK</h3>
 使用 UI 版本且不想展示 Ping++ 提供的广告请[联系我们](https://www.pingxx.com/contact)
 ```
 #import <Pingpp+UI.h>
 ```
+
 #### 带渠道选择页面
 ```
 /**
@@ -146,6 +148,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
         }
 }];
 ```
+
 #### 不带渠道选择页面
 ```
 [Pingpp createPay:string
@@ -162,6 +165,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
         }
 } ];
 ```
+
 ### <h3 id='4.3'>接收并处理交易结果</h3>
 ##### 渠道为支付宝但未安装支付宝钱包时，交易结果会在调起插件时的 Completion 中返回。渠道为微信、支付宝(安装了支付宝钱包)、银联或者测试模式时，请实现 UIApplicationDelegate 的 - application:openURL:xxxx: 方法:
 ##### iOS 8 及以下
@@ -176,6 +180,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
     return canHandleURL;
 }
 ```
+
 ##### iOS 9 及以上
 ```
 - (BOOL)application:(UIApplication *)app
@@ -187,6 +192,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
     return canHandleURL;
 }
 ```
+
 ## <h2 id='5'>额外配置</h2>
 1. iOS 9 以上版本如果需要使用支付宝和微信渠道，需要在 `Info.plist` 添加以下代码：
 
@@ -228,8 +234,9 @@ iOS SDK 要求 iOS 7.0 及以上版本
         </string>
     ```
 
-5. `CmbWallet`（招行一网通）  手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可
-6. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可
+5. `CmbWallet`（招行一网通）  手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可；
+6. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可；
+7. 招行一网通 app 支付不需要依赖 `CmbWallet` 模块，已经包含在 `Pingpp/Core` 里面。需要用到 `URL Schemes`，创建 `charge` 时，在 `extra[result_url]` 字段传入 `<SCHEME>://pingppcmbwallet`，其中 `<SCHEME>` 是你自定的 `URL Schemes`。
 
 ## <h2 id='6'>注意事项</h2>
 ### * 如果不需要 Apple Pay，请不要导入 Apple Pay 的静态库。以免提交到 App Store 时审核不通过。
