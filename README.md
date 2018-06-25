@@ -236,7 +236,8 @@ iOS SDK 要求 iOS 7.0 及以上版本
 
 5. `CmbWallet`（招行一网通）  手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可；
 6. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可；
-7. 招行一网通 app 支付不需要依赖 `CmbWallet` 模块，已经包含在 `Pingpp/Core` 里面。需要用到 `URL Schemes`，创建 `charge` 时，在 `extra[result_url]` 字段传入 `<SCHEME>://pingppcmbwallet`，其中 `<SCHEME>` 是你自定的 `URL Schemes`。
+7. 招行一网通 app 支付不需要依赖 `CmbWallet` 模块，已经包含在 `Pingpp/Core` 里面。需要用到 `URL Schemes`，创建 `charge` 时，在 `extra[result_url]` 字段传入 `<SCHEME>://pingppcmbwallet`，其中 `<SCHEME>` 是你自定的 `URL Schemes`；
+8. 判断设备上是否已经安装招商银行方法：`[Pingpp isCmbWalletInstalled]`。
 
 ## <h2 id='6'>注意事项</h2>
 ### * 如果不需要 Apple Pay，请不要导入 Apple Pay 的静态库。以免提交到 App Store 时审核不通过。
