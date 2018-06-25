@@ -209,6 +209,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
         <string>uppayx1</string>
         <string>uppayx2</string>
         <string>uppayx3</string>
+        <string>cmbmobilebank</string>
     </array>
     ```
 2. iOS 9 限制了 http 协议的访问，如果 App 需要访问 `http://`，需要在 `Info.plist` 添加如下代码：
