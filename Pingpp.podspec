@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.21'
+  s.version      = '2.2.22'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -11,9 +11,8 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://pingxx.com'
   s.license      = 'COMMERCIAL'
   s.author       = { 'Afon Weng' => 'xufeng.weng@pingxx.com' }
-  s.platform     = :ios, '7.0'
-  s.source       = { :http => "https://coding.net/u/pingplusplus/p/pingpp-assets/git/raw/master/archives/pingpp-ios/2.2.20/pingpp-ios-libs.zip",
-                     :sha1 => "fd5ea0fd06dbbdae38f25a81fc91ec86f7f1aac9" }
+  s.platform     = :ios, '8.0'
+  s.source       = { :http => "https://sdk-assets.oss-cn-shanghai.aliyuncs.com/pingpp/#{s.version}/pingpp-ios-libs.zip" }
   s.requires_arc = true
   s.default_subspec = 'Core', 'Alipay', 'UnionPay'
 

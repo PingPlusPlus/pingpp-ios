@@ -28,6 +28,7 @@ typedef NS_ENUM(NSUInteger, PingppErrorOption)
     PingppErrRequestTimeOut,
     PingppErrProcessing,
     PingppErrQqNotInstalled,
+    PingppErrCmbWalletNotInstalled,
 };
 
 typedef NS_ENUM(NSUInteger, PingppRequestContentTypeOption) {
@@ -152,5 +153,11 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  */
 + (void)setWebViewItemColor:(UIColor *)itemColor
                 buttonColor:(UIColor*)bntColor;
+
+/**
+ * 是否已安装招商银行 app
+ */
++ (BOOL)isCmbWalletInstalled;
+
 @end
 #endif

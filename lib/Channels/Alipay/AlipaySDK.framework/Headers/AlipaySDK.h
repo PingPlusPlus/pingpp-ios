@@ -9,25 +9,14 @@
 
 ////////////////////////////////////////////////////////
 ///////////////// 支付宝标准版本支付SDK ///////////////////
-/////////// version:15.5.0  motify:2017.10.24 ///////////
+/////////// version:15.5.5  motify:2018.05.09 ///////////
 ////////////////////////////////////////////////////////
 
 #import <UIKit/UIKit.h>
-
 #import "APayAuthInfo.h"
-typedef enum {
-    ALIPAY_TIDFACTOR_IMEI,
-    ALIPAY_TIDFACTOR_IMSI,
-    ALIPAY_TIDFACTOR_TID,
-    ALIPAY_TIDFACTOR_CLIENTKEY,
-    ALIPAY_TIDFACTOR_VIMEI,
-    ALIPAY_TIDFACTOR_VIMSI,
-    ALIPAY_TIDFACTOR_CLIENTID,
-    ALIPAY_TIDFACTOR_APDID,
-    ALIPAY_TIDFACTOR_MAX
-} AlipayTidFactor;
 
 typedef void(^CompletionBlock)(NSDictionary *resultDic);
+
 
 @interface AlipaySDK : NSObject
 
@@ -63,8 +52,6 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
 - (void)processOrderWithPaymentResult:(NSURL *)resultUrl
                       standbyCallback:(CompletionBlock)completionBlock;
 
-
-
 /**
  *  获取交易token。
  *
@@ -85,13 +72,6 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
  *  @return 当前版本字符串
  */
 - (NSString *)currentVersion;
-
-/**
- *  获取当前tid相关信息
- *
- *  @return tid相关信息
- */
-- (NSString*)queryTidFactor:(AlipayTidFactor)factor;
 
 /**
  *  測試所用，realse包无效
@@ -136,8 +116,35 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
          fromScheme:(NSString *)schemeStr
            callback:(CompletionBlock)completionBlock;
 
+
 //////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////授权1.0//////////////////////////////////////////////////////////////
+//////////////////////////授权2.0//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ *  快登授权2.0
+ *
+ *  @param infoStr          授权请求信息字符串
+ *  @param schemeStr        调用授权的app注册在info.plist中的scheme
+ *  @param completionBlock  授权结果回调，若在授权过程中，调用方应用被系统终止，则此block无效，
+ 需要调用方在appDelegate中调用processAuth_V2Result:standbyCallback:方法获取授权结果
+ */
+- (void)auth_V2WithInfo:(NSString *)infoStr
+             fromScheme:(NSString *)schemeStr
+               callback:(CompletionBlock)completionBlock;
+
+/**
+ *  处理授权信息Url
+ *
+ *  @param resultUrl        钱包返回的授权结果url
+ *  @param completionBlock  授权结果回调
+ */
+- (void)processAuth_V2Result:(NSURL *)resultUrl
+             standbyCallback:(CompletionBlock)completionBlock;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////授权1.0 (授权1.0接口即将废弃，请使用授权2.0接口)///////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
@@ -159,30 +166,5 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
 - (void)processAuthResult:(NSURL *)resultUrl
           standbyCallback:(CompletionBlock)completionBlock;
 
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////授权2.0//////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-
-/**
- *  快登授权2.0
- *
- *  @param infoStr          授权请求信息字符串
- *  @param schemeStr        调用授权的app注册在info.plist中的scheme
- *  @param completionBlock  授权结果回调，若在授权过程中，调用方应用被系统终止，则此block无效，
-                            需要调用方在appDelegate中调用processAuth_V2Result:standbyCallback:方法获取授权结果
- */
-- (void)auth_V2WithInfo:(NSString *)infoStr
-             fromScheme:(NSString *)schemeStr
-               callback:(CompletionBlock)completionBlock;
-
-/**
- *  处理授权信息Url
- *
- *  @param resultUrl        钱包返回的授权结果url
- *  @param completionBlock  授权结果回调
- */
-- (void)processAuth_V2Result:(NSURL *)resultUrl
-             standbyCallback:(CompletionBlock)completionBlock;
 
 @end
