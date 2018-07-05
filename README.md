@@ -101,17 +101,19 @@ iOS SDK 要求 iOS 7.0 及以上版本
 ```
 #import <Pingpp.h>
 ```
-```
-[Pingpp createPayment:charge
-           viewController:viewController
-             appURLScheme:kUrlScheme
-           withCompletion:^(NSString *result, PingppError *error) {
-               if ([result isEqualToString:@"success"]) {
-                   // 支付成功
-               } else {
-                   // 支付失败或取消
-                   NSLog(@"Error: code=%lu msg=%@", error.code, [error getMsg]);
-               }
+
+``` objective-c
+// data 表示 Charge/Order/Recharge 的 JSON 字符串
+[Pingpp createPayment:data
+       viewController:viewController
+         appURLScheme:kUrlScheme
+       withCompletion:^(NSString *result, PingppError *error) {
+    if ([result isEqualToString:@"success"]) {
+        // 支付成功
+    } else {
+        // 支付失败或取消
+        NSLog(@"Error: code=%lu msg=%@", error.code, [error getMsg]);
+    }
 }];
 ```
 
@@ -122,59 +124,57 @@ iOS SDK 要求 iOS 7.0 及以上版本
 ```
 
 #### 带渠道选择页面
-```
+``` objective-c
 /**
  *  设置需要显示的渠道按钮（有序）
  *  @param  channels  渠道数组，与 API 的 channel 字段对应。 例: @[@"wx",@"alipay", @"upacp", @"bfb_wap"]
  */
 [Pingpp enableChannels:channels];
 
-//调起支付页面
+// 调起支付页面
 [Pingpp payWithOrderNo:orderNo // 订单号
-                    amount:100 // 金额
-                    params:nil // 自定义参数，请求 chargeURL 时，会放在 custom_params 字段
-                 chargeURL:chargeURL // 壹收款会向该地址发送请求，该地址需要返回 charge 的 JSON 字符串
-              appURLScheme:appURLScheme // Info.plist 中填写的 URL Scheme，支付宝渠道和测试模式需要
-            viewController:self // 当前的 ViewController
-         completionHandler:^(NSString * _Nonnull result, PingppURLResponse * _Nullable response, NSError * _Nullable error) {
-
-        // 根据result判断支付是否成功
-        NSLog(@"result=%@", result);
-        if (response && response.responseString) {
-            NSLog(@"response.responseString=%@", response.responseString);
-        }
-        if (error) {
-            NSLog(@"completion error code:%lu domain:%@ userInfo:%@", error.code, error.domain, error.userInfo);
-        }
+                amount:100 // 金额
+                params:nil // 自定义参数，请求 chargeURL 时，会放在 custom_params 字段
+             chargeURL:chargeURL // 壹收款会向该地址发送请求，该地址需要返回 charge 的 JSON 字符串
+          appURLScheme:appURLScheme // Info.plist 中填写的 URL Scheme，支付宝渠道和测试模式需要
+        viewController:self // 当前的 ViewController
+     completionHandler:^(NSString * _Nonnull result, PingppURLResponse * _Nullable response, NSError * _Nullable error) {
+    // 根据result判断支付是否成功
+    NSLog(@"result=%@", result);
+    if (response && response.responseString) {
+        NSLog(@"response.responseString=%@", response.responseString);
+    }
+    if (error) {
+        NSLog(@"completion error code:%lu domain:%@ userInfo:%@", error.code, error.domain, error.userInfo);
+    }
 }];
 ```
 
 #### 不带渠道选择页面
-```
-[Pingpp createPay:string
-       viewController:self
-         appURLScheme:kUrlScheme
-       withCompletion:^(NSString *result, PingppError *error) {
-        // 根据result判断支付是否成功
-        NSLog(@"result=%@", result);
-        if (response && response.responseString) {
-            NSLog(@"response.responseString=%@", response.responseString);
-        }
-        if (error) {
-            NSLog(@"completion error code:%lu domain:%@ userInfo:%@", error.code, error.domain, error.userInfo);
-        }
-} ];
+``` objective-c
+[Pingpp createPay:data
+   viewController:self
+     appURLScheme:kUrlScheme
+   withCompletion:^(NSString *result, PingppError *error) {
+    // 根据result判断支付是否成功
+    NSLog(@"result=%@", result);
+    if (response && response.responseString) {
+        NSLog(@"response.responseString=%@", response.responseString);
+    }
+    if (error) {
+        NSLog(@"completion error code:%lu domain:%@ userInfo:%@", error.code, error.domain, error.userInfo);
+    }
+}];
 ```
 
 ### <h3 id='4.3'>接收并处理交易结果</h3>
 ##### 渠道为支付宝但未安装支付宝钱包时，交易结果会在调起插件时的 Completion 中返回。渠道为微信、支付宝(安装了支付宝钱包)、银联或者测试模式时，请实现 UIApplicationDelegate 的 - application:openURL:xxxx: 方法:
 ##### iOS 8 及以下
-```
+``` objective-c
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
-
     BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:nil];
 
     return canHandleURL;
@@ -182,11 +182,10 @@ iOS SDK 要求 iOS 7.0 及以上版本
 ```
 
 ##### iOS 9 及以上
-```
+``` objective-c
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
             options:(NSDictionary *)options {
-
     BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:nil];
 
     return canHandleURL;
