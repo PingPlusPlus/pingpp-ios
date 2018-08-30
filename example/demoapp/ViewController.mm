@@ -12,7 +12,6 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "Pingpp.h"
-#import "Pingpp+One.h"
 
 #define KBtn_width        200
 #define KBtn_height       40
@@ -35,7 +34,7 @@ URL Schemes 需要在 Xcode 的 Info 标签页的 URL Types 中添加，\
 对于微信支付来说，必须添加一项值为微信平台上注册的应用程序 id（"wx" 开头的字符串）作为 URL Scheme。
 #define kUrlScheme      @"demoapp001" // 这个是你定义的 URL Scheme，支付宝、微信支付、银联和测试模式需要。
 
-#define kUrl            @"http://218.244.151.190/demo/charge" // 你的服务端创建并返回 charge 的 URL 地址，此地址仅供测试用。
+#define kUrl            @"http://218.244.151.190/demo/charge" // 你的服务端创建并返回 charge 的 URL 地址。该地址仅供测试用。如果该地址失效，请使用你自己的后端接口。
 
 @interface ViewController ()
 
@@ -134,19 +133,6 @@ URL Schemes 需要在 Xcode 的 Info 标签页的 URL Types 中添加，\
     [bfbButton setTag:4];
     [scrollView addSubview:bfbButton];
     
-    UIButton* oneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [oneButton setTitle:@"壹收款" forState:UIControlStateNormal];
-    [oneButton addTarget:self action:@selector(payWithOrderNo) forControlEvents:UIControlEventTouchUpInside];
-    [oneButton setFrame:CGRectMake(imgx, KYOffSet+imgViewHeight+290, imgViewWith, KBtn_height)];
-    [oneButton.layer setMasksToBounds:YES];
-    [oneButton.layer setCornerRadius:8.0];
-    [oneButton.layer setBorderWidth:1.0];
-    [oneButton.layer setBorderColor:[UIColor grayColor].CGColor];
-    oneButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
-    [oneButton setTag:5];
-    [scrollView addSubview:oneButton];
-    
-    
     [scrollView setContentSize:CGSizeMake(viewRect.size.width, KYOffSet+imgViewHeight+260+KBtn_height)];
 }
 
@@ -179,36 +165,6 @@ URL Schemes 需要在 Xcode 的 Info 标签页的 URL Types 中添加，\
         [mAlert dismissWithClickedButtonIndex:0 animated:YES];
         mAlert = nil;
     }
-}
-
--(void)payWithOrderNo{
-#warning 调用壹收款时 必须 引用 Pingpp+One.h 文件。
-    
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"yyyyMMddHHmmss"];
-    NSString *order_no = [dateFormat stringFromDate:[NSDate date]];
-    
-    long long amount = [[self.mTextField.text stringByReplacingOccurrencesOfString:@"." withString:@""] longLongValue];
-    if (amount == 0) {
-        return;
-    }
-
-    [Pingpp payWithOrderNo:order_no//订单号，请注意保证唯一性
-                    amount:amount//订单金额，单位为分。例：150 表示 1.5 元。
-                    params:@{}//自定义参数，请求 chargeURL 时，会放在 custom_params 字段
-                 chargeURL:kUrl//壹收款会向该地址发送请求，该地址需要返回 charge 的 JSON 字符串
-              appURLScheme:kUrlScheme//Info.plist 中填写的 URL Scheme，支付宝渠道和测试模式需要
-            viewController:self//当前的 ViewController
-         completionHandler:^(NSString * _Nonnull result, PingppURLResponse * _Nullable response, NSError * _Nullable error) {
-             NSLog(@"completion block: %@", result);
-             if (error == nil) {
-                 NSLog(@"PingppError is nil");
-             } else {
-                 NSLog(@"PingppError: code=%lu msg=%@", (unsigned  long)error.code, [error userInfo]);
-             }
-             [self showAlertMessage:result];
-            
-            }];
 }
 
 - (void)normalPayAction:(id)sender

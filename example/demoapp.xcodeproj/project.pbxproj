@@ -17,7 +17,6 @@
 		0036267B1D9A4CB8004E6244 /* libpingpp+network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0036258F1D9A4CB8004E6244 /* libpingpp+network.a */; };
 		0036267C1D9A4CB8004E6244 /* libpingpp+webview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003625921D9A4CB8004E6244 /* libpingpp+webview.a */; };
 		0036267D1D9A4CB8004E6244 /* libpingppcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003625931D9A4CB8004E6244 /* libpingppcore.a */; };
-		0036267E1D9A4CB8004E6244 /* libpingpp+one.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003625951D9A4CB8004E6244 /* libpingpp+one.a */; };
 		0036267F1D9A4CB8004E6244 /* Pingpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 003625971D9A4CB8004E6244 /* Pingpp.bundle */; };
 		003626821D9A5091004E6244 /* libpingpp+yeepay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003626811D9A5091004E6244 /* libpingpp+yeepay.a */; };
 		5F61B02119C81A4F0035CD99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F61B02019C81A4F0035CD99 /* Foundation.framework */; };
@@ -44,8 +43,6 @@
 		003625901D9A4CB8004E6244 /* PingppURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingppURLResponse.h; sourceTree = "<group>"; };
 		003625921D9A4CB8004E6244 /* libpingpp+webview.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+webview.a"; sourceTree = "<group>"; };
 		003625931D9A4CB8004E6244 /* libpingppcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpingppcore.a; sourceTree = "<group>"; };
-		003625951D9A4CB8004E6244 /* libpingpp+one.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+one.a"; sourceTree = "<group>"; };
-		003625961D9A4CB8004E6244 /* Pingpp+One.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pingpp+One.h"; sourceTree = "<group>"; };
 		003625971D9A4CB8004E6244 /* Pingpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Pingpp.bundle; sourceTree = "<group>"; };
 		003625981D9A4CB8004E6244 /* Pingpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pingpp.h; sourceTree = "<group>"; };
 		003626811D9A5091004E6244 /* libpingpp+yeepay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+yeepay.a"; sourceTree = "<group>"; };
@@ -79,7 +76,6 @@
 				5F61B02519C81A500035CD99 /* UIKit.framework in Frameworks */,
 				0036259E1D9A4CB8004E6244 /* libpingpp+bfbWap.a in Frameworks */,
 				003626771D9A4CB8004E6244 /* libpingpp+qqwallet.a in Frameworks */,
-				0036267E1D9A4CB8004E6244 /* libpingpp+one.a in Frameworks */,
 				003626781D9A4CB8004E6244 /* libPaymentControl.a in Frameworks */,
 				0036267D1D9A4CB8004E6244 /* libpingppcore.a in Frameworks */,
 				0036267C1D9A4CB8004E6244 /* libpingpp+webview.a in Frameworks */,
@@ -100,7 +96,6 @@
 				003624581D9A4CB7004E6244 /* Channels */,
 				0036258D1D9A4CB8004E6244 /* Dependencies */,
 				003625931D9A4CB8004E6244 /* libpingppcore.a */,
-				003625941D9A4CB8004E6244 /* One */,
 				003625971D9A4CB8004E6244 /* Pingpp.bundle */,
 				003625981D9A4CB8004E6244 /* Pingpp.h */,
 			);
@@ -179,15 +174,6 @@
 				003625921D9A4CB8004E6244 /* libpingpp+webview.a */,
 			);
 			path = WebView;
-			sourceTree = "<group>";
-		};
-		003625941D9A4CB8004E6244 /* One */ = {
-			isa = PBXGroup;
-			children = (
-				003625951D9A4CB8004E6244 /* libpingpp+one.a */,
-				003625961D9A4CB8004E6244 /* Pingpp+One.h */,
-			);
-			path = One;
 			sourceTree = "<group>";
 		};
 		003626801D9A5091004E6244 /* Yeepay */ = {
@@ -472,7 +458,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "demoapp/demoapp-Info.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/demoapp/demoapp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../lib",
@@ -480,10 +466,9 @@
 					"$(PROJECT_DIR)/../lib/Channels/UnionPay",
 					"$(PROJECT_DIR)/../lib/Channels/Yeepay",
 					"$(PROJECT_DIR)/../lib/Channels/BfbWap",
-					"$(PROJECT_DIR)/../lib/One",
 					"$(PROJECT_DIR)/../lib/Dependencies/Network",
 					"$(PROJECT_DIR)/../lib/Channels/QQWallet",
-					"$(PROJECT_DIR)/../lib/Dependencies/Webview",
+					"$(PROJECT_DIR)/../lib/Dependencies/WebView",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -551,7 +536,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "demoapp/demoapp-Info.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/demoapp/demoapp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../lib",
@@ -559,10 +544,9 @@
 					"$(PROJECT_DIR)/../lib/Channels/UnionPay",
 					"$(PROJECT_DIR)/../lib/Channels/Yeepay",
 					"$(PROJECT_DIR)/../lib/Channels/BfbWap",
-					"$(PROJECT_DIR)/../lib/One",
 					"$(PROJECT_DIR)/../lib/Dependencies/Network",
 					"$(PROJECT_DIR)/../lib/Channels/QQWallet",
-					"$(PROJECT_DIR)/../lib/Dependencies/Webview",
+					"$(PROJECT_DIR)/../lib/Dependencies/WebView",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

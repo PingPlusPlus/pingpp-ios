@@ -20,7 +20,6 @@
 		1E1561BD1D9A5B8A00CC4E13 /* libpingpp+network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560D11D9A5B8A00CC4E13 /* libpingpp+network.a */; };
 		1E1561BE1D9A5B8A00CC4E13 /* libpingpp+webview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560D41D9A5B8A00CC4E13 /* libpingpp+webview.a */; };
 		1E1561BF1D9A5B8A00CC4E13 /* libpingppcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560D51D9A5B8A00CC4E13 /* libpingppcore.a */; };
-		1E1561C01D9A5B8A00CC4E13 /* libpingpp+one.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560D71D9A5B8A00CC4E13 /* libpingpp+one.a */; };
 		1E1561C11D9A5B8A00CC4E13 /* Pingpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E1560D91D9A5B8A00CC4E13 /* Pingpp.bundle */; };
 		1EAA24681AF2115B00952143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA24671AF2115B00952143 /* AppDelegate.swift */; };
 		1EAA246A1AF2115B00952143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA24691AF2115B00952143 /* ViewController.swift */; };
@@ -63,8 +62,6 @@
 		1E1560D21D9A5B8A00CC4E13 /* PingppURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingppURLResponse.h; sourceTree = "<group>"; };
 		1E1560D41D9A5B8A00CC4E13 /* libpingpp+webview.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+webview.a"; sourceTree = "<group>"; };
 		1E1560D51D9A5B8A00CC4E13 /* libpingppcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpingppcore.a; sourceTree = "<group>"; };
-		1E1560D71D9A5B8A00CC4E13 /* libpingpp+one.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+one.a"; sourceTree = "<group>"; };
-		1E1560D81D9A5B8A00CC4E13 /* Pingpp+One.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pingpp+One.h"; sourceTree = "<group>"; };
 		1E1560D91D9A5B8A00CC4E13 /* Pingpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Pingpp.bundle; sourceTree = "<group>"; };
 		1E1560DA1D9A5B8A00CC4E13 /* Pingpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pingpp.h; sourceTree = "<group>"; };
 		1EAA24621AF2115B00952143 /* demoapp-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demoapp-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,7 +120,6 @@
 				1EAA25091AF2144500952143 /* QuartzCore.framework in Frameworks */,
 				1EAA25071AF2144000952143 /* ImageIO.framework in Frameworks */,
 				1EAA25051AF2143800952143 /* CoreGraphics.framework in Frameworks */,
-				1E1561C01D9A5B8A00CC4E13 /* libpingpp+one.a in Frameworks */,
 				1EAA25031AF2142B00952143 /* CoreTelephony.framework in Frameworks */,
 				1EAA25011AF2142000952143 /* Security.framework in Frameworks */,
 				1EAA24FF1AF2140D00952143 /* libz.dylib in Frameworks */,
@@ -147,7 +143,6 @@
 				1E155F991D9A5B8A00CC4E13 /* Channels */,
 				1E1560CF1D9A5B8A00CC4E13 /* Dependencies */,
 				1E1560D51D9A5B8A00CC4E13 /* libpingppcore.a */,
-				1E1560D61D9A5B8A00CC4E13 /* One */,
 				1E1560D91D9A5B8A00CC4E13 /* Pingpp.bundle */,
 				1E1560DA1D9A5B8A00CC4E13 /* Pingpp.h */,
 			);
@@ -244,15 +239,6 @@
 				1E1560D41D9A5B8A00CC4E13 /* libpingpp+webview.a */,
 			);
 			path = WebView;
-			sourceTree = "<group>";
-		};
-		1E1560D61D9A5B8A00CC4E13 /* One */ = {
-			isa = PBXGroup;
-			children = (
-				1E1560D71D9A5B8A00CC4E13 /* libpingpp+one.a */,
-				1E1560D81D9A5B8A00CC4E13 /* Pingpp+One.h */,
-			);
-			path = One;
 			sourceTree = "<group>";
 		};
 		1EAA24591AF2115A00952143 = {
@@ -537,7 +523,7 @@
 					"$(PROJECT_DIR)/../../lib/Channels/Alipay",
 				);
 				INFOPLIST_FILE = "demoapp-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,10 +531,9 @@
 					"$(PROJECT_DIR)/../../lib/Channels/UnionPay",
 					"$(PROJECT_DIR)/../../lib",
 					"$(PROJECT_DIR)/../../lib/Dependencies/Network",
-					"$(PROJECT_DIR)/../../lib/One",
 					"$(PROJECT_DIR)/../../lib/Channels/BfbWap",
 					"$(PROJECT_DIR)/../../lib/Channels/QQWallet",
-					"$(PROJECT_DIR)/../../lib/Dependencies/Webview",
+					"$(PROJECT_DIR)/../../lib/Dependencies/WebView",
 					"$(PROJECT_DIR)/../../lib/Channels/Yeepay",
 					"$(PROJECT_DIR)/../../lib/Channels/ApplePay",
 				);
@@ -558,7 +543,6 @@
 					"-l\"c++\"",
 					"-l\"pingpp+alipay\"",
 					"-l\"pingpp+network\"",
-					"-l\"pingpp+one\"",
 					"-l\"pingpp+up\"",
 					"-l\"pingppcore\"",
 					"-l\"sqlite3\"",
@@ -599,7 +583,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pingplusplus.demoapp-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos10.0;
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "demoapp-swift/demoapp-swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -617,7 +601,7 @@
 					"$(PROJECT_DIR)/../../lib/Channels/Alipay",
 				);
 				INFOPLIST_FILE = "demoapp-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -625,10 +609,9 @@
 					"$(PROJECT_DIR)/../../lib/Channels/UnionPay",
 					"$(PROJECT_DIR)/../../lib",
 					"$(PROJECT_DIR)/../../lib/Dependencies/Network",
-					"$(PROJECT_DIR)/../../lib/One",
 					"$(PROJECT_DIR)/../../lib/Channels/BfbWap",
 					"$(PROJECT_DIR)/../../lib/Channels/QQWallet",
-					"$(PROJECT_DIR)/../../lib/Dependencies/Webview",
+					"$(PROJECT_DIR)/../../lib/Dependencies/WebView",
 					"$(PROJECT_DIR)/../../lib/Channels/Yeepay",
 					"$(PROJECT_DIR)/../../lib/Channels/ApplePay",
 				);
@@ -638,7 +621,6 @@
 					"-l\"c++\"",
 					"-l\"pingpp+alipay\"",
 					"-l\"pingpp+network\"",
-					"-l\"pingpp+one\"",
 					"-l\"pingpp+up\"",
 					"-l\"pingppcore\"",
 					"-l\"sqlite3\"",
@@ -679,7 +661,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pingplusplus.demoapp-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos10.0;
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "demoapp-swift/demoapp-swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
