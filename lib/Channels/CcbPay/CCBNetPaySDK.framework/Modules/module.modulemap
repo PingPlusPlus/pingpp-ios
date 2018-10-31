@@ -1,0 +1,6 @@
+framework module CCBNetPaySDK {
+  umbrella header "CCBNetPaySDK.h"
+
+  export *
+  module * { export * }
+}

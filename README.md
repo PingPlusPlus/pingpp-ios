@@ -21,7 +21,7 @@ __当前版本，不需要微信的 SDK，可以正常调用微信支付__
 
 ## <h2 id='2'>版本要求</h2>
 
-iOS SDK 要求 iOS 7.0 及以上版本
+iOS SDK 要求 iOS 10.0 及以上版本
 
 ## <h2 id='3'>接入方法</h2>
 ### <h3 id='3.1'>使用 CocoaPods</h3>
@@ -29,7 +29,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```
-    pod 'Pingpp', '~> 2.2.23'
+    pod 'Pingpp', '~> 2.2.24'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
@@ -37,34 +37,35 @@ iOS SDK 要求 iOS 7.0 及以上版本
     - `Alipay`（支付宝移动支付）
     - `CBAlipay`（支付宝移动支付 - 境外支付）
     - `AlipayNoUTDID`（支付宝移动支付，独立 `UTDID.framework`）
-    - `Wx`（微信 App 支付）
-    - `QQWallet`（QQ钱包 App 支付）
+    - `Wx`（微信 app 支付）
+    - `QQWallet`（QQ 钱包 app 支付）
     - `UnionPay`（银联手机支付）
     - `ApplePay`
     - `CmbWallet`（招行一网通）
     - `BfbWap`（百度钱包 Wap 支付）
     - `Yeepay`（易宝支付 Wap 支付）
     - `Jdpay`（京东支付 Wap 支付）
+    - `CcbPay`（建设银行 app 支付）
     - `UI`（Ping++ SDK UI 版）
 
 
     例如：
 
     ```
-    pod 'Pingpp/Alipay', '~> 2.2.23'
-    pod 'Pingpp/UnionPay', '~> 2.2.23'
-
+    pod 'Pingpp/Alipay', '~> 2.2.24'
+    pod 'Pingpp/UnionPay', '~> 2.2.24'
     ```
+
     Ping++ SDK UI 版
     ```
-    pod 'Pingpp/UI', '~> '2.2.23'
+    pod 'Pingpp/UI', '~> '2.2.24'
     ```
 
 2. 运行 `pod install`
 3. 从现在开始使用 `.xcworkspace` 打开项目，而不是 `.xcodeproj`
-4. 添加 URL Schemes：在 Xcode 中，选择你的工程设置项，选中 "TARGETS" 一栏，在 "Info" 标签栏的 "URL Types" 添加 "URL Schemes"，如果使用微信，填入所注册的微信应用程序 id，如果不使用微信，则自定义，允许英文字母和数字，首字母必须是英文字母，建议起名稍复杂一些，尽量避免与其他程序冲突。
+4. 添加 URL Schemes：在 Xcode 中，选择你的工程设置项，选中 "TARGETS" 一栏，在 "Info" 标签栏的 "URL Types" 添加 "URL Schemes"，如果使用微信，填入所注册的微信应用程序 id，如果不使用微信，则自定义，允许英文字母和数字，首字母必须是英文字母，建议起名稍复杂一些，尽量避免与其他程序冲突。如果使用 CcbPay，格式为 `comccbpay+商户代码(即 MERCHANTID 字段值)+商户自定义的标示`，示例：`comccbpay105320148140002myapp`。
 5. 2.1.0 及以上版本，可打开 Debug 模式，打印出 log，方便调试。开启方法：`[Pingpp setDebugMode:YES];`。
-6. 2.2.8 及以上版本，可选择是否在 WAP 渠道中支付完成后，点击“返回商户”按钮，直接关闭支付页面。开启方法：`[Pingpp ignoreResultUrl: YES];` 。
+6. 2.2.8 及以上版本，可选择是否在 WAP 渠道中支付完成后，点击“返回商户”按钮，直接关闭支付页面。开启方法：`[Pingpp ignoreResultUrl:YES];` 。
 
 
 ### <h3 id='3.2'>手动导入</h3>
@@ -193,9 +194,9 @@ iOS SDK 要求 iOS 7.0 及以上版本
 ```
 
 ## <h2 id='5'>额外配置</h2>
-1. iOS 9 以上版本如果需要使用支付宝和微信渠道，需要在 `Info.plist` 添加以下代码：
+1. 如果需要使用支付宝和微信等跳转至渠道 app 的渠道，需要在 `Info.plist` 添加以下代码：
 
-    ```
+    ```xml
     <key>LSApplicationQueriesSchemes</key>
     <array>
         <string>weixin</string>
@@ -209,11 +210,12 @@ iOS SDK 要求 iOS 7.0 及以上版本
         <string>uppayx2</string>
         <string>uppayx3</string>
         <string>cmbmobilebank</string>
+        <string>mbspay</string>
     </array>
     ```
-2. iOS 9 限制了 http 协议的访问，如果 App 需要访问 `http://`，需要在 `Info.plist` 添加如下代码：
+2. 如果 App 需要访问 `http://`，需要在 `Info.plist` 添加如下代码，或者根据需求添加 `NSExceptionDomains`：
 
-    ```
+    ```xml
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSAllowsArbitraryLoads</key>
@@ -228,16 +230,33 @@ iOS SDK 要求 iOS 7.0 及以上版本
     请到 Xcode 项目的 `Build Settings` 标签页搜索 bitcode，将 `Enable Bitcode` 设置为 `NO`。  
 4. `CmbWallet`（招行一网通） 需要把 招行一网通 提供的秘钥`CMBPublicKey` 添加到 `Info.plist` 如果是混淆加密的则不需要 如以下代码:
 
-    ```
-    <key>CMBPublicKey</key>          
-        <string>IwxiAyJIT4tlwJSCbRRE0jZFTvYjt02/CrlutsMzd5O4B9PaVyUmIKSasdasdasdhWTyp3Bb9T7c9ujiUJOJ8y7893grwEae9yiOBoBmByVsCMTaxnc+lMr7A9ifk48Tz61WxsxnQTyYzrIVbuerQIUi3PSORwcPMRqi+XLX8qPXkNpLT9dMvjOasdasdasdUaAdPFc2YFHwl9dHf2ydQsxh1BHvaVO0OO+GtZ04ZKjxRyJW2HfghKLJijl;XTjrWSNizcdoefFKQsTdzvcPNvx7PsxuXKo9SosheeS/SHPk9sGNdwvL55yEBA8gNs0XZbkxJYjuwrwsQInC/N6QSaI0f0kyTA==
-        </string>
+    ```xml
+    <key>CMBPublicKey</key>
+    <string>IwxiAyJIT4tlwJSCbRRE0jZFTvYjt02/CrlutsMzd5O4B9PaVyUmIKSasdasdasdhWTyp3Bb9T7c9ujiUJOJ8y7893grwEae9yiOBoBmByVsCMTaxnc+lMr7A9ifk48Tz61WxsxnQTyYzrIVbuerQIUi3PSORwcPMRqi+XLX8qPXkNpLT9dMvjOasdasdasdUaAdPFc2YFHwl9dHf2ydQsxh1BHvaVO0OO+GtZ04ZKjxRyJW2HfghKLJijl;XTjrWSNizcdoefFKQsTdzvcPNvx7PsxuXKo9SosheeS/SHPk9sGNdwvL55yEBA8gNs0XZbkxJYjuwrwsQInC/N6QSaI0f0kyTA==
+    </string>
     ```
 
 5. `CmbWallet`（招行一网通） 手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可；
 6. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可；
 7. 招行一网通 app 支付不需要依赖 `CmbWallet` 模块和上述 `CmbWallet` 相关配置，模块已经包含在 `Pingpp/Core` 里面。需要用到 `URL Schemes`，创建 `charge` 时，在 `extra[result_url]` 字段传入 `<SCHEME>://pingppcmbwallet`，其中 `<SCHEME>` 是你自定的 `URL Schemes`；
-8. 判断设备上是否已经安装招商银行方法：`[Pingpp isCmbWalletInstalled]`。
+8. 判断设备上是否已经安装招商银行 app 的方法：`[Pingpp isCmbWalletInstalled]`。
+9. 使用 CcbPay 请先确保用户手机安装了建设银行 app。判断设备上是否已经安装建设银行 app 的方法：`[Pingpp isCcbAppInstalled]`。
+10. 使用 CcbPay 的情况，需要在 `Info.plist` 的 `NSAppTransportSecurity` 字段添加相应的 `NSExceptionDomains`
+
+    ```xml
+    <key>NSExceptionDomains</key>
+    <dict>
+        <key>ibsbjstar.ccb.com.cn</key>
+        <dict>
+            <key>NSExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+            <key>NSExceptionRequiresForwardSecrecy</key>
+            <false/>
+            <key>NSIncludesSubdomains</key>
+            <true/>
+        </dict>
+    </dict>
+    ```
 
 ## <h2 id='6'>注意事项</h2>
 ### * 如果不需要 Apple Pay，请不要导入 Apple Pay 的静态库。以免提交到 App Store 时审核不通过。
@@ -245,7 +264,7 @@ iOS SDK 要求 iOS 7.0 及以上版本
 ### * 如果 集成 Apple Pay 测试时请注意 以下几点
 1. 测试时必须是真机进行测试
 2. 检查相关的证书是否正确
-3. 手机必须是 iPhone 6 以上 ，并且系统 iOS 9 以上
+3. 手机必须是 iPhone 6 以上
 4. 支付时必须绑定了真实的银行卡且有充足的余额
 
 ### * 请勿直接使用客户端支付结果作为最终判定订单状态的依据，支付状态以服务端为准!!!在收到客户端同步返回结果时，请向自己的服务端请求来查询订单状态。
@@ -254,6 +273,5 @@ iOS SDK 要求 iOS 7.0 及以上版本
 使用阿里百川等阿里系的 SDK 时，可能会出现冲突，请尝试使用 `pod 'Pingpp/AlipayNoUTDID'` 代替 `pod 'Pingpp/Alipay'`。
 
 因为 `CocoaPods` 的限制，只有编译通过的才能上传成功，所以使用时，需要删除项目中已经存在的 `UTDID.framework`。
-
 
 **关于如何使用 SDK 请参考 [开发者中心](https://www.pingxx.com/docs/index) 或者 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。**

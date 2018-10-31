@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.23'
+  s.version      = '2.2.24'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://pingxx.com'
   s.license      = 'COMMERCIAL'
   s.author       = { 'Afon Weng' => 'xufeng.weng@pingxx.com' }
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '10.0'
   s.source       = { :http => "https://sdk-assets.oss-cn-shanghai.aliyuncs.com/pingpp/#{s.version}/pingpp-ios-libs.zip" }
   s.requires_arc = true
   s.default_subspec = 'Core', 'Alipay', 'UnionPay'
@@ -100,6 +100,14 @@ Pod::Spec.new do |s|
 
   s.subspec 'WebView' do |ss|
     ss.vendored_libraries = 'lib/Dependencies/WebView/*.a'
+    ss.dependency 'Pingpp/Core'
+  end
+
+  s.subspec 'CcbPay' do |ss|
+    ss.vendored_libraries = 'lib/Channels/CcbPay/*.a'
+    ss.ios.vendored_frameworks = 'lib/Channels/CcbPay/CCBNetPaySDK.framework'
+    ss.frameworks = 'CoreTelephony'
+    ss.ios.library = 'sqlite3'
     ss.dependency 'Pingpp/Core'
   end
 

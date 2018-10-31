@@ -68,7 +68,7 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *
  *  @param charge           Charge 对象(JSON 格式字符串 或 NSDictionary)
  *  @param scheme           URL Scheme，支付宝渠道回调需要
- *  @param completionBlock  支付结果回调 Block
+ *  @param completion  支付结果回调 Block
  */
 + (void)createPayment:(NSObject *)charge
          appURLScheme:(NSString *)scheme
@@ -78,7 +78,7 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  回调结果接口(支付宝/微信/测试模式)
  *
  *  @param url              结果url
- *  @param completionBlock  支付结果回调 Block，保证跳转支付过程中，当 app 被 kill 掉时，能通过这个接口得到支付结果
+ *  @param completion  支付结果回调 Block，保证跳转支付过程中，当 app 被 kill 掉时，能通过这个接口得到支付结果
  *
  *  @return                 当无法处理 URL 或者 URL 格式不正确时，会返回 NO。
  */
@@ -90,7 +90,7 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *
  *  @param url                结果url
  *  @param sourceApplication  源应用 Bundle identifier
- *  @param completionBlock    支付结果回调 Block，保证跳转支付过程中，当 app 被 kill 掉时，能通过这个接口得到支付结果
+ *  @param completion    支付结果回调 Block，保证跳转支付过程中，当 app 被 kill 掉时，能通过这个接口得到支付结果
  *
  *  @return                   当无法处理 URL 或者 URL 格式不正确时，会返回 NO。
  */
@@ -156,8 +156,15 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
 
 /**
  * 是否已安装招商银行 app
+ * @return BOOL
  */
 + (BOOL)isCmbWalletInstalled;
+
+/**
+ * 是否已安装建设银行 app
+ * @return BOOL
+ */
++ (BOOL)isCcbAppInstalled;
 
 @end
 #endif
