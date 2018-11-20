@@ -119,7 +119,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
 ```
 
 ### <h3 id='4.2'>使用 Ping++ UI版 SDK</h3>
-使用 UI 版本且不想展示 Ping++ 提供的广告请[联系我们](https://www.pingxx.com/contact)
+
 ```
 #import <Pingpp+UI.h>
 ```
