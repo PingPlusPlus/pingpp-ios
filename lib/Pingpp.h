@@ -10,9 +10,10 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, PingppErrorOption)
+typedef NS_ENUM(NSInteger, PingppErrorOption)
 {
-    PingppErrInvalidCharge,
+    PingppErrNone = -1,
+    PingppErrInvalidCharge = 0,
     PingppErrInvalidCredential,
     PingppErrInvalidChannel,
     PingppErrWxNotInstalled,
@@ -29,6 +30,10 @@ typedef NS_ENUM(NSUInteger, PingppErrorOption)
     PingppErrProcessing,
     PingppErrQqNotInstalled,
     PingppErrCmbWalletNotInstalled,
+    PingppErrInvalidInputData,
+    PingppErrInvalidLibrary,
+    PingppErrOpenURLFailed,
+    PingppErrStatusUnknown,
 };
 
 typedef NS_ENUM(NSUInteger, PingppRequestContentTypeOption) {
@@ -97,11 +102,13 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
 + (BOOL)handleOpenURL:(NSURL *)url
     sourceApplication:(NSString *)sourceApplication
        withCompletion:(PingppCompletion)completion;
+
 /**
  *  web渠道支付成功后点击 "返回商户" 直接关闭支付页面
  *  @enabled        是否启用
  */
 + (void)ignoreResultUrl:(BOOL)enabled;
+
 /**
  *  版本号
  *
@@ -165,6 +172,26 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  * @return BOOL
  */
 + (BOOL)isCcbAppInstalled;
+
+/**
+ *  签约
+ *
+ *  @param agreement  Agreement 对象(JSON 格式字符串 或 NSDictionary)
+ *  @param completion 签约结果回调
+ */
++ (void)signAgreement:(NSObject *)agreement
+       withCompletion:(PingppCompletion)completion;
+
+/**
+ *  签约回调结果接口
+ *
+ *  @param url         结果 URL
+ *  @param completion  回调 Block，保证签约跳转过程中，当 app 被 kill 掉时，能通过这个接口得到支付结果
+ *
+ *  @return            当无法处理 URL 或者 URL 格式不正确时，会返回 NO。
+ */
++ (BOOL)handleAgreementURL:(NSURL *)url
+            withCompletion:(PingppCompletion)completion;
 
 @end
 #endif

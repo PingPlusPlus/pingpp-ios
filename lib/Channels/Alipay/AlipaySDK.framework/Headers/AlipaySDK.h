@@ -9,7 +9,7 @@
 
 ////////////////////////////////////////////////////////
 ///////////////// 支付宝标准版本支付SDK ///////////////////
-/////////// version:15.5.5  motify:2018.05.09 ///////////
+/////////// version:15.5.9  motify:2018.11.26///////////
 ////////////////////////////////////////////////////////
 
 #import <UIKit/UIKit.h>
@@ -17,6 +17,17 @@
 
 typedef void(^CompletionBlock)(NSDictionary *resultDic);
 
+typedef enum {
+    ALIPAY_TIDFACTOR_IMEI,
+    ALIPAY_TIDFACTOR_IMSI,
+    ALIPAY_TIDFACTOR_TID,
+    ALIPAY_TIDFACTOR_CLIENTKEY,
+    ALIPAY_TIDFACTOR_VIMEI,
+    ALIPAY_TIDFACTOR_VIMSI,
+    ALIPAY_TIDFACTOR_CLIENTID,
+    ALIPAY_TIDFACTOR_APDID,
+    ALIPAY_TIDFACTOR_MAX
+} AlipayTidFactor;
 
 @interface AlipaySDK : NSObject
 
@@ -32,22 +43,41 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
  */
 @property (nonatomic, weak) UIWindow *targetWindow;
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////支付宝支付相关接口/////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 /**
  *  支付接口
  *
- *  @param orderStr       订单信息
- *  @param schemeStr      调用支付的app注册在info.plist中的scheme
- *  @param completionBlock 支付结果回调Block，用于wap支付结果回调（非跳转钱包支付）
+ *  @param orderStr        支付订单信息字串
+ *  @param schemeStr       调用支付的app注册在info.plist中的scheme
+ *  @param completionBlock 支付结果回调Block，用于wap支付结果回调
+                           跳转支付宝支付时只有当processOrderWithPaymentResult接口的completionBlock为nil时会使用这个bolock
  */
 - (void)payOrder:(NSString *)orderStr
       fromScheme:(NSString *)schemeStr
         callback:(CompletionBlock)completionBlock;
 
 /**
- *  处理钱包或者独立快捷app支付跳回商户app携带的支付结果Url
+ *  支付接口 v2
  *
- *  @param resultUrl        支付结果url
- *  @param completionBlock  支付结果回调
+ *  @param orderStr        支付订单信息字串
+ *  @param dynamicLaunch   是否使用动态配置策略跳转支付宝支付
+ *  @param schemeStr       调用支付的app注册在info.plist中的scheme
+ *  @param completionBlock 支付结果回调Block，用于wap支付结果回调
+ 跳转支付宝支付时只有当processOrderWithPaymentResult接口的completionBlock为nil时会使用这个bolock
+ */
+- (void)payOrder:(NSString *)orderStr
+   dynamicLaunch:(BOOL)dynamicLaunch
+      fromScheme:(NSString *)schemeStr
+        callback:(CompletionBlock)completionBlock;
+
+/**
+ *  处理支付宝app支付后跳回商户app携带的支付结果Url
+ *
+ *  @param resultUrl        支付宝app返回的支付结果url
+ *  @param completionBlock  支付结果回调 为nil时默认使用支付接口的completionBlock
  */
 - (void)processOrderWithPaymentResult:(NSURL *)resultUrl
                       standbyCallback:(CompletionBlock)completionBlock;
@@ -58,6 +88,90 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
  *  @return 交易token，若无则为空。
  */
 - (NSString *)fetchTradeToken;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////支付宝授权 2.0 相关接口////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ *  快登授权2.0
+ *
+ *  @param infoStr          授权请求信息字串
+ *  @param schemeStr        调用授权的app注册在info.plist中的scheme
+ *  @param completionBlock  授权结果回调，若在授权过程中，调用方应用被系统终止，则此block无效，
+                            需要调用方在appDelegate中调用processAuth_V2Result:standbyCallback:方法获取授权结果
+ */
+- (void)auth_V2WithInfo:(NSString *)infoStr
+             fromScheme:(NSString *)schemeStr
+               callback:(CompletionBlock)completionBlock;
+
+/**
+ *  处理支付宝app授权后跳回商户app携带的授权结果Url
+ *
+ *  @param resultUrl        支付宝app返回的授权结果url
+ *  @param completionBlock  授权结果回调
+ */
+- (void)processAuth_V2Result:(NSURL *)resultUrl
+             standbyCallback:(CompletionBlock)completionBlock;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////支付宝授权 1.0 相关接口////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ *  快登授权
+ *  @param authInfo         授权相关信息
+ *  @param completionBlock  授权结果回调，若在授权过程中，调用方应用被系统终止，则此block无效，
+                            需要调用方在appDelegate中调用processAuth_V2Result:standbyCallback:方法获取授权结果
+ */
+- (void)authWithInfo:(APayAuthInfo *)authInfo
+            callback:(CompletionBlock)completionBlock;
+
+/**
+ *  处理支付宝app授权后跳回商户app携带的授权结果Url
+ *
+ *  @param resultUrl        支付宝app返回的授权结果url
+ *  @param completionBlock  授权结果回调
+ */
+- (void)processAuthResult:(NSURL *)resultUrl
+          standbyCallback:(CompletionBlock)completionBlock;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////支付宝 h5 支付转 native 支付接口////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ *  从h5链接中获取订单串并支付接口（自版本15.4.0起，推荐使用该接口）
+ *
+ *  @param urlStr     拦截的 url string
+ *
+ *  @return YES为成功获取订单信息并发起支付流程；NO为无法获取订单信息，输入url是普通url
+ */
+- (BOOL)payInterceptorWithUrl:(NSString *)urlStr
+                   fromScheme:(NSString *)schemeStr
+                     callback:(CompletionBlock)completionBlock;
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////支付宝 tid 相关信息获取接口/////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ *  获取当前tid相关信息
+ *
+ *  @return tid相关信息
+ */
+- (NSString*)queryTidFactor:(AlipayTidFactor)factor;
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////支付宝支付环境相关信息接口//////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
  *  是否已经使用过
@@ -80,91 +194,10 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
  */
 - (void)setUrl:(NSString *)url;
 
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////h5 拦截支付入口///////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
 /**
- *  从h5链接中获取订单串并支付接口（自版本15.4.0起，推荐使用该接口）
+ *  支付前主动更新本地配置
  *
- *  @param urlStr     拦截的 url string
- *
- *  @return YES为成功获取订单信息并发起支付流程；NO为无法获取订单信息，输入url是普通url
+ *  @param block 更新请求结果回调
  */
-- (BOOL)payInterceptorWithUrl:(NSString *)urlStr
-                   fromScheme:(NSString *)schemeStr
-                     callback:(CompletionBlock)completionBlock;
-
-/**
- *  从h5链接中获取订单串接口（自版本15.4.0起已废弃，请使用payInterceptorWithUrl...）
- *
- *  @param urlStr     拦截的 url string
- *
- *  @return 获取到的url order info
- */
-- (NSString*)fetchOrderInfoFromH5PayUrl:(NSString*)urlStr;
-
-
-/**
- *  h5链接获取到的订单串支付接口（自版本15.4.0起已废弃，请使用payInterceptorWithUrl...）
- *
- *  @param orderStr       订单信息
- *  @param schemeStr      调用支付的app注册在info.plist中的scheme
- *  @param completionBlock 支付结果回调Block
- */
-- (void)payUrlOrder:(NSString *)orderStr
-         fromScheme:(NSString *)schemeStr
-           callback:(CompletionBlock)completionBlock;
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////授权2.0//////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-
-/**
- *  快登授权2.0
- *
- *  @param infoStr          授权请求信息字符串
- *  @param schemeStr        调用授权的app注册在info.plist中的scheme
- *  @param completionBlock  授权结果回调，若在授权过程中，调用方应用被系统终止，则此block无效，
- 需要调用方在appDelegate中调用processAuth_V2Result:standbyCallback:方法获取授权结果
- */
-- (void)auth_V2WithInfo:(NSString *)infoStr
-             fromScheme:(NSString *)schemeStr
-               callback:(CompletionBlock)completionBlock;
-
-/**
- *  处理授权信息Url
- *
- *  @param resultUrl        钱包返回的授权结果url
- *  @param completionBlock  授权结果回调
- */
-- (void)processAuth_V2Result:(NSURL *)resultUrl
-             standbyCallback:(CompletionBlock)completionBlock;
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////授权1.0 (授权1.0接口即将废弃，请使用授权2.0接口)///////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-
-/**
- *  快登授权
- *  @param authInfo         需授权信息
- *  @param completionBlock  授权结果回调，若在授权过程中，调用方应用被系统终止，则此block无效，
-                            需要调用方在appDelegate中调用processAuthResult:standbyCallback:方法获取授权结果
- */
-- (void)authWithInfo:(APayAuthInfo *)authInfo
-             callback:(CompletionBlock)completionBlock;
-
-
-/**
- *  处理授权信息Url
- *
- *  @param resultUrl        钱包返回的授权结果url
- *  @param completionBlock  授权结果回调
- */
-- (void)processAuthResult:(NSURL *)resultUrl
-          standbyCallback:(CompletionBlock)completionBlock;
-
-
+- (void)fetchSdkConfigWithBlock:(void(^)(BOOL success))block;
 @end

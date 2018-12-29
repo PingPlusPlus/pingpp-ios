@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.24'
+  s.version      = '2.2.25'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -108,6 +108,11 @@ Pod::Spec.new do |s|
     ss.ios.vendored_frameworks = 'lib/Channels/CcbPay/CCBNetPaySDK.framework'
     ss.frameworks = 'CoreTelephony'
     ss.ios.library = 'sqlite3'
+    ss.dependency 'Pingpp/Core'
+  end
+
+  s.subspec 'Agreement' do |ss|
+    ss.vendored_libraries = 'lib/Dependencies/Agreement/*.a'
     ss.dependency 'Pingpp/Core'
   end
 

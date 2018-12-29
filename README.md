@@ -1,6 +1,7 @@
 # Pingpp iOS SDK
 
 ## 目录
+
 * [1. 简介](#1)
 * [2. 版本要求](#2)
 * [3. 接入方法](#3)
@@ -14,6 +15,7 @@
 * [6. 注意事项](#6)
 
 ## <h2 id='1'>简介</h2>
+
 lib 文件夹下是 iOS SDK 文件，  
 example 文件夹里面是一个简单的接入示例，该示例仅供参考。
 
@@ -24,12 +26,13 @@ __当前版本，不需要微信的 SDK，可以正常调用微信支付__
 iOS SDK 要求 iOS 10.0 及以上版本
 
 ## <h2 id='3'>接入方法</h2>
+
 ### <h3 id='3.1'>使用 CocoaPods</h3>
 
 1. 在 `Podfile` 添加
 
-    ```
-    pod 'Pingpp', '~> 2.2.24'
+    ```ruby
+    pod 'Pingpp', '~> 2.2.25'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
@@ -46,19 +49,24 @@ iOS SDK 要求 iOS 10.0 及以上版本
     - `Yeepay`（易宝支付 Wap 支付）
     - `Jdpay`（京东支付 Wap 支付）
     - `CcbPay`（建设银行 app 支付）
+    - `Agreement`（带扣签约）
     - `UI`（Ping++ SDK UI 版）
-
 
     例如：
 
+    ```ruby
+    pod 'Pingpp/Alipay', '~> 2.2.25'
+    pod 'Pingpp/UnionPay', '~> 2.2.25'
     ```
-    pod 'Pingpp/Alipay', '~> 2.2.24'
-    pod 'Pingpp/UnionPay', '~> 2.2.24'
+
+    代扣签约
+    ```ruby
+    pod 'Pingpp/Agreement', '~> '2.2.25'
     ```
 
     Ping++ SDK UI 版
-    ```
-    pod 'Pingpp/UI', '~> '2.2.24'
+    ```ruby
+    pod 'Pingpp/UI', '~> '2.2.25'
     ```
 
 2. 运行 `pod install`
@@ -67,8 +75,8 @@ iOS SDK 要求 iOS 10.0 及以上版本
 5. 2.1.0 及以上版本，可打开 Debug 模式，打印出 log，方便调试。开启方法：`[Pingpp setDebugMode:YES];`。
 6. 2.2.8 及以上版本，可选择是否在 WAP 渠道中支付完成后，点击“返回商户”按钮，直接关闭支付页面。开启方法：`[Pingpp ignoreResultUrl:YES];` 。
 
-
 ### <h3 id='3.2'>手动导入</h3>
+
 1. 获取 SDK  
 下载 SDK, 里面包含了 lib 文件夹和 example 文件夹。lib 文件夹里面是 SDK 的文件。
 2. 依赖 Frameworks：
@@ -98,7 +106,9 @@ iOS SDK 要求 iOS 10.0 及以上版本
 7. 2.2.8 及以上版本，可选择是否在 WAP 渠道中支付完成后，点击“返回商户”按钮，直接关闭支付页面。开启方法：`[Pingpp ignoreResultUrl: YES];` 。
 
 ## <h2 id='4'>接入方法</h2>
+
 #### <h3 id='4.1'>使用 Ping++ 标准版 SDK</h3>
+
 ```
 #import <Pingpp.h>
 ```
@@ -125,6 +135,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
 ```
 
 #### 带渠道选择页面
+
 ``` objective-c
 /**
  *  设置需要显示的渠道按钮（有序）
@@ -152,6 +163,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
 ```
 
 #### 不带渠道选择页面
+
 ``` objective-c
 [Pingpp createPay:data
    viewController:self
@@ -169,20 +181,9 @@ iOS SDK 要求 iOS 10.0 及以上版本
 ```
 
 ### <h3 id='4.3'>接收并处理交易结果</h3>
-##### 渠道为支付宝但未安装支付宝钱包时，交易结果会在调起插件时的 Completion 中返回。渠道为微信、支付宝(安装了支付宝钱包)、银联或者测试模式时，请实现 UIApplicationDelegate 的 - application:openURL:xxxx: 方法:
-##### iOS 8 及以下
-``` objective-c
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:nil];
 
-    return canHandleURL;
-}
-```
+##### 渠道为支付宝但未安装支付宝钱包时，交易结果会在调起插件时的 Completion 中返回。渠道为微信、支付宝(安装了支付宝钱包)、银联或者测试模式时，请实现 UIApplicationDelegate 的 - application:openURL:options: 方法:
 
-##### iOS 9 及以上
 ``` objective-c
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
@@ -193,7 +194,61 @@ iOS SDK 要求 iOS 10.0 及以上版本
 }
 ```
 
+### <h3 id='4.4'>使用代扣签约接口</h3>
+
+Podfile 添加
+
+```ruby
+pod 'Pingpp/Agreement', '~> '2.2.25'
+```
+
+通过服务端获取 `agreement` 对象后，调用接口
+
+```objective-c
+[Pingpp signAgreement:agreement
+       withCompletion:^(NSString *result, PingppError *error) {
+    // 处理结果/错误
+}];
+```
+
+```swift
+Pingpp.signAgreement(agreement) { (result: String?, error: PingppError?) in
+    // 处理结果/错误
+}
+```
+
+#### 处理签约结果
+
+``` objective-c
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options {
+    if ([Pingpp handleOpenURL:url withCompletion:nil]) {
+        // 这个是处理支付回调的
+        return YES;
+    } else if ([Pingpp handleAgreementURL:url withCompletion:nil]) {
+        // 这个是处理签约回调的，签约回调，目前前端只会在 completion 返回 "unknown"，需要通过服务端查询实际结果
+        return YES;
+    }
+
+    return NO;
+}
+```
+
+``` swift
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    if Pingpp.handleOpen(url, withCompletion: nil) {
+        return true
+    } else if Pingpp.handleAgreementURL(url, withCompletion: nil) {
+        return true
+    }
+
+    return false
+}
+```
+
 ## <h2 id='5'>额外配置</h2>
+
 1. 如果需要使用支付宝和微信等跳转至渠道 app 的渠道，需要在 `Info.plist` 添加以下代码：
 
     ```xml
@@ -259,9 +314,11 @@ iOS SDK 要求 iOS 10.0 及以上版本
     ```
 
 ## <h2 id='6'>注意事项</h2>
+
 ### * 如果不需要 Apple Pay，请不要导入 Apple Pay 的静态库。以免提交到 App Store 时审核不通过。
 
 ### * 如果 集成 Apple Pay 测试时请注意 以下几点
+
 1. 测试时必须是真机进行测试
 2. 检查相关的证书是否正确
 3. 手机必须是 iPhone 6 以上
@@ -270,6 +327,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
 ### * 请勿直接使用客户端支付结果作为最终判定订单状态的依据，支付状态以服务端为准!!!在收到客户端同步返回结果时，请向自己的服务端请求来查询订单状态。
 
 ### * 支付宝渠道发生包冲突的情况
+
 使用阿里百川等阿里系的 SDK 时，可能会出现冲突，请尝试使用 `pod 'Pingpp/AlipayNoUTDID'` 代替 `pod 'Pingpp/Alipay'`。
 
 因为 `CocoaPods` 的限制，只有编译通过的才能上传成功，所以使用时，需要删除项目中已经存在的 `UTDID.framework`。
