@@ -113,11 +113,13 @@ iOS SDK 要求 iOS 10.0 及以上版本
 #import <Pingpp.h>
 ```
 
+Objective-C
+
 ``` objective-c
 // data 表示 Charge/Order/Recharge 的 JSON 字符串
 [Pingpp createPayment:data
        viewController:viewController
-         appURLScheme:kUrlScheme
+         appURLScheme:URLScheme
        withCompletion:^(NSString *result, PingppError *error) {
     if ([result isEqualToString:@"success"]) {
         // 支付成功
@@ -126,6 +128,17 @@ iOS SDK 要求 iOS 10.0 及以上版本
         NSLog(@"Error: code=%lu msg=%@", error.code, [error getMsg]);
     }
 }];
+```
+
+Swift
+
+```swift
+Pingpp.createPayment(data as NSObject, viewController: viewController, appURLScheme: URLScheme) { (result: String?, error: PingppError?) in
+    if error != nil {
+        // 处理错误
+    }
+    // 处理结果
+}
 ```
 
 ### <h3 id='4.2'>使用 Ping++ UI版 SDK</h3>
@@ -167,7 +180,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
 ``` objective-c
 [Pingpp createPay:data
    viewController:self
-     appURLScheme:kUrlScheme
+     appURLScheme:URLScheme
    withCompletion:^(NSString *result, PingppError *error) {
     // 根据result判断支付是否成功
     NSLog(@"result=%@", result);
@@ -204,12 +217,16 @@ pod 'Pingpp/Agreement', '~> '2.2.25'
 
 通过服务端获取 `agreement` 对象后，调用接口
 
+Objective-C
+
 ```objective-c
 [Pingpp signAgreement:agreement
        withCompletion:^(NSString *result, PingppError *error) {
     // 处理结果/错误
 }];
 ```
+
+Swift
 
 ```swift
 Pingpp.signAgreement(agreement) { (result: String?, error: PingppError?) in
@@ -218,6 +235,8 @@ Pingpp.signAgreement(agreement) { (result: String?, error: PingppError?) in
 ```
 
 #### 处理签约结果
+
+Objective-C
 
 ``` objective-c
 - (BOOL)application:(UIApplication *)app
@@ -234,6 +253,8 @@ Pingpp.signAgreement(agreement) { (result: String?, error: PingppError?) in
     return NO;
 }
 ```
+
+Swift
 
 ``` swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
