@@ -9,8 +9,7 @@
     * [3. 手动导入](#3.2)
 * [4. 接入方法](#4)
     * [4.1 使用 Ping++ 标准版 SDK](#4.1)
-    * [4.2 使用 Ping++ UI版 SDK](#4.2)
-    * [4.3 接收并处理交易结果](#4.3)
+    * [4.2 接收并处理交易结果](#4.2)
 * [5. 额外配置](#5)
 * [6. 注意事项](#6)
 
@@ -50,7 +49,6 @@ iOS SDK 要求 iOS 10.0 及以上版本
     - `Jdpay`（京东支付 Wap 支付）
     - `CcbPay`（建设银行 app 支付）
     - `Agreement`（带扣签约）
-    - `UI`（Ping++ SDK UI 版）
 
     例如：
 
@@ -61,12 +59,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
 
     代扣签约
     ```ruby
-    pod 'Pingpp/Agreement', '~> '2.2.25'
-    ```
-
-    Ping++ SDK UI 版
-    ```ruby
-    pod 'Pingpp/UI', '~> '2.2.25'
+    pod 'Pingpp/Agreement', '~> 2.2.25'
     ```
 
 2. 运行 `pod install`
@@ -141,59 +134,7 @@ Pingpp.createPayment(data as NSObject, viewController: viewController, appURLSch
 }
 ```
 
-### <h3 id='4.2'>使用 Ping++ UI版 SDK</h3>
-
-```
-#import <Pingpp+UI.h>
-```
-
-#### 带渠道选择页面
-
-``` objective-c
-/**
- *  设置需要显示的渠道按钮（有序）
- *  @param  channels  渠道数组，与 API 的 channel 字段对应。 例: @[@"wx",@"alipay", @"upacp", @"bfb_wap"]
- */
-[Pingpp enableChannels:channels];
-
-// 调起支付页面
-[Pingpp payWithOrderNo:orderNo // 订单号
-                amount:100 // 金额
-                params:nil // 自定义参数，请求 chargeURL 时，会放在 custom_params 字段
-             chargeURL:chargeURL // 壹收款会向该地址发送请求，该地址需要返回 charge 的 JSON 字符串
-          appURLScheme:appURLScheme // Info.plist 中填写的 URL Scheme，支付宝渠道和测试模式需要
-        viewController:self // 当前的 ViewController
-     completionHandler:^(NSString * _Nonnull result, PingppURLResponse * _Nullable response, NSError * _Nullable error) {
-    // 根据result判断支付是否成功
-    NSLog(@"result=%@", result);
-    if (response && response.responseString) {
-        NSLog(@"response.responseString=%@", response.responseString);
-    }
-    if (error) {
-        NSLog(@"completion error code:%lu domain:%@ userInfo:%@", error.code, error.domain, error.userInfo);
-    }
-}];
-```
-
-#### 不带渠道选择页面
-
-``` objective-c
-[Pingpp createPay:data
-   viewController:self
-     appURLScheme:URLScheme
-   withCompletion:^(NSString *result, PingppError *error) {
-    // 根据result判断支付是否成功
-    NSLog(@"result=%@", result);
-    if (response && response.responseString) {
-        NSLog(@"response.responseString=%@", response.responseString);
-    }
-    if (error) {
-        NSLog(@"completion error code:%lu domain:%@ userInfo:%@", error.code, error.domain, error.userInfo);
-    }
-}];
-```
-
-### <h3 id='4.3'>接收并处理交易结果</h3>
+### <h3 id='4.2'>接收并处理交易结果</h3>
 
 ##### 渠道为支付宝但未安装支付宝钱包时，交易结果会在调起插件时的 Completion 中返回。渠道为微信、支付宝(安装了支付宝钱包)、银联或者测试模式时，请实现 UIApplicationDelegate 的 - application:openURL:options: 方法:
 
@@ -212,7 +153,7 @@ Pingpp.createPayment(data as NSObject, viewController: viewController, appURLSch
 Podfile 添加
 
 ```ruby
-pod 'Pingpp/Agreement', '~> '2.2.25'
+pod 'Pingpp/Agreement', '~> 2.2.25'
 ```
 
 通过服务端获取 `agreement` 对象后，调用接口
@@ -280,6 +221,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
         <string>alipay</string>
         <string>alipays</string>
         <string>mqq</string>
+        <string>mqqwallet</string>
         <string>uppaysdk</string>
         <string>uppaywallet</string>
         <string>uppayx1</string>

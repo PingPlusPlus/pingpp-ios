@@ -59,14 +59,6 @@ Pod::Spec.new do |s|
     ss.dependency 'Pingpp/Core'
   end
 
-  s.subspec 'UI' do |ss|
-    ss.frameworks = 'QuartzCore'
-    ss.source_files = 'lib/UI/*.h'
-    ss.public_header_files = 'lib/UI/*.h'
-    ss.vendored_libraries = 'lib/UI/*.a'
-    ss.dependency 'Pingpp/Core'
-  end
-
   s.subspec 'BfbWap' do |ss|
     ss.vendored_libraries = 'lib/Channels/BfbWap/*.a'
     ss.dependency 'Pingpp/Core'
