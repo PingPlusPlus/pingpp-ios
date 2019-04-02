@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.25'
+  s.version      = '2.2.26'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     core.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   end
 
-  s.subspec 'ApplePay' do|ss|
+  s.subspec 'ApplePay' do |ss|
     ss.vendored_libraries = 'lib/Channels/ApplePay/*.a'
     ss.frameworks = 'PassKit'
     ss.dependency 'Pingpp/Core'
@@ -87,6 +87,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'QQWallet' do |ss|
     ss.vendored_libraries = 'lib/Channels/QQWallet/*.a'
+    ss.public_header_files = 'lib/Channels/QQWallet/QQWalletSDK/*.h'
     ss.dependency 'Pingpp/Core'
   end
 
@@ -105,6 +106,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'Agreement' do |ss|
     ss.vendored_libraries = 'lib/Dependencies/Agreement/*.a'
+    ss.dependency 'Pingpp/Core'
+  end
+
+  s.subspec 'Cmpay' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Cmpay/*.a'
     ss.dependency 'Pingpp/Core'
   end
 

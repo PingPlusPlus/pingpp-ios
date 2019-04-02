@@ -31,7 +31,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```ruby
-    pod 'Pingpp', '~> 2.2.25'
+    pod 'Pingpp', '~> 2.2.26'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
@@ -49,17 +49,18 @@ iOS SDK 要求 iOS 10.0 及以上版本
     - `Jdpay`（京东支付 Wap 支付）
     - `CcbPay`（建设银行 app 支付）
     - `Agreement`（带扣签约）
+    - `Cmpay`（和包支付）
 
     例如：
 
     ```ruby
-    pod 'Pingpp/Alipay', '~> 2.2.25'
-    pod 'Pingpp/UnionPay', '~> 2.2.25'
+    pod 'Pingpp/Alipay', '~> 2.2.26'
+    pod 'Pingpp/UnionPay', '~> 2.2.26'
     ```
 
     代扣签约
     ```ruby
-    pod 'Pingpp/Agreement', '~> 2.2.25'
+    pod 'Pingpp/Agreement', '~> 2.2.26'
     ```
 
 2. 运行 `pod install`
@@ -153,7 +154,7 @@ Pingpp.createPayment(data as NSObject, viewController: viewController, appURLSch
 Podfile 添加
 
 ```ruby
-pod 'Pingpp/Agreement', '~> 2.2.25'
+pod 'Pingpp/Agreement', '~> 2.2.26'
 ```
 
 通过服务端获取 `agreement` 对象后，调用接口
@@ -229,6 +230,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
         <string>uppayx3</string>
         <string>cmbmobilebank</string>
         <string>mbspay</string>
+        <string>cmpay</string>
     </array>
     ```
 2. 如果 App 需要访问 `http://`，需要在 `Info.plist` 添加如下代码，或者根据需求添加 `NSExceptionDomains`：
