@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, PingppErrorOption)
     PingppErrInvalidLibrary,
     PingppErrOpenURLFailed,
     PingppErrStatusUnknown,
+    PingppErrCmpayAppNotInstalled,
 };
 
 typedef NS_ENUM(NSUInteger, PingppRequestContentTypeOption) {
