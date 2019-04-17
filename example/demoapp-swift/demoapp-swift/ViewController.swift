@@ -46,11 +46,10 @@ class ViewController: UIViewController {
                 let charge = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 print(charge! as String)
                 
-                    Pingpp.createPayment(charge! as String as String as NSObject!, appURLScheme: kAppURLScheme) { (result, error) -> Void in
-                        print(result)
+                Pingpp.createPayment(charge! as NSObject, appURLScheme: kAppURLScheme) { (result, error) -> Void in
+                        print(result!)
                         if error != nil {
-                            print(error?.code.rawValue)
-                            print(error?.getMsg())
+                            print(error!.getMsg()!)
                         }
                     }
                 
