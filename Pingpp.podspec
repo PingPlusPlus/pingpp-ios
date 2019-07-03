@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.26'
+  s.version      = '2.2.27'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     ss.vendored_libraries = 'lib/Channels/Alipay/*.a'
     ss.frameworks = 'CoreMotion', 'CoreTelephony'
     ss.dependency 'Pingpp/Core'
-    ss.dependency 'PingppAlipaySDK', '~> 15.5'
+    ss.dependency 'PingppAlipaySDK'
   end
 
   s.subspec 'CBAlipay' do |ss|
@@ -47,7 +47,7 @@ Pod::Spec.new do |s|
     ss.vendored_libraries = 'lib/Channels/Alipay/*.a'
     ss.frameworks = 'CoreMotion', 'CoreTelephony'
     ss.dependency 'Pingpp/Core'
-    ss.dependency 'PingppAlipaySDKNoUTDID', '~> 15.5'
+    ss.dependency 'PingppAlipaySDKNoUTDID'
   end
 
   s.subspec 'Wx' do |ss|
