@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = 'COMMERCIAL'
   s.author       = { 'Afon Weng' => 'xufeng.weng@pingxx.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :http => "https://sdk-assets.oss-cn-shanghai.aliyuncs.com/pingpp/2.2.28/pingpp-ios-libs.zip?OSSAccessKeyId=LTAINvrmNUVIPdCE&Expires=3376656000&Signature=NCdezpyMG2DfA0wJL%2FFzV4pTJww%3D" }
+  s.source       = { :http => "https://sdk-assets.oss-cn-shanghai.aliyuncs.com/pingpp/#{s.version}/pingpp-ios-libs.zip" }
   s.requires_arc = true
   s.default_subspec = 'Core', 'Alipay', 'UnionPay'
 
