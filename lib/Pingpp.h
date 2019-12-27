@@ -81,6 +81,21 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
        withCompletion:(PingppCompletion)completion;
 
 /**
+ *  支付调用接口(附带 Universal Link)
+ *
+ *  @param charge           Charge 对象(JSON 格式字符串 或 NSDictionary)
+ *  @param viewController   银联渠道需要
+ *  @param scheme           URL Scheme，支付宝渠道回调需要
+ *  @param universalLink    Universal Link
+ *  @param completionBlock  支付结果回调 Block
+ */
++ (void)createPayment:(NSObject *)charge
+       viewController:(UIViewController*)viewController
+         appURLScheme:(NSString *)scheme
+        universalLink:(NSString *)universalLink
+       withCompletion:(PingppCompletion)completionBlock;
+
+/**
  *  回调结果接口(支付宝/微信/测试模式)
  *
  *  @param url              结果url
@@ -193,6 +208,31 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  */
 + (BOOL)handleAgreementURL:(NSURL *)url
             withCompletion:(PingppCompletion)completion;
+
+/**
+ *  设置 Universal Link
+ *
+ *  @param universalLink    Universal Link
+ */
++ (void)setUniversalLink:(NSString *)universalLink;
+
+
+/**
+ *  获取已设置的 Universal Link
+ *
+ */
++ (NSString *)universalLink;
+
+/**
+ *  Universal Link 回调结果接口
+ *
+ *  @param userActivity        NSUserActivity
+ *  @param completion  支付结果回调 Block，保证跳转支付过程中，当 app 被 kill 掉时，能通过这个接口得到支付结果
+ *
+ *  @return                 当无法处理 URL 或者 URL 格式不正确时，会返回 NO。
+ */
++ (BOOL)handleContinueUserActivity:(NSUserActivity *)userActivity
+                    withCompletion:(PingppCompletion)completion;
 
 @end
 #endif

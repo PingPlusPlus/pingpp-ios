@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.28'
+  s.version      = '2.2.29'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -51,7 +51,9 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Wx' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Wx/*.a'
     ss.dependency 'Pingpp/Core'
+    ss.dependency 'WechatOpenSDK'
   end
 
   s.subspec 'UnionPay' do |ss|

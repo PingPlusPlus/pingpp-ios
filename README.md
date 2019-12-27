@@ -31,12 +31,13 @@ iOS SDK 要求 iOS 10.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```ruby
-    pod 'Pingpp', '~> 2.2.28'
+    pod 'Pingpp', '~> 2.2.29'
     ```
 
     默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
     目前支持以下模块：
     - `Alipay`（支付宝移动支付）
+    - `Wx`（微信支付）
     - `CBAlipay`（支付宝移动支付 - 境外支付）
     - `AlipayNoUTDID`（支付宝移动支付，独立 `UTDID.framework`）
     - `Wx`（微信 app 支付）
@@ -54,13 +55,14 @@ iOS SDK 要求 iOS 10.0 及以上版本
     例如：
 
     ```ruby
-    pod 'Pingpp/Alipay', '~> 2.2.28'
-    pod 'Pingpp/UnionPay', '~> 2.2.28'
+    pod 'Pingpp/Alipay', '~> 2.2.29'
+    pod 'Pingpp/Wx', '~> 2.2.29'
+    pod 'Pingpp/UnionPay', '~> 2.2.29'
     ```
 
     代扣签约
     ```ruby
-    pod 'Pingpp/Agreement', '~> 2.2.28'
+    pod 'Pingpp/Agreement', '~> 2.2.29'
     ```
 
 2. 运行 `pod install`
@@ -86,6 +88,8 @@ iOS SDK 要求 iOS 10.0 及以上版本
     libsqlite3.0.tbd
     CoreMotion.framework
     CoreLocation.framework
+    WebKit.framework
+    CoreGraphics.framework
     ```
 
     Apple Pay 所需：
@@ -149,12 +153,37 @@ Pingpp.createPayment(data as NSObject, viewController: viewController, appURLSch
 }
 ```
 
+```swift
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    if Pingpp.handleOpen(url, withCompletion: nil) {
+        return true;
+    } else if Pingpp.handleAgreementURL(url, withCompletion: nil) {
+        return true;
+    } else {
+        // 其他逻辑
+    }
+
+    return false
+}
+
+// 微信使用 Universal Links 的情况，需要该方法
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    var ret = Pingpp.handleContinue(userActivity, withCompletion: nil)
+    if !ret {
+        // 其他逻辑
+        // ret = 其他处理
+    }
+
+    return ret
+}
+```
+
 ### <h3 id='4.4'>使用代扣签约接口</h3>
 
 Podfile 添加
 
 ```ruby
-pod 'Pingpp/Agreement', '~> 2.2.28'
+pod 'Pingpp/Agreement', '~> 2.2.29'
 ```
 
 通过服务端获取 `agreement` 对象后，调用接口
@@ -201,12 +230,25 @@ Swift
 ``` swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     if Pingpp.handleOpen(url, withCompletion: nil) {
-        return true
+        return true;
     } else if Pingpp.handleAgreementURL(url, withCompletion: nil) {
-        return true
+        return true;
+    } else {
+        // 其他逻辑
     }
 
     return false
+}
+
+// 微信使用 Universal Links 的情况，需要该方法
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    var ret = Pingpp.handleContinue(userActivity, withCompletion: nil)
+    if !ret {
+        // 其他逻辑
+        // ret = 其他处理
+    }
+
+    return ret
 }
 ```
 
