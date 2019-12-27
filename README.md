@@ -18,8 +18,6 @@
 lib 文件夹下是 iOS SDK 文件，  
 example 文件夹里面是一个简单的接入示例，该示例仅供参考。
 
-__当前版本，不需要微信的 SDK，可以正常调用微信支付__
-
 ## <h2 id='2'>版本要求</h2>
 
 iOS SDK 要求 iOS 10.0 及以上版本
@@ -131,6 +129,9 @@ Objective-C
 Swift
 
 ```swift
+// 微信支付 SDK 需要设置 Universal Links
+Pingpp.setUniversalLink("https://example.com/sample/")
+
 Pingpp.createPayment(data as NSObject, viewController: viewController, appURLScheme: URLScheme) { (result: String?, error: PingppError?) in
     if error != nil {
         // 处理错误
@@ -138,6 +139,8 @@ Pingpp.createPayment(data as NSObject, viewController: viewController, appURLSch
     // 处理结果
 }
 ```
+
+> Universal Links 配置方法请参考 [Apple 官方文档](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/enabling_universal_links)及[微信相关文档](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/iOS.html)
 
 ### <h3 id='4.2'>接收并处理交易结果</h3>
 
