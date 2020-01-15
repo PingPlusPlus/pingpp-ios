@@ -262,6 +262,7 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
     ```xml
     <key>LSApplicationQueriesSchemes</key>
     <array>
+        <string>weixinULAPI</string>
         <string>weixin</string>
         <string>wechat</string>
         <string>alipay</string>
