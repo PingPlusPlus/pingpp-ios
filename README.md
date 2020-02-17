@@ -29,10 +29,10 @@ iOS SDK 要求 iOS 10.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```ruby
-    pod 'Pingpp', '~> 2.2.29'
+    pod 'Pingpp', '~> 2.2.30'
     ```
 
-    默认会包含支付宝、微信和银联。你也可以自己选择渠道。  
+    默认会包含支付宝和银联。你也可以自己选择渠道。  
     目前支持以下模块：
     - `Alipay`（支付宝移动支付）
     - `Wx`（微信支付）
@@ -49,18 +49,19 @@ iOS SDK 要求 iOS 10.0 及以上版本
     - `CcbPay`（建设银行 app 支付）
     - `Agreement`（带扣签约）
     - `Cmpay`（和包支付）
+    - `Lakala`（拉卡拉 `alipay_app_lakala`）
 
     例如：
 
     ```ruby
-    pod 'Pingpp/Alipay', '~> 2.2.29'
-    pod 'Pingpp/Wx', '~> 2.2.29'
-    pod 'Pingpp/UnionPay', '~> 2.2.29'
+    pod 'Pingpp/Alipay', '~> 2.2.30'
+    pod 'Pingpp/Wx', '~> 2.2.30'
+    pod 'Pingpp/UnionPay', '~> 2.2.30'
     ```
 
     代扣签约
     ```ruby
-    pod 'Pingpp/Agreement', '~> 2.2.29'
+    pod 'Pingpp/Agreement', '~> 2.2.30'
     ```
 
 2. 运行 `pod install`
@@ -144,6 +145,8 @@ Pingpp.createPayment(data as NSObject, viewController: viewController, appURLSch
 
 ### <h3 id='4.2'>接收并处理交易结果</h3>
 
+> alipay_app_lakala 渠道没有支付结果回调。
+
 ##### 渠道为支付宝但未安装支付宝钱包时，交易结果会在调起插件时的 Completion 中返回。渠道为微信、支付宝(安装了支付宝钱包)、银联或者测试模式时，请实现 UIApplicationDelegate 的 - application:openURL:options: 方法:
 
 ``` objective-c
@@ -186,7 +189,7 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 Podfile 添加
 
 ```ruby
-pod 'Pingpp/Agreement', '~> 2.2.29'
+pod 'Pingpp/Agreement', '~> 2.2.30'
 ```
 
 通过服务端获取 `agreement` 对象后，调用接口

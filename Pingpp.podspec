@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.29'
+  s.version      = '2.2.30'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -30,6 +30,7 @@ Pod::Spec.new do |s|
     ss.vendored_libraries = 'lib/Channels/ApplePay/*.a'
     ss.frameworks = 'PassKit'
     ss.dependency 'Pingpp/Core'
+    ss.dependency 'PingppUnionPayApplePaySDK'
   end
 
   s.subspec 'Alipay' do |ss|
@@ -59,6 +60,7 @@ Pod::Spec.new do |s|
   s.subspec 'UnionPay' do |ss|
     ss.vendored_libraries = 'lib/Channels/UnionPay/*.a'
     ss.dependency 'Pingpp/Core'
+    ss.dependency 'PingppUnionPaySDK'
   end
 
   s.subspec 'BfbWap' do |ss|
@@ -114,6 +116,12 @@ Pod::Spec.new do |s|
   s.subspec 'Cmpay' do |ss|
     ss.vendored_libraries = 'lib/Channels/Cmpay/*.a'
     ss.dependency 'Pingpp/Core'
+  end
+
+  s.subspec 'Lakala' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Lakala/*.a'
+    ss.dependency 'Pingpp/Core'
+    ss.dependency 'PingppLakalaSDK'
   end
 
 end
