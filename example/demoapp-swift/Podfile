@@ -1,0 +1,30 @@
+platform :ios, '10.0'
+use_modular_headers!
+
+PingppSDKVersion = '2.2.30'
+
+target 'demoapp-swift' do
+    pod 'Pingpp/Wx', PingppSDKVersion
+    pod 'Pingpp/Alipay', PingppSDKVersion
+##    pod 'Pingpp/AlipayNoUTDID', PingppSDKVersion
+    pod 'Pingpp/UnionPay', PingppSDKVersion
+    pod 'Pingpp/ApplePay', PingppSDKVersion
+    pod 'Pingpp/QQWallet', PingppSDKVersion
+    pod 'Pingpp/CmbWallet', PingppSDKVersion
+    pod 'Pingpp/BfbWap', PingppSDKVersion
+    pod 'Pingpp/Yeepay', PingppSDKVersion
+    pod 'Pingpp/Jdpay', PingppSDKVersion
+    pod 'Pingpp/CcbPay', PingppSDKVersion
+    pod 'Pingpp/Cmpay', PingppSDKVersion
+    pod 'Pingpp/Agreement', PingppSDKVersion
+    pod 'Pingpp/Lakala', PingppSDKVersion
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
+            config.build_settings['ENABLE_BITCODE'] = 'NO'
+        end
+    end
+end

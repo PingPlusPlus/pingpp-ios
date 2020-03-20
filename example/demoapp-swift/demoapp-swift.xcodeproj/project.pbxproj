@@ -7,20 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E1560DB1D9A5B8A00CC4E13 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E155F9B1D9A5B8A00CC4E13 /* AlipaySDK.bundle */; };
-		1E1560DC1D9A5B8A00CC4E13 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E155F9C1D9A5B8A00CC4E13 /* AlipaySDK.framework */; };
-		1E1560DD1D9A5B8A00CC4E13 /* libpingpp+alipay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E155F9D1D9A5B8A00CC4E13 /* libpingpp+alipay.a */; };
-		1E1560DE1D9A5B8A00CC4E13 /* libpingpp+applepayUpacp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E155F9F1D9A5B8A00CC4E13 /* libpingpp+applepayUpacp.a */; };
-		1E1560DF1D9A5B8A00CC4E13 /* libUPAPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E155FA01D9A5B8A00CC4E13 /* libUPAPayPlugin.a */; };
-		1E1560E01D9A5B8A00CC4E13 /* libpingpp+bfbWap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E155FA31D9A5B8A00CC4E13 /* libpingpp+bfbWap.a */; };
-		1E1561B91D9A5B8A00CC4E13 /* libpingpp+qqwallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560C81D9A5B8A00CC4E13 /* libpingpp+qqwallet.a */; };
-		1E1561BA1D9A5B8A00CC4E13 /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560CA1D9A5B8A00CC4E13 /* libPaymentControl.a */; };
-		1E1561BB1D9A5B8A00CC4E13 /* libpingpp+up.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560CB1D9A5B8A00CC4E13 /* libpingpp+up.a */; };
-		1E1561BC1D9A5B8A00CC4E13 /* libpingpp+yeepay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560CE1D9A5B8A00CC4E13 /* libpingpp+yeepay.a */; };
-		1E1561BD1D9A5B8A00CC4E13 /* libpingpp+network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560D11D9A5B8A00CC4E13 /* libpingpp+network.a */; };
-		1E1561BE1D9A5B8A00CC4E13 /* libpingpp+webview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560D41D9A5B8A00CC4E13 /* libpingpp+webview.a */; };
-		1E1561BF1D9A5B8A00CC4E13 /* libpingppcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1560D51D9A5B8A00CC4E13 /* libpingppcore.a */; };
-		1E1561C11D9A5B8A00CC4E13 /* Pingpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E1560D91D9A5B8A00CC4E13 /* Pingpp.bundle */; };
 		1EAA24681AF2115B00952143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA24671AF2115B00952143 /* AppDelegate.swift */; };
 		1EAA246A1AF2115B00952143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA24691AF2115B00952143 /* ViewController.swift */; };
 		1EAA246D1AF2115B00952143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA246B1AF2115B00952143 /* Main.storyboard */; };
@@ -45,25 +31,10 @@
 		1EAA25151AF2148C00952143 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAA25141AF2148C00952143 /* AddressBook.framework */; };
 		1EAA25171AF2149100952143 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAA25161AF2149100952143 /* AddressBookUI.framework */; };
 		1EAA25191AF214B300952143 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAA25181AF214B300952143 /* PassKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C6AD4EA1F57F866D3CB5A8E3 /* libPods-demoapp-swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D6ACC0E6D68016D5E79BB5 /* libPods-demoapp-swift.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E155F9B1D9A5B8A00CC4E13 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		1E155F9C1D9A5B8A00CC4E13 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
-		1E155F9D1D9A5B8A00CC4E13 /* libpingpp+alipay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+alipay.a"; sourceTree = "<group>"; };
-		1E155F9F1D9A5B8A00CC4E13 /* libpingpp+applepayUpacp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+applepayUpacp.a"; sourceTree = "<group>"; };
-		1E155FA01D9A5B8A00CC4E13 /* libUPAPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPAPayPlugin.a; sourceTree = "<group>"; };
-		1E155FA31D9A5B8A00CC4E13 /* libpingpp+bfbWap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+bfbWap.a"; sourceTree = "<group>"; };
-		1E1560C81D9A5B8A00CC4E13 /* libpingpp+qqwallet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+qqwallet.a"; sourceTree = "<group>"; };
-		1E1560CA1D9A5B8A00CC4E13 /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
-		1E1560CB1D9A5B8A00CC4E13 /* libpingpp+up.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+up.a"; sourceTree = "<group>"; };
-		1E1560CE1D9A5B8A00CC4E13 /* libpingpp+yeepay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+yeepay.a"; sourceTree = "<group>"; };
-		1E1560D11D9A5B8A00CC4E13 /* libpingpp+network.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+network.a"; sourceTree = "<group>"; };
-		1E1560D21D9A5B8A00CC4E13 /* PingppURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingppURLResponse.h; sourceTree = "<group>"; };
-		1E1560D41D9A5B8A00CC4E13 /* libpingpp+webview.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpingpp+webview.a"; sourceTree = "<group>"; };
-		1E1560D51D9A5B8A00CC4E13 /* libpingppcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpingppcore.a; sourceTree = "<group>"; };
-		1E1560D91D9A5B8A00CC4E13 /* Pingpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Pingpp.bundle; sourceTree = "<group>"; };
-		1E1560DA1D9A5B8A00CC4E13 /* Pingpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pingpp.h; sourceTree = "<group>"; };
 		1EAA24621AF2115B00952143 /* demoapp-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demoapp-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAA24661AF2115B00952143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EAA24671AF2115B00952143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +64,9 @@
 		1EAA25161AF2149100952143 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		1EAA25181AF214B300952143 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		1EAA251D1AF2191500952143 /* demoapp-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "demoapp-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		27D6ACC0E6D68016D5E79BB5 /* libPods-demoapp-swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demoapp-swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C589497685422F0DB6687A3 /* Pods-demoapp-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoapp-swift.debug.xcconfig"; path = "Target Support Files/Pods-demoapp-swift/Pods-demoapp-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		DD733D612157FF7F3D461CAD /* Pods-demoapp-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoapp-swift.release.xcconfig"; path = "Target Support Files/Pods-demoapp-swift/Pods-demoapp-swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,20 +75,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EAA25191AF214B300952143 /* PassKit.framework in Frameworks */,
-				1E1560DC1D9A5B8A00CC4E13 /* AlipaySDK.framework in Frameworks */,
-				1E1561BF1D9A5B8A00CC4E13 /* libpingppcore.a in Frameworks */,
 				1EAA25171AF2149100952143 /* AddressBookUI.framework in Frameworks */,
-				1E1560DF1D9A5B8A00CC4E13 /* libUPAPayPlugin.a in Frameworks */,
-				1E1560DE1D9A5B8A00CC4E13 /* libpingpp+applepayUpacp.a in Frameworks */,
-				1E1561BC1D9A5B8A00CC4E13 /* libpingpp+yeepay.a in Frameworks */,
 				1EAA25151AF2148C00952143 /* AddressBook.framework in Frameworks */,
 				1EAA250B1AF2144C00952143 /* MobileCoreServices.framework in Frameworks */,
-				1E1561BB1D9A5B8A00CC4E13 /* libpingpp+up.a in Frameworks */,
 				1EAA25131AF2147300952143 /* MapKit.framework in Frameworks */,
 				1EAA25111AF2146800952143 /* CoreAudio.framework in Frameworks */,
-				1E1561BD1D9A5B8A00CC4E13 /* libpingpp+network.a in Frameworks */,
-				1E1561BE1D9A5B8A00CC4E13 /* libpingpp+webview.a in Frameworks */,
-				1E1560DD1D9A5B8A00CC4E13 /* libpingpp+alipay.a in Frameworks */,
 				1EAA250F1AF2146300952143 /* AudioToolbox.framework in Frameworks */,
 				1EAA250D1AF2145500952143 /* MessageUI.framework in Frameworks */,
 				1EAA25091AF2144500952143 /* QuartzCore.framework in Frameworks */,
@@ -124,123 +89,17 @@
 				1EAA25011AF2142000952143 /* Security.framework in Frameworks */,
 				1EAA24FF1AF2140D00952143 /* libz.dylib in Frameworks */,
 				1EAA24FD1AF2140800952143 /* libsqlite3.dylib in Frameworks */,
-				1E1560E01D9A5B8A00CC4E13 /* libpingpp+bfbWap.a in Frameworks */,
 				1EAA24FB1AF2140100952143 /* libstdc++.dylib in Frameworks */,
 				1EAA24F91AF213FB00952143 /* CFNetwork.framework in Frameworks */,
-				1E1561BA1D9A5B8A00CC4E13 /* libPaymentControl.a in Frameworks */,
 				1EAA24F81AF213F600952143 /* SystemConfiguration.framework in Frameworks */,
-				1E1561B91D9A5B8A00CC4E13 /* libpingpp+qqwallet.a in Frameworks */,
 				1EAA24F71AF213EB00952143 /* libc++.dylib in Frameworks */,
+				C6AD4EA1F57F866D3CB5A8E3 /* libPods-demoapp-swift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E155F981D9A5B8A00CC4E13 /* Pingpp */ = {
-			isa = PBXGroup;
-			children = (
-				1E155F991D9A5B8A00CC4E13 /* Channels */,
-				1E1560CF1D9A5B8A00CC4E13 /* Dependencies */,
-				1E1560D51D9A5B8A00CC4E13 /* libpingppcore.a */,
-				1E1560D91D9A5B8A00CC4E13 /* Pingpp.bundle */,
-				1E1560DA1D9A5B8A00CC4E13 /* Pingpp.h */,
-			);
-			name = Pingpp;
-			path = ../../../lib;
-			sourceTree = "<group>";
-		};
-		1E155F991D9A5B8A00CC4E13 /* Channels */ = {
-			isa = PBXGroup;
-			children = (
-				1E155F9A1D9A5B8A00CC4E13 /* Alipay */,
-				1E155F9E1D9A5B8A00CC4E13 /* ApplePay */,
-				1E155FA21D9A5B8A00CC4E13 /* BfbWap */,
-				1E1560C71D9A5B8A00CC4E13 /* QQWallet */,
-				1E1560C91D9A5B8A00CC4E13 /* UnionPay */,
-				1E1560CD1D9A5B8A00CC4E13 /* Yeepay */,
-			);
-			path = Channels;
-			sourceTree = "<group>";
-		};
-		1E155F9A1D9A5B8A00CC4E13 /* Alipay */ = {
-			isa = PBXGroup;
-			children = (
-				1E155F9B1D9A5B8A00CC4E13 /* AlipaySDK.bundle */,
-				1E155F9C1D9A5B8A00CC4E13 /* AlipaySDK.framework */,
-				1E155F9D1D9A5B8A00CC4E13 /* libpingpp+alipay.a */,
-			);
-			path = Alipay;
-			sourceTree = "<group>";
-		};
-		1E155F9E1D9A5B8A00CC4E13 /* ApplePay */ = {
-			isa = PBXGroup;
-			children = (
-				1E155F9F1D9A5B8A00CC4E13 /* libpingpp+applepayUpacp.a */,
-				1E155FA01D9A5B8A00CC4E13 /* libUPAPayPlugin.a */,
-			);
-			path = ApplePay;
-			sourceTree = "<group>";
-		};
-		1E155FA21D9A5B8A00CC4E13 /* BfbWap */ = {
-			isa = PBXGroup;
-			children = (
-				1E155FA31D9A5B8A00CC4E13 /* libpingpp+bfbWap.a */,
-			);
-			path = BfbWap;
-			sourceTree = "<group>";
-		};
-		1E1560C71D9A5B8A00CC4E13 /* QQWallet */ = {
-			isa = PBXGroup;
-			children = (
-				1E1560C81D9A5B8A00CC4E13 /* libpingpp+qqwallet.a */,
-			);
-			path = QQWallet;
-			sourceTree = "<group>";
-		};
-		1E1560C91D9A5B8A00CC4E13 /* UnionPay */ = {
-			isa = PBXGroup;
-			children = (
-				1E1560CA1D9A5B8A00CC4E13 /* libPaymentControl.a */,
-				1E1560CB1D9A5B8A00CC4E13 /* libpingpp+up.a */,
-			);
-			path = UnionPay;
-			sourceTree = "<group>";
-		};
-		1E1560CD1D9A5B8A00CC4E13 /* Yeepay */ = {
-			isa = PBXGroup;
-			children = (
-				1E1560CE1D9A5B8A00CC4E13 /* libpingpp+yeepay.a */,
-			);
-			path = Yeepay;
-			sourceTree = "<group>";
-		};
-		1E1560CF1D9A5B8A00CC4E13 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				1E1560D01D9A5B8A00CC4E13 /* Network */,
-				1E1560D31D9A5B8A00CC4E13 /* WebView */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
-		1E1560D01D9A5B8A00CC4E13 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				1E1560D11D9A5B8A00CC4E13 /* libpingpp+network.a */,
-				1E1560D21D9A5B8A00CC4E13 /* PingppURLResponse.h */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		1E1560D31D9A5B8A00CC4E13 /* WebView */ = {
-			isa = PBXGroup;
-			children = (
-				1E1560D41D9A5B8A00CC4E13 /* libpingpp+webview.a */,
-			);
-			path = WebView;
-			sourceTree = "<group>";
-		};
 		1EAA24591AF2115A00952143 = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +107,7 @@
 				1EAA24F51AF213D200952143 /* Frameworks */,
 				1EAA247A1AF2115B00952143 /* demoapp-swiftTests */,
 				1EAA24631AF2115B00952143 /* Products */,
+				638655FAE0945D935CC333EA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,7 +122,6 @@
 		1EAA24641AF2115B00952143 /* demoapp-swift */ = {
 			isa = PBXGroup;
 			children = (
-				1E155F981D9A5B8A00CC4E13 /* Pingpp */,
 				1EAA24671AF2115B00952143 /* AppDelegate.swift */,
 				1EAA24691AF2115B00952143 /* ViewController.swift */,
 				1EAA246B1AF2115B00952143 /* Main.storyboard */,
@@ -321,8 +180,18 @@
 				1EAA24F61AF213EB00952143 /* libc++.dylib */,
 				1EAA24F31AF213C300952143 /* CFNetwork.framework */,
 				1EAA24F11AF213BE00952143 /* SystemConfiguration.framework */,
+				27D6ACC0E6D68016D5E79BB5 /* libPods-demoapp-swift.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		638655FAE0945D935CC333EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C589497685422F0DB6687A3 /* Pods-demoapp-swift.debug.xcconfig */,
+				DD733D612157FF7F3D461CAD /* Pods-demoapp-swift.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EAA24811AF2115B00952143 /* Build configuration list for PBXNativeTarget "demoapp-swift" */;
 			buildPhases = (
+				0856F0DE5CC2EA3B6A083404 /* [CP] Check Pods Manifest.lock */,
 				1EAA245E1AF2115B00952143 /* Sources */,
 				1EAA245F1AF2115B00952143 /* Frameworks */,
 				1EAA24601AF2115B00952143 /* Resources */,
+				C9B8F1AFC6DC23C9040892D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -357,7 +228,6 @@
 				TargetAttributes = {
 					1EAA24611AF2115B00952143 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 3XCAYELUBS;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -385,15 +255,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E1561C11D9A5B8A00CC4E13 /* Pingpp.bundle in Resources */,
 				1EAA246D1AF2115B00952143 /* Main.storyboard in Resources */,
 				1EAA24721AF2115B00952143 /* LaunchScreen.xib in Resources */,
-				1E1560DB1D9A5B8A00CC4E13 /* AlipaySDK.bundle in Resources */,
 				1EAA246F1AF2115B00952143 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0856F0DE5CC2EA3B6A083404 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-demoapp-swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9B8F1AFC6DC23C9040892D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-demoapp-swift/Pods-demoapp-swift-resources.sh",
+				"${PODS_ROOT}/Pingpp/lib/Channels/CmbWallet/SecreteKeyBoard",
+				"${PODS_ROOT}/Pingpp/lib/Pingpp.bundle",
+				"${PODS_ROOT}/PingppAlipaySDK/AlipaySDK.bundle",
+				"${PODS_ROOT}/PingppLakalaSDK/depositorySDK.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SecreteKeyBoard",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Pingpp.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/depositorySDK.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demoapp-swift/Pods-demoapp-swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1EAA245E1AF2115B00952143 /* Sources */ = {
@@ -536,10 +453,11 @@
 		};
 		1EAA24821AF2115B00952143 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C589497685422F0DB6687A3 /* Pods-demoapp-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "compiler-default";
-				DEVELOPMENT_TEAM = 3XCAYELUBS;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -614,10 +532,11 @@
 		};
 		1EAA24831AF2115B00952143 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD733D612157FF7F3D461CAD /* Pods-demoapp-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "compiler-default";
-				DEVELOPMENT_TEAM = 3XCAYELUBS;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

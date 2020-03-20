@@ -45,14 +45,15 @@ class ViewController: UIViewController {
             if data != nil {
                 let charge = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 print(charge! as String)
-                
-                Pingpp.createPayment(charge! as NSObject, appURLScheme: kAppURLScheme) { (result, error) -> Void in
-                        print(result!)
-                        if error != nil {
-                            print(error!.getMsg()!)
+
+                DispatchQueue.main.async {
+                    Pingpp.createPayment(charge! as NSObject, appURLScheme: kAppURLScheme) { (result, error) -> Void in
+                            print(result!)
+                            if error != nil {
+                                print(error!.getMsg()!)
+                            }
                         }
-                    }
-                
+                }
             } else {
                 print("response data is nil")
             }

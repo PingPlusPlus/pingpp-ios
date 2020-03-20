@@ -50,8 +50,19 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>weixin</string>
+		<string>weixinULAPI</string>
 		<string>wechat</string>
 		<string>alipay</string>
+		<string>alipays</string>
+		<string>mqqwallet</string>
+		<string>mqq</string>
+		<string>uppaysdk</string>
+		<string>uppaywallet</string>
+		<string>uppayx1</string>
+		<string>uppayx2</string>
+		<string>uppayx3</string>
+		<string>mbspay</string>
+		<string>cmpay</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
