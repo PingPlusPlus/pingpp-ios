@@ -29,7 +29,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```ruby
-    pod 'Pingpp', '~> 2.2.30'
+    pod 'Pingpp', '~> 2.2.31'
     ```
 
     默认会包含支付宝和银联。你也可以自己选择渠道。  
@@ -54,14 +54,14 @@ iOS SDK 要求 iOS 10.0 及以上版本
     例如：
 
     ```ruby
-    pod 'Pingpp/Alipay', '~> 2.2.30'
-    pod 'Pingpp/Wx', '~> 2.2.30'
-    pod 'Pingpp/UnionPay', '~> 2.2.30'
+    pod 'Pingpp/Alipay', '~> 2.2.31'
+    pod 'Pingpp/Wx', '~> 2.2.31'
+    pod 'Pingpp/UnionPay', '~> 2.2.31'
     ```
 
     代扣签约
     ```ruby
-    pod 'Pingpp/Agreement', '~> 2.2.30'
+    pod 'Pingpp/Agreement', '~> 2.2.31'
     ```
 
 2. 运行 `pod install`
@@ -104,7 +104,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
 
 ## <h2 id='4'>接入方法</h2>
 
-#### <h3 id='4.1'>使用 Ping++ 标准版 SDK</h3>
+### <h3 id='4.1'>使用 Ping++ 标准版 SDK</h3>
 
 ```
 #import <Pingpp.h>
@@ -142,6 +142,39 @@ Pingpp.createPayment(data as NSObject, viewController: viewController, appURLSch
 ```
 
 > Universal Links 配置方法请参考 [Apple 官方文档](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/enabling_universal_links)及[微信相关文档](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/iOS.html)
+
+#### 招行相关方法
+
+##### 控制支付方式
+
+自动判断，安装招行 app 时通过打开 app 支付，未安装时通过 WebView 打开 H5 页面支付。
+
+```swift
+Pingpp.setCmbPayMethod(PingppCmbPayMethod.auto)
+```
+
+仅通过打开 app 支付，要求必须安装有招行 app。
+
+```swift
+Pingpp.setCmbPayMethod(PingppCmbPayMethod.appOnly)
+```
+
+仅通过 WebView 打开 H5 页面支付。
+
+```swift
+Pingpp.setCmbPayMethod(PingppCmbPayMethod.h5Only)
+```
+
+##### 设置招行 H5 地址
+
+> 生产环境不需要设置。仅在招行要求在招行的测试环境执行测试案例时使用。
+
+```swift
+// 参数 1，Bool，是否启用招行测试地址；
+// 参数 2，String，招行测试 H5 地址。仅参数 1 为 true 时生效。如果参数 2 传 nil，则会使用默认测试地址。
+Pingpp.setCmbEnv(true, url: nil)
+Pingpp.setCmbEnv(true, url: "https://...")
+```
 
 ### <h3 id='4.2'>接收并处理交易结果</h3>
 
@@ -189,7 +222,7 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 Podfile 添加
 
 ```ruby
-pod 'Pingpp/Agreement', '~> 2.2.30'
+pod 'Pingpp/Agreement', '~> 2.2.31'
 ```
 
 通过服务端获取 `agreement` 对象后，调用接口
@@ -297,20 +330,10 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
     XXXXXXX does not contain bitcode. You must rebuild it with bitcode enabled (Xcode setting ENABLE_BITCODE), obtain an updated library from the vendor, or disable bitcode for this target.
     ```
     请到 Xcode 项目的 `Build Settings` 标签页搜索 bitcode，将 `Enable Bitcode` 设置为 `NO`。  
-4. `CmbWallet`（招行一网通） 需要把 招行一网通 提供的秘钥`CMBPublicKey` 添加到 `Info.plist` 如果是混淆加密的则不需要 如以下代码:
-
-    ```xml
-    <key>CMBPublicKey</key>
-    <string>IwxiAyJIT4tlwJSCbRRE0jZFTvYjt02/CrlutsMzd5O4B9PaVyUmIKSasdasdasdhWTyp3Bb9T7c9ujiUJOJ8y7893grwEae9yiOBoBmByVsCMTaxnc+lMr7A9ifk48Tz61WxsxnQTyYzrIVbuerQIUi3PSORwcPMRqi+XLX8qPXkNpLT9dMvjOasdasdasdUaAdPFc2YFHwl9dHf2ydQsxh1BHvaVO0OO+GtZ04ZKjxRyJW2HfghKLJijl;XTjrWSNizcdoefFKQsTdzvcPNvx7PsxuXKo9SosheeS/SHPk9sGNdwvL55yEBA8gNs0XZbkxJYjuwrwsQInC/N6QSaI0f0kyTA==
-    </string>
-    ```
-
-5. `CmbWallet`（招行一网通） 手动导入 : 需要把 `lib/Channels/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可；
-6. `CmbWallet`（招行一网通） pod 安装 : 需要把 `Pods/Pingpp/CmbWallet`目录下的 `SecreteKeyBoard`文件夹手动添加到 工程中的 `Assets.xcassets` 添加成功后即可删除 如果是混淆加密的方式直接删除即可；
-7. 招行一网通 app 支付不需要依赖 `CmbWallet` 模块和上述 `CmbWallet` 相关配置，模块已经包含在 `Pingpp/Core` 里面。需要用到 `URL Schemes`，创建 `charge` 时，在 `extra[result_url]` 字段传入 `<SCHEME>://pingppcmbwallet`，其中 `<SCHEME>` 是你自定的 `URL Schemes`；
-8. 判断设备上是否已经安装招商银行 app 的方法：`[Pingpp isCmbWalletInstalled]`。
-9. 使用 CcbPay 请先确保用户手机安装了建设银行 app。判断设备上是否已经安装建设银行 app 的方法：`[Pingpp isCcbAppInstalled]`。
-10. 使用 CcbPay 的情况，需要在 `Info.plist` 的 `NSAppTransportSecurity` 字段添加相应的 `NSExceptionDomains`
+4. 招行一网通 app 支付配置招行分配的 `URL Schemes`，并调用方法 `[Pingpp setCmbURLScheme:@"..."];`，该 `URL Scheme` 不要与其他支付方式共用，否则会影响前端支付结果返回；
+5. 判断设备上是否已经安装招商银行 app 的方法：`[Pingpp isCmbWalletInstalled]`。
+6. 使用 CcbPay 请先确保用户手机安装了建设银行 app。判断设备上是否已经安装建设银行 app 的方法：`[Pingpp isCcbAppInstalled]`。
+7. 使用 CcbPay 的情况，需要在 `Info.plist` 的 `NSAppTransportSecurity` 字段添加相应的 `NSExceptionDomains`。
 
     ```xml
     <key>NSExceptionDomains</key>

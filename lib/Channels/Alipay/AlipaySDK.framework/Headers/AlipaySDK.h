@@ -9,11 +9,13 @@
 
 ////////////////////////////////////////////////////////
 ///////////////// 支付宝标准版本支付SDK ///////////////////
-/////////// version:15.6.8  motify:2019.09.19///////////
+///////// version:15.7.4  motify:2020.02.28///////////
 ////////////////////////////////////////////////////////
 
 #import <UIKit/UIKit.h>
 #import "APayAuthInfo.h"
+#import "AFServiceCenter.h"
+#import "AFServiceResponse.h"
 
 typedef void(^CompletionBlock)(NSDictionary *resultDic);
 
@@ -200,4 +202,22 @@ typedef enum {
  *  @param block 更新请求结果回调
  */
 - (void)fetchSdkConfigWithBlock:(void(^)(BOOL success))block;
+
+
+typedef void(^APLogBlock)(NSString *log);
+
+/**
+*   接收AlipaySDK的log信息
+*
+*  @param logBlock 打印log的回调block
+*/
++ (void)startLogWithBlock:(APLogBlock)logBlock;
+
+/**
+*   停止输出log,会释放logBlock
+*
+*
+*/
++ (void)stopLog;
+
 @end

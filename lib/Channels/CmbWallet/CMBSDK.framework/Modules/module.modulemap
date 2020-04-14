@@ -1,0 +1,6 @@
+framework module CMBSDK {
+  umbrella header "CMBSDK.h"
+
+  export *
+  module * { export * }
+}

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.30'
+  s.version      = '2.2.31'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -77,10 +77,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'CmbWallet' do |ss|
     ss.vendored_libraries = 'lib/Channels/CmbWallet/*.a'
-    ss.ios.vendored_frameworks = 'lib/Channels/CmbWallet/cmbkeyboard.framework'
-    ss.resource = 'lib/Channels/CmbWallet/SecreteKeyBoard'
     ss.dependency 'Pingpp/Core'
-    ss.dependency 'Pingpp/WebView'
+    ss.dependency 'PingppCMBSDK'
   end
 
   s.subspec 'Jdpay' do |ss|

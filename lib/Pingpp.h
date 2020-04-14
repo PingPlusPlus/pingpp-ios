@@ -42,6 +42,12 @@ typedef NS_ENUM(NSUInteger, PingppRequestContentTypeOption) {
     PingppRequestContentTypeForm
 };
 
+typedef NS_ENUM(NSUInteger, PingppCmbPayMethod) {
+    PingppCmbPayMethodAuto = 0x03, // 自动判断
+    PingppCmbPayMethodAppOnly = 0x01, // 仅使用打开 app 支付
+    PingppCmbPayMethodH5Only = 0x02 // 仅使用 H5(WebView) 支付
+};
+
 @interface PingppError : NSObject
 
 @property(readonly, assign) PingppErrorOption code;
@@ -233,6 +239,39 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  */
 + (BOOL)handleContinueUserActivity:(NSUserActivity *)userActivity
                     withCompletion:(PingppCompletion)completion;
+
+/**
+ *  设置招行分配的 URL Scheme
+ *
+ *  @param URLScheme    招行分配的 URL Scheme
+ */
++ (void)setCmbURLScheme:(NSString *)URLScheme;
+
+/**
+ *  获取已设置的招行分配的 URL Scheme
+ *
+ */
++ (NSString *)cmbURLScheme;
+
+/**
+ *  控制招行支付的方式
+ *
+ *  @param method    支付的方式
+ */
++ (void)setCmbPayMethod:(PingppCmbPayMethod)method;
+
+/**
+ *  获取控制招行支付的方式
+ */
++ (PingppCmbPayMethod)cmbPayMethod;
+
+/**
+ *  设置招行支付的环境，生产/测试
+ *
+ *  @param test    是否设置为测试环境
+ *  @param url  测试环境使用的 H5 URL
+ */
++ (void)setCmbEnv:(BOOL)test url:(nullable NSString *)url;
 
 @end
 #endif
