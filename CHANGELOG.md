@@ -1,5 +1,13 @@
 # ChangeLog
 
+### 2.2.32
+
+#### 更改
+
+- 更新拉卡拉 SDK 支持微信(wx_app_lakala)
+- `Pingpp.h` nullability 声明修改
+- 去掉 idfa 相关获取
+
 ### 2.2.31
 
 #### 更改

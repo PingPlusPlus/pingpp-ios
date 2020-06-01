@@ -48,6 +48,8 @@ typedef NS_ENUM(NSUInteger, PingppCmbPayMethod) {
     PingppCmbPayMethodH5Only = 0x02 // 仅使用 H5(WebView) 支付
 };
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PingppError : NSObject
 
 @property(readonly, assign) PingppErrorOption code;
@@ -57,7 +59,7 @@ typedef NS_ENUM(NSUInteger, PingppCmbPayMethod) {
 @end
 
 
-typedef void (^PingppCompletion)(NSString *result, PingppError *error);
+typedef void (^PingppCompletion)(NSString *result, PingppError * _Nullable error);
 
 
 @interface Pingpp : NSObject
@@ -71,9 +73,9 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @param completionBlock  支付结果回调 Block
  */
 + (void)createPayment:(NSObject *)charge
-       viewController:(UIViewController*)viewController
-         appURLScheme:(NSString *)scheme
-       withCompletion:(PingppCompletion)completionBlock;
+       viewController:(nullable UIViewController*)viewController
+         appURLScheme:(nullable NSString *)scheme
+       withCompletion:(nullable PingppCompletion)completionBlock;
 
 /**
  *  支付调用接口(支付宝/微信)
@@ -83,8 +85,8 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @param completion  支付结果回调 Block
  */
 + (void)createPayment:(NSObject *)charge
-         appURLScheme:(NSString *)scheme
-       withCompletion:(PingppCompletion)completion;
+         appURLScheme:(nullable NSString *)scheme
+       withCompletion:(nullable PingppCompletion)completion;
 
 /**
  *  支付调用接口(附带 Universal Link)
@@ -96,10 +98,10 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @param completionBlock  支付结果回调 Block
  */
 + (void)createPayment:(NSObject *)charge
-       viewController:(UIViewController*)viewController
-         appURLScheme:(NSString *)scheme
-        universalLink:(NSString *)universalLink
-       withCompletion:(PingppCompletion)completionBlock;
+       viewController:(nullable UIViewController*)viewController
+         appURLScheme:(nullable NSString *)scheme
+        universalLink:(nullable NSString *)universalLink
+       withCompletion:(nullable PingppCompletion)completionBlock;
 
 /**
  *  回调结果接口(支付宝/微信/测试模式)
@@ -110,7 +112,7 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @return                 当无法处理 URL 或者 URL 格式不正确时，会返回 NO。
  */
 + (BOOL)handleOpenURL:(NSURL *)url
-       withCompletion:(PingppCompletion)completion;
+       withCompletion:(nullable PingppCompletion)completion;
 
 /**
  *  回调结果接口(支付宝/微信/测试模式)
@@ -122,8 +124,8 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @return                   当无法处理 URL 或者 URL 格式不正确时，会返回 NO。
  */
 + (BOOL)handleOpenURL:(NSURL *)url
-    sourceApplication:(NSString *)sourceApplication
-       withCompletion:(PingppCompletion)completion;
+    sourceApplication:(nullable NSString *)sourceApplication
+       withCompletion:(nullable PingppCompletion)completion;
 
 /**
  *  web渠道支付成功后点击 "返回商户" 直接关闭支付页面
@@ -149,9 +151,9 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  设置 App ID
  *  @param  appId  Ping++ 的应用 ID，请登录 https://dashboard.pingxx.com 查看
  */
-+ (void)setAppId:(NSString *)appId;
++ (void)setAppId:(nullable NSString *)appId;
 
-+ (NSString *)appId;
++ (nullable NSString *)appId;
 
 /**
  *  设置请求的 Content-Type
@@ -181,7 +183,7 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  * 设置webView navigationItem 颜色
  */
 + (void)setWebViewItemColor:(UIColor *)itemColor
-                buttonColor:(UIColor*)bntColor;
+                buttonColor:(UIColor *)bntColor;
 
 /**
  * 是否已安装招商银行 app
@@ -202,7 +204,7 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @param completion 签约结果回调
  */
 + (void)signAgreement:(NSObject *)agreement
-       withCompletion:(PingppCompletion)completion;
+       withCompletion:(nullable PingppCompletion)completion;
 
 /**
  *  签约回调结果接口
@@ -213,21 +215,21 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @return            当无法处理 URL 或者 URL 格式不正确时，会返回 NO。
  */
 + (BOOL)handleAgreementURL:(NSURL *)url
-            withCompletion:(PingppCompletion)completion;
+            withCompletion:(nullable PingppCompletion)completion;
 
 /**
  *  设置 Universal Link
  *
  *  @param universalLink    Universal Link
  */
-+ (void)setUniversalLink:(NSString *)universalLink;
++ (void)setUniversalLink:(nullable NSString *)universalLink;
 
 
 /**
  *  获取已设置的 Universal Link
  *
  */
-+ (NSString *)universalLink;
++ (nullable NSString *)universalLink;
 
 /**
  *  Universal Link 回调结果接口
@@ -238,20 +240,20 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
  *  @return                 当无法处理 URL 或者 URL 格式不正确时，会返回 NO。
  */
 + (BOOL)handleContinueUserActivity:(NSUserActivity *)userActivity
-                    withCompletion:(PingppCompletion)completion;
+                    withCompletion:(nullable PingppCompletion)completion;
 
 /**
  *  设置招行分配的 URL Scheme
  *
  *  @param URLScheme    招行分配的 URL Scheme
  */
-+ (void)setCmbURLScheme:(NSString *)URLScheme;
++ (void)setCmbURLScheme:(nullable NSString *)URLScheme;
 
 /**
  *  获取已设置的招行分配的 URL Scheme
  *
  */
-+ (NSString *)cmbURLScheme;
++ (nullable NSString *)cmbURLScheme;
 
 /**
  *  控制招行支付的方式
@@ -274,4 +276,7 @@ typedef void (^PingppCompletion)(NSString *result, PingppError *error);
 + (void)setCmbEnv:(BOOL)test url:(nullable NSString *)url;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
 #endif
