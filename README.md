@@ -29,7 +29,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
 1. 在 `Podfile` 添加
 
     ```ruby
-    pod 'Pingpp', '~> 2.2.32'
+    pod 'Pingpp', '~> 2.2.33'
     ```
 
     默认会包含支付宝和银联。你也可以自己选择渠道。  
@@ -54,14 +54,14 @@ iOS SDK 要求 iOS 10.0 及以上版本
     例如：
 
     ```ruby
-    pod 'Pingpp/Alipay', '~> 2.2.32'
-    pod 'Pingpp/Wx', '~> 2.2.32'
-    pod 'Pingpp/UnionPay', '~> 2.2.32'
+    pod 'Pingpp/Alipay', '~> 2.2.33'
+    pod 'Pingpp/Wx', '~> 2.2.33'
+    pod 'Pingpp/UnionPay', '~> 2.2.33'
     ```
 
     代扣签约
     ```ruby
-    pod 'Pingpp/Agreement', '~> 2.2.32'
+    pod 'Pingpp/Agreement', '~> 2.2.33'
     ```
 
 2. 运行 `pod install`
@@ -222,7 +222,7 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 Podfile 添加
 
 ```ruby
-pod 'Pingpp/Agreement', '~> 2.2.32'
+pod 'Pingpp/Agreement', '~> 2.2.33'
 ```
 
 通过服务端获取 `agreement` 对象后，调用接口
