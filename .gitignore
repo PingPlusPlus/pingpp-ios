@@ -16,3 +16,4 @@ DerivedData
 xcuserdata/
 
 .swift-version
+pack.sh

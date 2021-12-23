@@ -1,7 +1,7 @@
 platform :ios, '10.0'
 use_modular_headers!
 
-PingppSDKVersion = '2.2.30'
+PingppSDKVersion = '2.2.34'
 
 target 'demoapp' do
     pod 'Pingpp/Wx', PingppSDKVersion

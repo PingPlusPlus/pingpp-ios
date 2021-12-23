@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pingpp'
-  s.version      = '2.2.34'
+  s.version      = '2.2.35'
   s.summary      = 'Pingplusplus iOS SDK'
   s.description  = <<-DESC
                    移动应用支付接口。
@@ -120,6 +120,12 @@ Pod::Spec.new do |s|
     ss.vendored_libraries = 'lib/Channels/Lakala/*.a'
     ss.dependency 'Pingpp/Core'
     ss.dependency 'PingppLakalaSDK', '~> 2.0.1'
+  end
+
+  s.subspec 'Chinaums' do |ss|
+    ss.vendored_libraries = 'lib/Channels/Chinaums/*.a'
+    ss.dependency 'Pingpp/Core'
+    ss.dependency 'PingppChinaUmsSDK'
   end
 
 end

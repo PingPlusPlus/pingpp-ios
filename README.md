@@ -24,16 +24,19 @@ iOS SDK 要求 iOS 10.0 及以上版本
 
 ## <h2 id='3'>接入方法</h2>
 
+**如不需要使用`银联商务`，请使用 `2.2.34` 版本。**
+
 ### <h3 id='3.1'>使用 CocoaPods</h3>
 
 1. 在 `Podfile` 添加
 
     ```ruby
-    pod 'Pingpp', '~> 2.2.33'
+    pod 'Pingpp', '~> 2.2.34'
     ```
 
     默认会包含支付宝和银联。你也可以自己选择渠道。  
     目前支持以下模块：
+
     - `Alipay`（支付宝移动支付）
     - `Wx`（微信支付）
     - `CBAlipay`（支付宝移动支付 - 境外支付）
@@ -50,18 +53,20 @@ iOS SDK 要求 iOS 10.0 及以上版本
     - `Agreement`（带扣签约）
     - `Cmpay`（和包支付）
     - `Lakala`（拉卡拉 `alipay_app_lakala`, `wx_app_lakala`）
+    - `Chinaums`（银联商务，仅 `2.2.35` 支持）
 
     例如：
 
     ```ruby
-    pod 'Pingpp/Alipay', '~> 2.2.33'
-    pod 'Pingpp/Wx', '~> 2.2.33'
-    pod 'Pingpp/UnionPay', '~> 2.2.33'
+    pod 'Pingpp/Alipay', '~> 2.2.34'
+    pod 'Pingpp/Wx', '~> 2.2.34'
+    pod 'Pingpp/UnionPay', '~> 2.2.34'
     ```
 
     代扣签约
+
     ```ruby
-    pod 'Pingpp/Agreement', '~> 2.2.33'
+    pod 'Pingpp/Agreement', '~> 2.2.34'
     ```
 
 2. 运行 `pod install`
@@ -69,13 +74,16 @@ iOS SDK 要求 iOS 10.0 及以上版本
 4. 添加 URL Schemes：在 Xcode 中，选择你的工程设置项，选中 "TARGETS" 一栏，在 "Info" 标签栏的 "URL Types" 添加 "URL Schemes"，如果使用微信，填入所注册的微信应用程序 id，如果不使用微信，则自定义，允许英文字母和数字，首字母必须是英文字母，建议起名稍复杂一些，尽量避免与其他程序冲突。如果使用 CcbPay，格式为 `comccbpay+商户代码(即 MERCHANTID 字段值)+商户自定义的标示`，示例：`comccbpay105320148140002myapp`。
 5. 2.1.0 及以上版本，可打开 Debug 模式，打印出 log，方便调试。开启方法：`[Pingpp setDebugMode:YES];`。
 6. 2.2.8 及以上版本，可选择是否在 WAP 渠道中支付完成后，点击“返回商户”按钮，直接关闭支付页面。开启方法：`[Pingpp ignoreResultUrl:YES];` 。
+7. 使用银联商务时，最好使用单独的 URL Scheme(使用微信支付时除外)，并在调用 `createPayment` 方法时，通过 `appURLScheme` 参数传入。
 
 ### <h3 id='3.2'>手动导入</h3>
 
 1. 获取 SDK  
 下载 SDK, 里面包含了 lib 文件夹和 example 文件夹。lib 文件夹里面是 SDK 的文件。
 2. 依赖 Frameworks：
+
     必需：
+
     ```
     CFNetwork.framework
     SystemConfiguration.framework
@@ -96,6 +104,7 @@ iOS SDK 要求 iOS 10.0 及以上版本
     ```
     PassKit.framework
     ```
+
 3. 如果不需要某些渠道，删除 `lib/Channels` 下的相应目录即可。
 4. 添加 URL Schemes：在 Xcode 中，选择你的工程设置项，选中 "TARGETS" 一栏，在 "Info" 标签栏的 "URL Types" 添加 "URL Schemes"，如果使用微信，填入所注册的微信应用程序 id，如果不使用微信，则自定义，允许英文字母和数字，首字母必须是英文字母，建议起名稍复杂一些，尽量避免与其他程序冲突。
 5. 添加 Other Linker Flags：在 Build Settings 搜索 Other Linker Flags ，添加 `-ObjC`。
@@ -222,7 +231,7 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 Podfile 添加
 
 ```ruby
-pod 'Pingpp/Agreement', '~> 2.2.33'
+pod 'Pingpp/Agreement', '~> 2.2.34'
 ```
 
 通过服务端获取 `agreement` 对象后，调用接口
