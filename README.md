@@ -20,53 +20,30 @@ example 文件夹里面是一个简单的接入示例，该示例仅供参考。
 
 ## <h2 id='2'>版本要求</h2>
 
-iOS SDK 要求 iOS 10.0 及以上版本
+iOS SDK 2.3.0 要求 iOS 15.0 及以上版本。
 
 ## <h2 id='3'>接入方法</h2>
-
-**如不需要使用`银联商务`，请使用 `2.2.34` 版本。**
 
 ### <h3 id='3.1'>使用 CocoaPods</h3>
 
 1. 在 `Podfile` 添加
 
     ```ruby
-    pod 'Pingpp', '2.2.34'
+    pod 'Pingpp', '~> 2.3.0'
     ```
 
-    默认会包含支付宝和银联。你也可以自己选择渠道。  
-    目前支持以下模块：
+    2.3.0 默认包含 Core 和支付宝，支持以下模块：
 
     - `Alipay`（支付宝移动支付）
-    - `Wx`（微信支付）
     - `CBAlipay`（支付宝移动支付 - 境外支付）
-    - `AlipayNoUTDID`（支付宝移动支付，独立 `UTDID.framework`）
-    - `Wx`（微信 app 支付）
-    - `QQWallet`（QQ 钱包 app 支付）
-    - `UnionPay`（银联手机支付）
-    - `ApplePay`
-    - `CmbWallet`（招行一网通）
-    - `BfbWap`（百度钱包 Wap 支付）
-    - `Yeepay`（易宝支付 Wap 支付）
-    - `Jdpay`（京东支付 Wap 支付）
-    - `CcbPay`（建设银行 app 支付）
-    - `Agreement`（带扣签约）
-    - `Cmpay`（和包支付）
-    - `Lakala`（拉卡拉 `alipay_app_lakala`, `wx_app_lakala`）
-    - `Chinaums`（银联商务，仅 `2.2.35` 支持）
+
+    其他旧渠道的二进制尚不支持 arm64 模拟器，不随 2.3.0 的 CocoaPods 包发布；需要这些渠道的项目请继续使用对应的 2.2.x 版本。
 
     例如：
 
     ```ruby
-    pod 'Pingpp/Alipay', '2.2.34'
-    pod 'Pingpp/Wx', '2.2.34'
-    pod 'Pingpp/UnionPay', '2.2.34'
-    ```
-
-    代扣签约
-
-    ```ruby
-    pod 'Pingpp/Agreement', '2.2.34'
+    pod 'Pingpp/Alipay', '~> 2.3.0'
+    pod 'Pingpp/CBAlipay', '~> 2.3.0'
     ```
 
 2. 运行 `pod install`
@@ -228,7 +205,7 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 
 ### <h3 id='4.4'>使用代扣签约接口</h3>
 
-Podfile 添加
+代扣签约不随 2.3.0 发布。如需继续使用，请固定旧版本：
 
 ```ruby
 pod 'Pingpp/Agreement', '2.2.34'
@@ -374,8 +351,6 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 
 ### * 支付宝渠道发生包冲突的情况
 
-使用阿里百川等阿里系的 SDK 时，可能会出现冲突，请尝试使用 `pod 'Pingpp/AlipayNoUTDID'` 代替 `pod 'Pingpp/Alipay'`。
-
-因为 `CocoaPods` 的限制，只有编译通过的才能上传成功，所以使用时，需要删除项目中已经存在的 `UTDID.framework`。
+`Pingpp 2.3.0` 暂不提供 `AlipayNoUTDID` 子规格。NoUTDID 二进制要求宿主提供兼容的 UTDID 实现，而当前外部 UTDID 尚无 arm64 模拟器切片。仍需使用该渠道的客户请固定 `pod 'Pingpp/AlipayNoUTDID', '2.2.34'`，并自行确认 UTDID 依赖与工程架构兼容。
 
 **关于如何使用 SDK 请参考 [开发者中心](https://www.pingxx.com/docs/index) 或者 [example](https://github.com/PingPlusPlus/pingpp-ios/tree/master/example) 文件夹里的示例。**
