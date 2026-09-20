@@ -1,5 +1,22 @@
 # ChangeLog
 
+### 2.3.0 (2026-09-18)
+
+#### 新增
+
+- Core、Network、Alipay 以 XCFramework 形式发布，支持 arm64 模拟器
+
+#### 更改
+
+- 最低系统支持版本调整为 iOS 15.0
+- 标准支付宝 SDK 更新至 15.8.42.1
+- CocoaPods 仅发布 `Core`、`Alipay` 和 `CBAlipay`；其他旧渠道请继续使用 2.2.x
+- `AlipayNoUTDID` 因外部 UTDID 尚不支持 arm64 模拟器，暂不随 2.3.0 发布
+
+#### 修复
+
+- 恢复支付宝渠道分发逻辑，修复 `No such channel` 错误
+
 ### 2.2.35
 
 > 该版本不支持`支付宝`，请使用 `2.2.34`
